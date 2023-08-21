@@ -1,5 +1,5 @@
 #container {
-    background-color: #cba;
+    /* background-color: #cba; */
     height: 100vh;
     box-sizing: border-box;
 }
@@ -11,13 +11,11 @@
 }
 #container {
     padding: 10px;
-    height: 650px;
+    height: 90vh;
     width: auto;
     border: 2px solid blue;
     border-radius: 10px;
-    margin: 10px 0;
-    padding: 10px;
-    
+    margin: 20px 0 10px 0; 
 }
 #login_container
 {   
@@ -26,6 +24,7 @@
     width: 40%;
     border: 2px solid green;
     border-radius: 10px;
+    margin: 20px;
 
 }
 #login {
@@ -40,7 +39,6 @@
 }
 #login div {
     border-radius: 5px;
-    font: 30px Helvetica;
     text-align: left;
     padding: 20px;
     line-height: 0.8px;
@@ -54,8 +52,9 @@
 
 }
 #welcome_content {
-   border: 2px solid black;
-    width: 50%;
+    margin: 20px;
+    border: 2px solid black;
+    width:auto;
     margin-left: 45%;
     border-radius: 10px;
     height: 80vh;
