@@ -1,48 +1,70 @@
 #container {
     background-color: #cba;
+    height: 100vh;
+    box-sizing: border-box;
 }
 #header {
     height: 70px;
     width: auto;
     border-radius: 5px;
-    background-color: aliceblue;
+    border: 2px solid black;
 }
 #container {
-    align-content: center;
     padding: 10px;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(201, 245, 201);
+    height: 650px;
+    width: auto;
+    border: 2px solid blue;
     border-radius: 10px;
-    margin: auto;
+    margin: 10px 0;
     padding: 10px;
     
 }
 #login_container
-{
-    height: 60%;
-    margin-right: 60%;
-    background-color: yellow;
+{   
+    float: left;
+    height: 80vh;
+    width: 40%;
+    border: 2px solid green;
     border-radius: 10px;
 
 }
 #login {
-    position: relative;
-    height: 60%;
+    height: 300px;
+    text-align: center;
+    align-content: center;
     width: auto;
-    background-color: pink;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 3px;
+
+}
+#login div {
+    border-radius: 5px;
+    font: 30px Helvetica;
+    text-align: left;
+    padding: 20px;
+    line-height: 0.8px;
 }
 #register {
-    height: 30%;
-    width: 100%;
-    background-color: rgb(61, 123, 151);
+    height: 150px;
+    width: auto;
+    margin:20px 20px 0 20px;
+    border: 2px solid black;
+    border-radius: 3px;
 
 }
 #welcome_content {
-    background-color: palegreen;
+   border: 2px solid black;
     width: 50%;
     margin-left: 45%;
     border-radius: 10px;
     height: 80vh;
 
+}
+footer {
+    bottom: 10px;
+    height: 70px;
+    width: auto;
+    border-radius: 5px;
+    border: 2px solid black;
 }
