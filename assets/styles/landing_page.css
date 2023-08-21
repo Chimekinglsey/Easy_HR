@@ -2,6 +2,7 @@
     /* background-color: red; */
     height: 100vh;
     box-sizing: border-box;
+    overflow: auto;
 }
 #header {
     height: 70px;
@@ -9,13 +10,20 @@
     border-radius: 5px;
     border: 2px solid black;
 }
+#header img {
+    height: 100%;
+    border-radius: 50%;
+    
+   
+}
 #container {
     padding: 10px;
-    height: 90vh;
+    height: fit-content;
     width: auto;
     border: 2px solid blue;
     border-radius: 10px;
-    margin: 20px 0 10px 0; 
+    margin: 20px 0 10px 0;
+    overflow: auto;
 }
 #login_container
 {   
@@ -25,10 +33,12 @@
     border: 2px solid green;
     border-radius: 10px;
     margin: 20px;
+    overflow: scroll;
 
 }
 #login {
-    height: 200px;
+    transform: translate(0%, 50%);
+    height: auto;
     text-align: center;
     align-content: center;
     width: auto;
@@ -41,9 +51,11 @@
     border-radius: 5px;
     text-align: left;
     padding: 20px;
+    height: auto;
     line-height: 0.8px;
+    overflow: auto;
 }
-#login div .login_btn, .register_btn{
+#login div .login_btn{
     display: inline-block;
     font-size: 20px;
     border-radius: 3px;
@@ -53,6 +65,7 @@
     height: 40px;
     width: 100px;
     margin-right: 40px;
+    overflow: auto;
 }
 div input {
     width: 200px;
@@ -72,18 +85,42 @@ select option{
     width: 200px;
 }
 #welcome_content {
+    padding: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 20px;
     border: 2px solid black;
     width:auto;
     margin-left: 45%;
     border-radius: 10px;
-    height: 80vh;
+    height: auto;
 
+}
+
+.center {
+    text-align: center;
+}
+.italics{
+    font-style: italic;
+    text-align: center;
+}
+.why_choose_us {
+    text-justify: auto;
+}
+.center li {
+    text-align: left;
 }
 footer {
     bottom: 10px;
+    text-align: center;
     height: 70px;
     width: auto;
     border-radius: 5px;
-    border: 2px solid black;
+    line-height: 0.8;
+    border: 2px solid rgb(151, 25, 25);
+    margin: 5px 0;
+}
+footer ul a{
+    display: inline-block;
+    text-decoration: none;
+    padding-right: 30px;
 }
