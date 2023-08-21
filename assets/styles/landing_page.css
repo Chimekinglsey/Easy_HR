@@ -1,0 +1,48 @@
+#container {
+    background-color: #cba;
+}
+#header {
+    height: 70px;
+    width: auto;
+    border-radius: 5px;
+    background-color: aliceblue;
+}
+#container {
+    align-content: center;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(201, 245, 201);
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+    
+}
+#login_container
+{
+    height: 60%;
+    margin-right: 60%;
+    background-color: yellow;
+    border-radius: 10px;
+
+}
+#login {
+    position: relative;
+    height: 60%;
+    width: auto;
+    background-color: pink;
+}
+#register {
+    height: 30%;
+    width: 100%;
+    background-color: rgb(61, 123, 151);
+
+}
+#welcome_content {
+    background-color: palegreen;
+    width: 50%;
+    margin-left: 45%;
+    border-radius: 10px;
+    height: 80vh;
+
+}
