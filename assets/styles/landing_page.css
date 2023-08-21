@@ -68,6 +68,9 @@ div input {
     line-height: 2;
     margin-left: 20px;
 }
+select option{
+    width: 200px;
+}
 #welcome_content {
     margin: 20px;
     border: 2px solid black;
