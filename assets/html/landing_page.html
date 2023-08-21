@@ -14,14 +14,39 @@
      <div id="container">
         <div id="login_container">
             <div id="login">
-                <h3>LOGIN</h3>
                 <div>
-                    <p>Email:<input type="email" value="e.g Johndoe@example.com"></p>
-                    <p>Password:<input type="password" value="Password123++"></p>
+                    <p>LOGIN</p>
+                    <p>Email</p>
+                    <input type="email" value="e.g Johndoe@example.com">
+                    <p>Password</p>
+                    <input type="password" value="Password123++"><br>
+                    <button class="login_btn">Login</button>
+                    <button class="register_btn">Register</button>
                 </div>
             </div>
             <div id="register">
-
+                <form action="" method="post">
+                    <label for="FirstName"> First Name</label>
+                    <input type="text" id="FirstName"><br>
+                    <label for="LastName"> Last Name</label>
+                    <input type="text" id="LastName"><br>
+                    <label for="DOB"> D.O.B</label>
+                    <input type="date" id="DOB"><br>
+                    <label for="CompanyName"> Company Name</label>
+                    <input type="text" id="CompanyName"><br>
+                    <label for="Email"> Official Email</label>
+                    <input type="email" id="Email"><br>
+                    <label for="CompanySize"> Company Size</label>
+                    <select>
+                        <option value="1-50"></option>
+                        <option value="51-100"></option>
+                        <option value="101-200"></option>
+                        <option value="201-500"></option>
+                        <option value="Above 500"></option>
+                    </select><br>
+                    <label for="Password"> Password</label>
+                    <input type="password" value="">
+                </form>
             </div>
 
         </div>

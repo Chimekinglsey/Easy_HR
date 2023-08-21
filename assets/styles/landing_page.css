@@ -28,7 +28,7 @@
 
 }
 #login {
-    height: 300px;
+    height: 200px;
     text-align: center;
     align-content: center;
     width: auto;
@@ -43,13 +43,30 @@
     padding: 20px;
     line-height: 0.8px;
 }
+#login div .login_btn, .register_btn{
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 3px;
+    background-color: rgb(39, 180, 39);
+    color: white;
+    font-style: bold;
+    height: 40px;
+    width: 100px;
+    margin-right: 40px;
+}
+div input {
+    width: 200px;
+}
 #register {
-    height: 150px;
+    height: 250px;
     width: auto;
     margin:20px 20px 0 20px;
     border: 2px solid black;
     border-radius: 3px;
-
+}
+#register form {
+    line-height: 2;
+    margin-left: 20px;
 }
 #welcome_content {
     margin: 20px;
