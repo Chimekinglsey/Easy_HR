@@ -2,22 +2,39 @@ body {
     min-width: 1000px;
 }
 #container {
-    /* background-color: red; */
     height: 100vh;
     box-sizing: border-box;
     overflow: auto;
+    background-color: rgb(231, 212, 211);
 }
 #header {
     height: 70px;
     width: auto;
     border-radius: 5px;
-    border: 2px solid black;
+    text-align: center;
+    background-color: rgb(221, 215, 214);
 }
-#header img {
-    height: 100%;
+#header img{
+    text-align: left;
+    margin-left: 0;
+    height: 66px;
+    border: 2px solid green;
     border-radius: 50%;
-    
-   
+}
+.image {
+    width: 30%;
+    text-align: left;
+}
+ .ul {
+    display: inline-block;
+    transform: translate(0, -100%);
+    text-align: center;
+}
+#header a {
+    text-decoration: none;
+    padding-right: 30px;
+    color: black;
+    padding-right: 50px;
 }
 #container {
     padding: 10px;
@@ -34,12 +51,11 @@ body {
     display: grid;
     place-items: center;
     float: left;
-    height: 80vh;
+    height: 100vh;
     width: 40%;
     border: 2px solid green;
     border-radius: 10px;
     margin: 20px;
-    overflow: scroll;
 
 }
 #login {
@@ -52,7 +68,11 @@ body {
     margin: auto;
     border: 2px solid black;
     border-radius: 3px;
-
+}
+.login_text {
+    display: block;
+    font: 30px bold Helvetica;
+    color: blue;
 }
 #login div {
     border-radius: 5px;
@@ -60,48 +80,56 @@ body {
     padding: 20px;
     height: auto;
     line-height: 0.8px;
-    overflow: auto;
+    text-align: center;
 }
 
 #login .login_btn, .login_google {
     display: inline-block;
     font-size: 16px;
     border-radius: 3px;
-    background-color: rgb(39, 180, 39);
-    color: white;
+    background-color: rgb(214, 221, 214);
+    color: black;
     font-style: bold;
-    height: 30px;
     width: fit-content;
+    padding: 10px 20px;
     margin-top: 5px;
-    margin-right: 40px;
-    overflow: auto;
 }
 .login_google a {
     text-decoration: none;
+    color: black;
 }
+
 div input {
     width: 200px;
 }
-#register {
-    height: 250px;
-    width: auto;
-    margin:20px 20px 0 20px;
-    border: 2px solid black;
+#register_btn {
+    
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    color: black;
+    font-style: bold;
+}
+div .register_btn {
     border-radius: 3px;
+    background-color: rgb(214, 221, 214);
+    height: 40px;
+    padding: 10px 20px;
+ 
+  
 }
-#register form {
-    line-height: 2;
-    margin-left: 20px;
-}
-select option{
-    width: 200px;
+#register_btn button a {
+    font-size: 16px;
+    color: black;
+    font-style: bold;
+    text-decoration: none;
 }
 #welcome_content {
     padding: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 20px;
     border: 2px solid black;
-    width:auto;
+    width: auto;
     margin-left: 45%;
     border-radius: 10px;
     height: auto;
@@ -128,11 +156,15 @@ footer {
     width: auto;
     border-radius: 5px;
     line-height: 0.8;
-    border: 2px solid rgb(151, 25, 25);
+    background-color: rgb(221, 215, 214);
     margin: 5px 0;
+}
+footer ul {
+    line-height: 30px;
 }
 footer ul a{
     display: inline-block;
     text-decoration: none;
     padding-right: 30px;
+    color: black;
 }
