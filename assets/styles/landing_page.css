@@ -1,3 +1,6 @@
+body {
+    min-width: 1000px;
+}
 #container {
     /* background-color: red; */
     height: 100vh;
@@ -24,6 +27,7 @@
     border-radius: 10px;
     margin: 20px 0 10px 0;
     overflow: auto;
+    
 }
 #login_container
 {   
@@ -41,8 +45,8 @@
     height: auto;
     text-align: center;
     align-content: center;
-    width: auto;
-    margin: 20px;
+    width: 50%;
+    margin: auto;
     border: 2px solid black;
     border-radius: 3px;
 
@@ -55,18 +59,24 @@
     line-height: 0.8px;
     overflow: auto;
 }
-#login div .login_btn{
+.login_google {
+    text-decoration: none;
+}
+#login .login_btn, .login_google {
     display: inline-block;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 3px;
     background-color: rgb(39, 180, 39);
     color: white;
     font-style: bold;
-    height: 40px;
-    width: 100px;
+    height: 30px;
+    width: fit-content;
+    margin-top: 5px;
     margin-right: 40px;
     overflow: auto;
 }
+
+
 div input {
     width: 200px;
 }
