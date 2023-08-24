@@ -1,123 +1,139 @@
+/* Global Styles */
 body {
     min-width: 1000px;
-}
-#container {
-    height: 100vh;
-    box-sizing: border-box;
+    min-height: 90vh;
     overflow: auto;
-    background-color: rgb(231, 212, 211);
+    margin: 0;
+    font-family: Arial, sans-serif; 
 }
 
+/* Main Container Styles */
 #container {
+    background-color: #d6d8d6;
     padding: 10px;
-    height: fit-content;
-    width: auto;
-    border: 2px solid blue;
     border-radius: 10px;
     margin: 20px 0 10px 0;
     overflow: auto;
-    
 }
-#login_container
-{   
+
+/* Login Container Styles */
+#login_container {
     display: grid;
     place-items: center;
     float: left;
     height: 100vh;
     width: 40%;
-    border: 2px solid green;
     border-radius: 10px;
     margin: 20px;
-
+    background-color: white; 
 }
+@media (max-height: 500px) {
+    #login {
+        max-height: 200px;
+        overflow: auto;
+    }
+}
+/* Login Box Styles */
 #login {
-    /* transform: translate(0%, 50%); */
-    height: auto;
+    height: 90vh;
     text-align: center;
     align-content: center;
-    width: 50%;
-    min-width: 300px;
-    margin: auto;
-    border: 2px solid black;
+    width: 70%;
+    min-width: 200px;
+    overflow: auto;
+    margin: 15px auto;
     border-radius: 3px;
+    background-color: #f8f8f8;
+@media (max-height: 500px) {
+    #login {
+        max-height: 200px;
+        overflow: auto;
+        top: 20px;
+    }
 }
 .login_text {
-    display: block;
-    font: 30px bold Helvetica;
+    font-size: 30px;
     color: blue;
+    margin: 0;
+    padding: 10px 0;
 }
+
+/* Login Form Styles */
 #login div {
     border-radius: 5px;
     text-align: left;
     padding: 20px;
-    height: auto;
-    line-height: 0.8px;
-    text-align: center;
+    margin: 0 auto; /* Center content */
 }
 
-#login .login_btn, .login_google {
-    display: inline-block;
+.login_btn, .login_google {
     font-size: 16px;
     border-radius: 3px;
     background-color: rgb(214, 221, 214);
     color: black;
-    font-style: bold;
-    width: fit-content;
+    font-weight: bold; /* Use font-weight instead of font-style */
     padding: 10px 20px;
-    margin-top: 5px;
+    margin-top: 10px; /* Increased spacing */
+    display: block; /* Make buttons full width */
+    text-align: center; /* Center text */
 }
+
 .login_google a {
     text-decoration: none;
     color: black;
 }
 
+/* Input Styles */
 div input {
-    width: 200px;
+    width: 100%; /* Make input fields full width */
+    padding: 8px; /* Added padding */
+    margin-bottom: 10px; /* Spacing between inputs */
+    border-radius: 3px;
+    font-size: 14px;
 }
+
+/* Register Button Styles */
 #register_btn {
-    
     text-align: center;
-    display: block;
     font-size: 16px;
     color: black;
-    font-style: bold;
+    font-weight: bold;
+    margin-top: 10px; /* Increased spacing */
 }
-div .register_btn {
+
+.register_btn {
     border-radius: 3px;
     background-color: rgb(214, 221, 214);
-    height: 40px;
     padding: 10px 20px;
- 
-  
-}
-#register_btn button a {
     font-size: 16px;
     color: black;
-    font-style: bold;
-    text-decoration: none;
+    font-weight: bold;
+    text-decoration: none; /* Remove underlines from the link */
 }
+
+/* Welcome Content Styles */
 #welcome_content {
     padding: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 20px;
-    border: 2px solid black;
-    width: auto;
-    margin-left: 45%;
-    border-radius: 10px;
-    height: auto;
+    margin: 20px 20px 20px 45%;
 
+    width: auto;
+    border-radius: 10px;
+    background-color: #d2e3ee; /* Added a background color */
 }
 
+/* Centered Text Styles */
 .center {
     text-align: center;
 }
-.italics{
+
+.italics {
     font-style: italic;
     text-align: center;
 }
+
+/* Adjusted List Item Styles */
 .why_choose_us {
-    text-justify: auto;
-}
-.center li {
-    text-align: left;
+    text-align: left; /* Use left alignment */
+    list-style-type: disc; /* Added bullet*/
 }

@@ -6,7 +6,7 @@ body {
     height: 70px;
     border-radius: 5px;
     text-align: center;
-    background-color: rgb(221, 215, 214);
+    background-color: #35424a;
 }
 #header img{
     text-align: left;
@@ -27,7 +27,7 @@ body {
 #header a {
     text-decoration: none;
     padding-right: 30px;
-    color: black;
+    color: white;
     padding-right: 50px;
 }
 
@@ -36,10 +36,10 @@ footer {
     text-align: center;
     height: 70px;
     width: auto;
+    color: white;
     border-radius: 5px;
     line-height: 0.8;
-    background-color: rgb(221, 215, 214);
-    margin: 5px 0;
+    background-color: #35424a;    margin: 5px 0;
 }
 footer ul {
     line-height: 30px;
@@ -48,5 +48,5 @@ footer ul a{
     display: inline-block;
     text-decoration: none;
     padding-right: 30px;
-    color: black;
+    color: white;
 }
