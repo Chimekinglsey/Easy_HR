@@ -1,0 +1,54 @@
+body {
+
+}
+
+
+
+
+
+
+
+
+.forms {
+    background-color: aqua;
+    height:fit-content;
+    width: 1000px;
+    border:2px solid;
+    border-color: black;
+}
+
+#formflex {
+    background-color: whitesmoke;
+    height:fit-content;
+    display: flex;
+    border: 2px solid;
+
+}
+
+#first input {
+    display: block;
+}
+
+#second input {
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
