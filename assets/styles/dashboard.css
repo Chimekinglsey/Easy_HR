@@ -1,143 +1,68 @@
-body {
-    min-width: 1000px;
-}
+/* Default styles for your divs */
 #container {
-    height: 100vh;
-    box-sizing: border-box;
     background-color: rgb(231, 212, 211);
     padding: 10px;
-    height: fit-content;
-    width: auto;
-    border: 2px solid blue;
     border-radius: 10px;
-    margin: 20px;
-    overflow: auto;
-    
+    margin: 20px 0;
+    display: flex; /* Use flexbox to arrange the elements */
 }
-#welcome {   
-    display: grid;
-    place-items: center;
-    float: left;
-    height: 100vh;
-    width: 55%;
-    border: 2px solid green;
+
+#welcome {
+    flex: 1; /* Take up available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: 10px;
     margin: 20px;
-
+    padding: 20px;
+    background-color: #fff;
 }
 
 #welcome #logo {
+    background-image: url("../images/user.png");
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    background-position: center top;
+    text-align: center;
+    border-radius: 50%;
     border: 2px solid black;
-    margin-top: 40px;
-    height: 100%;
-    width: 80%;
 }
 
-#welcome .welcome_body {
-    border: 2px solid black;
-    height: auto;
-    width: 80%;
+.welcome_body {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
 }
+
 #dashboard_items {
-    /* transform: translate(0%, 50%); */
-    height: auto;
-    text-align: center;
-    align-content: center;
-    float: left;
-    height:90vh;
-    width: 35%;
-    margin: 30px;
-    padding: 40px 10px;
-    border: 2px solid black;
-    border-radius: 3px;
-
-}
-
-#dashboard_items button {
-    font: 20px bold Helvetica;
-    height: 60px;
-    background-color: rgb(185, 206, 192);
-    border-radius: 4px;
-    border: 2px solid rosybrown;
-    margin: 30px;
-    width: 200px;
-    padding: 5px 10px;
+    flex: 1; /* Take up available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    line-height: 50px;
-}
-
-#login div {
-    border-radius: 5px;
-    text-align: left;
-    padding: 20px;
-    height: auto;
-    line-height: 0.8px;
-    text-align: center;
-}
-
-#login .login_btn, .login_google {
-    display: inline-block;
-    font-size: 16px;
     border-radius: 3px;
-    background-color: rgb(214, 221, 214);
-    color: black;
-    font-style: bold;
-    width: fit-content;
-    padding: 10px 20px;
-    margin-top: 5px;
-}
-.login_google a {
-    text-decoration: none;
-    color: black;
-}
-
-div input {
-    width: 200px;
-}
-#register_btn {
-    
-    text-align: center;
-    display: block;
-    font-size: 16px;
-    color: black;
-    font-style: bold;
-}
-div .register_btn {
-    border-radius: 3px;
-    background-color: rgb(214, 221, 214);
-    height: 40px;
-    padding: 10px 20px;
- 
-  
-}
-#register_btn button a {
-    font-size: 16px;
-    color: black;
-    font-style: bold;
-    text-decoration: none;
-}
-#welcome_content {
-    padding: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 20px;
-    border: 2px solid black;
-    width: auto;
-    margin-left: 45%;
-    border-radius: 10px;
-    height: auto;
-
+    padding: 20px;
+    background-color: #fff;
 }
 
-.center {
-    text-align: center;
+.dashboard_btns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-.italics{
-    font-style: italic;
-    text-align: center;
+
+.btn {
+    height: 70px;
+    width: 100%;
 }
-.why_choose_us {
-    text-justify: auto;
-}
-.center li {
-    text-align: left;
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    #welcome, #dashboard_items {
+        width: 100%;
+    }
 }

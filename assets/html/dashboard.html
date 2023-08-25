@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyHR</title>
     <link rel="icon" href="../images/icon.png" type="image/img">
-    <link rel="stylesheet" href="../styles/dashboard.css">
     <link rel="stylesheet" href="../styles/default.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
 </head>
 <body>
     <header id="header">
@@ -23,26 +23,27 @@
      <div id="container">
         <div id="welcome">
             <div id="logo">
-    
             </div>
             <div class="welcome_body">
                 <h2>Welcome back {{ user }}</h2>
                 <h3>You have {{ emp_count }} employees</h3>
             </div>
         </div>
-        <div id="dashboard_items">
-                <button class="dashboard_btn">
-                    Manage Employee
-                </button>
-                <button class="dashboard_btn">
-                    Manage Department
-                </button>
-                <button class="dashboard_btn">
-                    Manage Branch
-                </button>
-                <button class="dashboard_btn">
-                    Manage Payroll
-                </button>
+            <div id="dashboard_items">
+                <div class="dashboard_btns">
+                    <button class="btn">
+                        Manage Employee
+                    </button>
+                    <button class="btn">
+                        Manage Department
+                    </button>
+                    <button class="btn">
+                        Manage Branch
+                    </button>
+                    <button class="btn">
+                        Manage Payroll
+                    </button>
+            </div>
         </div>
     </div>
 </body>

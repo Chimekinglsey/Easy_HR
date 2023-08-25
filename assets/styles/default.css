@@ -1,5 +1,6 @@
 body {
     min-width: 1000px;
+    background-image: linear-gradient(to right, rgb(165, 199, 165), rgb(90, 90, 197));
 }
 
 #header {
@@ -29,6 +30,31 @@ body {
     padding-right: 30px;
     color: white;
     padding-right: 50px;
+}
+.btn{
+    display: block;
+    background-color: rgb(214, 221, 214);
+    font-weight: bold; /* Use font-weight instead of font-style */
+    padding: 10px 20px;
+    margin:auto;
+    margin-top: 15px;
+    width: 200px;
+    background-color: rgb(1, 65, 1);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+}
+.btn:hover {
+    background-color: #6fa18a;
+    color: rgb(14, 12, 12);
 }
 
 footer {

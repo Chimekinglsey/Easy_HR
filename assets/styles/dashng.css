@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body {
-    /* height:75vh; */
+    margin: 0;
 }
 #employee_menu {
     height: 100%;
@@ -36,6 +36,7 @@ section {
     width: 45%;
 }
 #formflex #second {
+    margin-top: 50px;
     border: 2px solid rgb(214, 109, 23);
     background-color: red;
     display: inline-block;

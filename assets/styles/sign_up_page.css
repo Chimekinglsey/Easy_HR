@@ -1,11 +1,12 @@
 body {
-
+    min-width: 500px !important;
 }
 #header {
     text-align: left !important;
 }   
 #container {
-    /* background-color: red; */
+    top: 20px;
+    background-color: #d6d8d6;
     height: 79vh;
     box-sizing: border-box;
     overflow: auto;
@@ -16,35 +17,21 @@ body {
 #container {
     padding: 20px;
     width: auto;
-    border: 2px solid blue;
+    border: 4px solid black;
     border-radius: 10px;
     margin: 2px 0 1px 0;
     overflow: auto;
+    background-color: #f8f8f8;
 }
 
-
-.signUp_google {
-    display: block;
-    font-size: 16px;
-    border-radius: 3px;
-    /* background-color: rgb(39, 180, 39); */
-    color: white;
-    font-style: bold;
-    height: 30px;
-    width: fit-content;
-    margin-top: 5px;
-    margin-right: 40px;
-    overflow: auto;
-    padding: 3px;
-}
-
-.signUp_google a {
-    text-decoration: none;
-    /* background-color: gray; */
+.center {
+    display:grid;
+    place-items: center;
 }
 div input {
     width: 200px;
 }
+
 #register {
     height: 350px;
     width: 450px;
@@ -55,27 +42,14 @@ div input {
     border-radius: 3px;
     display: grid;
     place-items: center;
+    background-color: #c1c1c2; /* Added a background color */
+
 }
 #register form {
     line-height: 2;
     margin-left: 20px;
 }
-.signUp_btn {
-    display: block;
-    font-size: 16px;
-    border-radius: 3px;
-    background-color: rgb(39, 180, 39);
-    color: white;
-    font-style: bold;
-    height: 30px;
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
 
-.center {
-    text-align: center;
-}
 .italics{
     font-style: italic;
     text-align: center;

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <script src="https://apis.google.com/js/api:client.js"></script>    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyHR</title>
     <link rel="icon" href="../images/icon.png" type="image/img">
-    <link rel="stylesheet" href="../styles/landing_page.css">
-    <link rel="stylesheet" href="../styles/default.css">
+        <link rel="stylesheet" href="../styles/default.css">
+        <link rel="stylesheet" href="../styles/landing_page.css">
+
 </head>
 <body>
     <header id="header">
@@ -29,26 +31,35 @@
                     <input type="email" value="e.g Johndoe@example.com">
                     <p>Password</p>
                     <input type="password" value="Password123++"><br>
-                    <button class="login_btn">Login</button>
+                    <button class="login_btn btn">Login</button>
                     <div class="hr">
                         <hr>
-                        <h3>OR</h3>
+                        <h4>OR</h4>
                         <hr>
                     </div>
-                    <div class="login_google"><a href="google">Login with GOOGLE</a></div>
+                    <!-- custom google button api -->
+                    <div id="gSignInWrapper">
+                        <span class="label">Sign in with:</span>
+                        <div id="customBtn" class="customGPlusSignIn">
+                          <span class="icon"></span>
+                          <span class="buttonText">Google</span>
+                        </div>
+                      </div>
+                      <div id="name"></div>
+                    <!-- ends here.  -->
                 </div>
                 <div id="register_btn">
                     <p>Don't have an account yet?</p><br>
-                    <button class="register_btn"><a href="../html/sign_up_page.html">Register</a></button>
+                    <button class="register_btn btn" ><a href="../html/sign_up_page.html">Register</a></button>
                 </div>
             </div>
         </div>
         <div id="welcome_content">
-            <h1 class="center">Welcome to EasyHR</h1>
-            <h2> Your Ultimate Employee Management Solution</h2>
-            <p>In the fast-paced world of business, managing your workforce efficiently is not just a necessity; it's the key to success. That's where EasyHR steps in a cutting-edge web application meticulously crafted to elevate your employee management to unparalleled heights.</p>
+            <h1 class="center fixed">Welcome to E<p class="green">as</p>yH<p class="green">R</p></h1>
+            <h2 class="center"> Your Ultimate Employee Management Solution</h2>
+            <p class="center">In the fast-paced world of business, managing your workforce efficiently is not just a necessity; it's the key to success. That's where EasyHR steps in a cutting-edge web application meticulously crafted to elevate your employee management to unparalleled heights.</p>
 
-            <h2 class="center"><b>Why Choose EasyHR?</b></h2>
+            <h2 class="center"><b>Why Choose E<p class="green">as</p>yH<p class="green">R</p></b></h2>
             <ul class="why_choose_us center">
                     <li><b>Unbeatable Pricing:</b>We understand that managing a workforce shouldn't break the bank. EasyHR offers competitive pricing plans tailored to your company's size and needs, ensuring you get the most value without compromise.</li>
                     <li><b>Fortified Data Security:</b>Your employee data is your company's lifeblood, and safeguarding it is our top priority. With advanced encryption and stringent security measures, EasyHR guarantees that your data remains confidential and protected from any breaches.</li>
@@ -58,12 +69,11 @@
                     <li><b>All-in-One Solution:</b>EasyHR isn't just a tool – it's a comprehensive solution. Create and manage employee records, track leaves effortlessly, streamline payrolls, and securely store vital employee information all within a single, cohesive platform.</li>
                 </ul>
 
-<h2 class="center">Join the EasyHR Revolution Today!</h2>
+<h2 class="center">Join the E<p class="green">as</p>yH<p class="green">R</p> Revolution Today!</h2>
 <p class="italics">Unlock Efficiency &nbsp;&nabla;&nbsp; Empower Your Workforce. &nbsp;&nabla;&nbsp;<b>Choose EasyHR.</b></p>
 
         </div>
     </div>
-</body>
 <footer>
     <ul>
         <a href="#">About</a>
@@ -73,4 +83,7 @@
     </ul>
     <p class="center"><i>Big Team 2023 &copy; <b>All Rights Reserved</b></i></p>
 </footer>
+<script src="../scripts/sign_in_with_google.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+</body>
 </html>

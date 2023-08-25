@@ -3,19 +3,38 @@ body {
     min-width: 1000px;
     min-height: 90vh;
     overflow: auto;
-    margin: 0;
-    font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif;
 }
 
 /* Main Container Styles */
 #container {
-    background-color: #d6d8d6;
+    background-color: rgb(228, 218, 217);
     padding: 10px;
     border-radius: 10px;
     margin: 20px 0 10px 0;
     overflow: auto;
 }
-
+.login_google{
+    display: inline;
+}
+.login_google:hover{
+.btn .blue{
+    display: inline;
+    color: blue;
+}
+.btn .red{
+    display: inline;
+    color: red;
+}
+.btn .yellow{
+    display: inline;
+    color: yellow;
+}
+.btn .green{
+    display: inline;
+    color: green;
+}
+}
 /* Login Container Styles */
 #login_container {
     display: grid;
@@ -40,8 +59,10 @@ body {
     align-content: center;
     width: 70%;
     min-width: 200px;
+    font-size: 16px;
+    font-weight: bold;
     overflow: auto;
-    margin: 15px auto;
+    margin: 10px auto;
     border-radius: 3px;
     background-color: #f8f8f8;
 }
@@ -54,7 +75,8 @@ body {
 }
 .login_text {
     font-size: 30px;
-    color: blue;
+    color: rgb(6, 124, 31);
+    font-weight: bolder;
     margin: 0;
     padding: 10px 0;
 }
@@ -63,31 +85,22 @@ body {
 #login div {
     border-radius: 5px;
     text-align: center;
-    padding: 20px;
-    margin: 0 auto; /* Center content */
-    display: grid;
-    place-items: center;
-}
-
-#login div button {
-    
-}
-
-.login_btn, .login_google, .hr {
-    font-size: 16px;
-    border-radius: 3px;
-    background-color: rgb(214, 221, 214);
-    color: black;
-    font-weight: bold; /* Use font-weight instead of font-style */
     padding: 10px 20px;
-    margin-top: 10px; /* Increased spacing */
-    display: block; /* Make buttons full width */
-    text-align: center; /* Center text */
+    margin: 0 auto; /* Center content */
 }
-
-.login_google a {
-    text-decoration: none;
-    color: black;
+#login div input{
+    width: 70%;
+}
+#login div button {
+    margin:auto;
+    margin-top: 10px;
+    width: 200px;
+    padding: 15px 0;
+}
+#login div .hr {
+    line-height: 1px;
+    color: #007bff;
+    width: 70%;
 }
 
 /* Input Styles */
@@ -105,26 +118,20 @@ div input {
     font-size: 16px;
     color: black;
     font-weight: bold;
-    margin-top: 10px; /* Increased spacing */
+    padding: 10px 0;
 }
-
-.register_btn {
-    border-radius: 3px;
-    background-color: rgb(214, 221, 214);
-    padding: 10px 20px;
-    font-size: 16px;
-    color: black;
-    font-weight: bold;
-    text-decoration: none; /* Remove underlines from the link */
+.register_btn a {
+    text-decoration: none;
 }
-
 /* Welcome Content Styles */
 #welcome_content {
     padding: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 20px 20px 20px 45%;
-
+    font-size: 18px;
     width: auto;
+    height: 100vh;
+    overflow: auto;
     border-radius: 10px;
     background-color: #d2e3ee; /* Added a background color */
 }
@@ -132,6 +139,10 @@ div input {
 /* Centered Text Styles */
 .center {
     text-align: center;
+}
+#welcome_content .green {
+    display: inline;
+    color: green;
 }
 
 .italics {
@@ -144,3 +155,39 @@ div input {
     text-align: left; /* Use left alignment */
     list-style-type: disc; /* Added bullet*/
 }
+#customBtn {
+    display: block;
+    background: white;
+    color: #444;
+    width: 160px;
+    border-radius: 5px;
+    border: thin solid #888;
+    box-shadow: 1px 1px 1px grey;
+    white-space: nowrap;
+    height: 30px;
+  }
+  #customBtn:hover {
+    cursor: pointer;
+    background-color: lightblue;
+  }
+  span.label {
+    font-family: serif;
+    font-weight: normal;
+  }
+  span.icon {
+    background: url('../images/google.png') transparent 5px 50% no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+  }
+  span.buttonText {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 42px;
+    padding-right: 42px;
+    font-size: 18px;
+    font-weight: bold;
+    /* Use the Roboto font that is loaded in the <head> */
+    font-family: 'Roboto', sans-serif;
+  }
