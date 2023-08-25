@@ -40,7 +40,19 @@
     }
 }
 
-#dashboard_items {
+#dashboard_items_add_employee {
+    /*flex: 3;*/ /* Take up available space */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#dashboard_items_update_employee {
     flex: 3; /* Take up available space */
     display: flex;
     flex-direction: column;
@@ -83,6 +95,28 @@
 .row input[type='tel']{
     display: table-cell;
     width: 85%;
+}
+
+#hide_employee_id_input{
+    display: none;
+}
+
+#update_emp:active + #hide_employee_id_input {
+    display: block;
+}
+
+.right {
+    display: flex;
+}
+
+#update_btn {
+    margin: 20px 20px 20px 120px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+#cancel_btn {
+    margin: 20px 120px 20px 20px;
+    background-color: rgb(175, 16, 16);
 }
 
 
