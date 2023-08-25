@@ -14,27 +14,6 @@ body {
     margin: 20px 0 10px 0;
     overflow: auto;
 }
-.login_google{
-    display: inline;
-}
-.login_google:hover{
-.btn .blue{
-    display: inline;
-    color: blue;
-}
-.btn .red{
-    display: inline;
-    color: red;
-}
-.btn .yellow{
-    display: inline;
-    color: yellow;
-}
-.btn .green{
-    display: inline;
-    color: green;
-}
-}
 /* Login Container Styles */
 #login_container {
     display: grid;
@@ -75,7 +54,7 @@ body {
 }
 .login_text {
     font-size: 30px;
-    color: rgb(6, 124, 31);
+    color: rgb(27, 17, 160);
     font-weight: bolder;
     margin: 0;
     padding: 10px 0;
@@ -90,6 +69,7 @@ body {
 }
 #login div input{
     width: 70%;
+    text-align: center;
 }
 #login div button {
     margin:auto;

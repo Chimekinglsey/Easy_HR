@@ -1,0 +1,97 @@
+/* Default styles for your divs */
+#container {
+    background-color: rgb(231, 212, 211);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: flex; /* Use flexbox to arrange the elements */
+}
+
+#welcome {
+    flex: 1; /* Take up available space */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#welcome #logo {
+    background-image: url("../images/user.png");
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    background-position: center top;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.welcome_body {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+}
+#update_emp:active{
+    #add_new_emp {
+        display: flex;
+    }
+}
+
+#dashboard_items {
+    flex: 3; /* Take up available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.dashboard_btns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn {
+    height: 70px;
+    width: 100%;
+}
+#reduce_btn {
+    height: 50px;
+    width: 150px;
+}
+#register{ 
+    display: flex;
+    height: auto;
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    font: 16px Helvetica, Impact;
+    border: 2px solid black;
+    border-radius: 3px;
+    place-items: center;
+    background-color: #c1c1c2; /* Added a background color */
+}
+
+.row input[type='tel']{
+    display: table-cell;
+    width: 85%;
+}
+
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    #welcome, #dashboard_items {
+        width: 100%;
+    }
+}
