@@ -33,7 +33,6 @@ body {
 }
 #header a {
     text-decoration: none;
-    padding-right: 30px;
     color: white;
     padding-right: 50px;
 }
@@ -42,6 +41,20 @@ body {
         width: auto;
         height: 70px;
 
+    }
+    #header .image{
+        width: 50px;
+        height: 66px;
+    }
+    #header img{
+        width: 150%;
+    }
+    #header a {
+        padding-right: 0%;
+        margin-right: 20px;
+    }
+    .ul ul {
+        left: 0px;
     }
 }
 
@@ -115,6 +128,7 @@ footer {
     line-height: 0.8;
     background-color: #35424a;
     margin: 5px 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 footer ul {
     line-height: 30px;

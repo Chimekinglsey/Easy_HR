@@ -1,7 +1,6 @@
 /* Global Styles */
 body {
     min-height: 90vh;
-    overflow: auto;
 }
 
 /* Main Container Styles */
@@ -29,12 +28,31 @@ body {
         overflow: auto;
     }
 }
+@media (max-width: 700px) {
+    #welcome_content {
+        display: none;
+    }
+    #login_container {
+        width:480px;
+    }
+    #login {
+        width:auto;
+    }
+    
+}
 @media (max-width: 500px) {
     #welcome_content {
         display: none;
     }
+    #login_container {
+        width:400px;
+    }
+    #login {
+        width:auto;
+    }
     
 }
+
 /* Login Box Styles */
 #login {
     height: fit-content;
