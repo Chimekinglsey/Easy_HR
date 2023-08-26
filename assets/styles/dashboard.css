@@ -58,11 +58,11 @@
     width: 100%;
 }
 /* Media query for responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     #container {
         flex-direction: column;
     }
     #welcome, #dashboard_items {
-        width: 100%;
-    }
+        width: auto;
+}
 }
