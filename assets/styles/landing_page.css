@@ -19,7 +19,7 @@ body {
     display: grid;
     place-items: center;
     float: left;
-    height: 100vh;
+    height: fit-content;
     width: 40%;
     border-radius: 10px;
     margin: 20px;
@@ -31,9 +31,15 @@ body {
         overflow: auto;
     }
 }
+@media (max-width: 500px) {
+    #welcome_content {
+        display: none;
+    }
+    
+}
 /* Login Box Styles */
 #login {
-    height: 90vh;
+    height: fit-content;
     text-align: center;
     align-content: center;
     width: 70%;
@@ -41,7 +47,7 @@ body {
     font-size: 16px;
     font-weight: bold;
     overflow: auto;
-    margin: 10px auto;
+    margin: 50px auto;
     border-radius: 3px;
     background-color: #f8f8f8;
 }
@@ -98,7 +104,6 @@ div input {
     font-size: 16px;
     color: black;
     font-weight: bold;
-    padding: 10px 0;
 }
 .register_btn a {
     text-decoration: none;
@@ -110,8 +115,7 @@ div input {
     margin: 20px 20px 20px 45%;
     font-size: 18px;
     width: auto;
-    height: 100vh;
-    overflow: auto;
+    height: fit-content;
     border-radius: 10px;
     background-color: #d2e3ee; /* Added a background color */
 }
@@ -129,6 +133,17 @@ div input {
     font-style: italic;
     text-align: center;
 }
+/* Forgot password */
+#forgot_passw {
+    height: min-content;
+    margin: 0;
+}
+#forgot_passw a {
+    color: red;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: normal;
+}
 
 /* Adjusted List Item Styles */
 .why_choose_us {
@@ -142,9 +157,8 @@ div input {
     width: 160px;
     border-radius: 5px;
     border: thin solid #888;
-    box-shadow: 1px 1px 1px grey;
     white-space: nowrap;
-    height: 30px;
+    height: 25px;
   }
   #customBtn:hover {
     cursor: pointer;
@@ -159,13 +173,13 @@ div input {
     display: inline-block;
     vertical-align: middle;
     width: 42px;
-    height: 42px;
+    height: 34px;
   }
   span.buttonText {
     display: inline-block;
     vertical-align: middle;
-    padding-left: 42px;
-    padding-right: 42px;
+    padding-left: 20px;
+    padding-right: 40px;
     font-size: 18px;
     font-weight: bold;
     /* Use the Roboto font that is loaded in the <head> */
