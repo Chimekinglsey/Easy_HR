@@ -81,15 +81,7 @@ ADD NEW EMPLOYEE CSS
     height: 70px;
     width: 100%;
 }
-/* Media query for container responsiveness */
-@media (max-width: 768px) {
-    #container {
-        flex-direction: column;
-    }
-    #welcome, #dashboard_items {
-        width: 100%;
-    }
-}
+
 /* 
 UPDATE EMPLOYEE CSS
 */
@@ -214,4 +206,39 @@ VIEW EMPLOYEE CSS
     margin: 20px;
     padding: 0 20px;
     background-color: #fff;
+}
+
+/* Media query for container responsiveness */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    #welcome {
+        width: auto;
+    }
+
+    #dashboard_items {
+        width: 100%;
+    }
+
+    #form_table {
+        width: auto;
+        margin-left: 0px;
+        padding: 0px;
+    }
+
+    .row label {
+        padding-left: 20px;
+    }
+
+    #manage_employee_view {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #select_view {
+        /* padding: 0px; */
+        width: auto;
+        margin-left: 0px;
+    }
 }
