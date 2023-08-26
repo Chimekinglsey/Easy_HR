@@ -34,13 +34,10 @@
     padding: 10px;
     text-align: center;
 }
-#update_emp:active{
-    #add_new_emp {
-        display: flex;
-    }
-}
-
-#dashboard_items_add_employee {
+/* 
+ADD NEW EMPLOYEE CSS
+*/
+#manage_employee_add {
     /*flex: 3;*/ /* Take up available space */
     display: none;
     flex-direction: column;
@@ -51,29 +48,27 @@
     padding: 20px;
     background-color: #fff;
 }
-
-#dashboard_items_update_employee {
-    /* flex: 3; */
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    margin: 20px;
+#register{ /*This css is used for both add_new employee and update_employee*/
+    display: flex;
+    flex: 3;
+    height: auto;
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
     padding: 20px;
-    background-color: #fff;
+    font: 16px Helvetica, Impact;
+    border: 2px solid black;
+    border-radius: 3px;
+    place-items: center;
+    background-color: #c1c1c2;
+}
+.below {
+    flex: 3;
 }
 
-#dashboard_items_view_employee {
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
+.row input[type='tel']{
+    display: table-cell;
+    width: 82%;
 }
 
 .dashboard_btns {
@@ -86,38 +81,32 @@
     height: 70px;
     width: 100%;
 }
+/* Media query for container responsiveness */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    #welcome, #dashboard_items {
+        width: 100%;
+    }
+}
+/* 
+UPDATE EMPLOYEE CSS
+*/
+#manage_employee_update{
+    /* flex: 3; */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
 #reduce_btn {
     height: 50px;
     width: 150px;
-}
-#form_guide {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    background-color: pink;
-    border: 2px solid black;
-}
-#register{ 
-    display: flex;
-    flex: 3;
-    height: auto;
-    width: auto;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 20px;
-    font: 16px Helvetica, Impact;
-    border: 2px solid black;
-    border-radius: 3px;
-    place-items: center;
-    background-color: #c1c1c2; /* Added a background color */
-}
-.below {
-    flex: 3;
-}
-
-.row input[type='tel']{
-    display: table-cell;
-    width: 85%;
 }
 
 #hide_employee_id_input{
@@ -139,12 +128,6 @@
     width: 50%;
     height: 3em;
 }
-#reset{
-    margin-right: 50px;
-}
-#view{
-    margin-left: 50px;
-}
 
 #cancel_btn, #reset {
     margin: 20px 120px 20px 20px;
@@ -156,12 +139,79 @@
 }
 
 
-/* Media query for responsiveness */
-@media (max-width: 768px) {
-    #container {
-        flex-direction: column;
-    }
-    #welcome, #dashboard_items {
-        width: 100%;
-    }
+/* 
+VIEW EMPLOYEE CSS
+*/
+#manage_employee_view {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 0 20px;
+    background-color: #fff;
+}
+#manage_employee_view .form_guide{
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #61676b;
+    color: white;
+}
+.form_guide div {
+    text-align: center;
+}
+.form_guide button {
+    display: inline-block;
+    width: fit-content;
+    margin: 2px 5px;
+    padding: 5px;
+    height: fit-content;
+}
+#select_view{ 
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    font: 16px Helvetica, Impact;
+    border: 2px solid black;
+    border-radius: 3px;
+    place-items: center;
+    margin:auto;
+    background-color: #c1c1c2; /* Added a background color */
+}
+#form_table{
+    width: 700px;
+}
+#form_table p {
+    text-align: center;
+}
+.row label {
+    padding: 10px;
+    padding-left: 50px;
+}
+#reset{ /*Some reset rule are in the cancel rule of the update emp section*/
+    margin-right: 50px;
+}
+#view{
+    margin-left: 50px;
+}
+
+/* ARCHIVE CSS PLACEHOLDER */
+#manage_employee_archive {
+    flex: 3;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 0 20px;
+    background-color: #fff;
 }
