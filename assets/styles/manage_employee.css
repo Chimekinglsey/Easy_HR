@@ -1,11 +1,14 @@
 body {
     margin: 0px;
+    width: 100%;
+    min-width: 700px;
 }
 /* Default styles for your divs */
 #container {
     background-color: rgb(231, 212, 211);
     padding: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+    /* commented out border-radius */
     margin: 20px 0;
     display: flex; /* Use flexbox to arrange the elements */
     width: auto;
@@ -16,7 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 20px 0;
     padding: 20px;
     background-color: #fff;
@@ -42,8 +45,8 @@ body {
 ADD NEW EMPLOYEE CSS
 */
 #manage_employee_add {
-    flex: 3; /* Take up available space */
-    display: flex;
+    /* flex: 3; */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -56,7 +59,6 @@ ADD NEW EMPLOYEE CSS
     display: flex;
     flex: 3;
     height: auto;
-    width: auto;
     margin-right: auto;
     margin-left: auto;
     padding: 20px;
@@ -99,7 +101,7 @@ UPDATE EMPLOYEE CSS
     align-items: center;
     border-radius: 3px;
     margin: 20px;
-    padding: 20px;
+    padding: 20px 10px;
     background-color: #fff;
 }
 #reduce_btn {
@@ -141,22 +143,25 @@ UPDATE EMPLOYEE CSS
 VIEW EMPLOYEE CSS
 */
 #manage_employee_view {
-    /* flex: 3; */
-    display: none;
+    flex: 3;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 3px;
     margin: 20px;
     padding: 0 20px;
-    background-color: #fff;
+    background-color: #a09393;
     width: auto;
 }
 #manage_employee_view .form_guide{
     flex: 1;
     text-align: center;
+    border-radius: 5px 5px 0 0;
     padding: 20px;
-    width: 100%;
+    padding-left: 0%;
+    margin: 0;
+    width: 102.2%;
     margin-bottom: 10px;
     background-color: #61676b;
     color: white;
@@ -215,16 +220,17 @@ VIEW EMPLOYEE CSS
     background-color: #fff;
 }
 
-/* Media query for container responsiveness */
+/* +1000px Media query for container responsiveness */
 @media (max-width: 1000px) {
     #container {
-        width: fit-content;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
     }
     #form_table {
         width: auto;
-        margin-left: 0px;
+        margin: 0px;
         padding: 10px;
     }
 
@@ -232,25 +238,29 @@ VIEW EMPLOYEE CSS
         padding-left: 30px;
     }
 
-    #manage_employee_view, #manage_employee_add {
+    #manage_employee_view {
         margin: 10px;
         padding: 0px 10px;
+    }
+    #manage_employee_add, #manage_employee_update {
+        padding: 5px;
     }
 
     #select_view, #register {
         /* padding: 0px; */
         width: auto;
-        margin-left: px;
+        margin-left: 0px;
     }
 
     #manage_employee_view .form_guide{
-        padding: 5px;
-        width: 98%;
         margin-bottom: 5px;
+        width: 100%;
     }
 }
+/* greater than 870px */
 
-@media (max-width: 768px) {
+/* +768px responsiveness  */
+@media (max-width: 870px) {
     #container {
         flex-direction: column;
     }
@@ -260,6 +270,15 @@ VIEW EMPLOYEE CSS
 
     #dashboard_items {
         width: 100%;
+    }
+    #manage_employee_add, #manage_employee_update{
+        margin: 0px;
+        padding: 5px;
+        margin-top: 20px;
+    }
+    #register{
+        padding: 10px 0;
+        margin: 0px;
     }
 
     #form_table {
@@ -274,8 +293,8 @@ VIEW EMPLOYEE CSS
         padding-left: 20px;
     }
 
-    #manage_employee_view, #manage_employee_add {
-        margin: 0px;
+    #manage_employee_view {
+        margin: 20px 0px 0px 0px;
         padding: 0px;
     }
 
@@ -286,9 +305,8 @@ VIEW EMPLOYEE CSS
         margin-right: auto;
     }
     #manage_employee_view .form_guide{
-        padding: 5px;
-        width: 98%;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+        width: 97%;
     }
 
 }
