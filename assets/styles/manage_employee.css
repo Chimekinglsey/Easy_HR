@@ -15,8 +15,8 @@ body {
 }
 
 #welcome {
-    flex: 1; /* Take up available space */
     display: flex;
+    flex: 1; 
     flex-direction: column;
     align-items: center;
     border-radius: 5px;
@@ -45,7 +45,6 @@ body {
 ADD NEW EMPLOYEE CSS
 */
 #manage_employee_add {
-    /* flex: 3; */
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -94,7 +93,6 @@ ADD NEW EMPLOYEE CSS
 UPDATE EMPLOYEE CSS
 */
 #manage_employee_update{
-    /* flex: 3; */
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -143,8 +141,8 @@ UPDATE EMPLOYEE CSS
 VIEW EMPLOYEE CSS
 */
 #manage_employee_view {
-    flex: 3;
     display: flex;
+    flex: 3;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -259,8 +257,6 @@ VIEW EMPLOYEE CSS
         width: 100%;
     }
 }
-/* greater than 870px */
-
 /* less than 870px (formally 768px) responsiveness  */
 @media (max-width: 870px) { /*Changed this to 870 after measuring the width where imbalance is offensive*/
     #container {
