@@ -1,3 +1,6 @@
+body {
+    margin: 0px;
+}
 /* Default styles for your divs */
 #container {
     background-color: rgb(231, 212, 211);
@@ -5,6 +8,7 @@
     border-radius: 10px;
     margin: 20px 0;
     display: flex; /* Use flexbox to arrange the elements */
+    width: auto;
 }
 
 #welcome {
@@ -38,8 +42,8 @@
 ADD NEW EMPLOYEE CSS
 */
 #manage_employee_add {
-    /*flex: 3;*/ /* Take up available space */
-    display: none;
+    flex: 3; /* Take up available space */
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -62,6 +66,7 @@ ADD NEW EMPLOYEE CSS
     place-items: center;
     background-color: #c1c1c2;
 }
+
 .below {
     flex: 3;
 }
@@ -69,6 +74,7 @@ ADD NEW EMPLOYEE CSS
 .row input[type='tel']{
     display: table-cell;
     width: 82%;
+    /* margin-left: 10px; */
 }
 
 .dashboard_btns {
@@ -135,8 +141,8 @@ UPDATE EMPLOYEE CSS
 VIEW EMPLOYEE CSS
 */
 #manage_employee_view {
-    flex: 3;
-    display: flex;
+    /* flex: 3; */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -144,6 +150,7 @@ VIEW EMPLOYEE CSS
     margin: 20px;
     padding: 0 20px;
     background-color: #fff;
+    width: auto;
 }
 #manage_employee_view .form_guide{
     flex: 1;
@@ -209,6 +216,40 @@ VIEW EMPLOYEE CSS
 }
 
 /* Media query for container responsiveness */
+@media (max-width: 1000px) {
+    #container {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #form_table {
+        width: auto;
+        margin-left: 0px;
+        padding: 10px;
+    }
+
+    .row label {
+        padding-left: 30px;
+    }
+
+    #manage_employee_view, #manage_employee_add {
+        margin: 10px;
+        padding: 0px 10px;
+    }
+
+    #select_view, #register {
+        /* padding: 0px; */
+        width: auto;
+        margin-left: px;
+    }
+
+    #manage_employee_view .form_guide{
+        padding: 5px;
+        width: 98%;
+        margin-bottom: 5px;
+    }
+}
+
 @media (max-width: 768px) {
     #container {
         flex-direction: column;
@@ -223,22 +264,31 @@ VIEW EMPLOYEE CSS
 
     #form_table {
         width: auto;
-        margin-left: 0px;
         padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
     }
+    
 
     .row label {
         padding-left: 20px;
     }
 
-    #manage_employee_view {
+    #manage_employee_view, #manage_employee_add {
         margin: 0px;
         padding: 0px;
     }
 
-    #select_view {
+    #select_view, #register {
         /* padding: 0px; */
         width: auto;
-        margin-left: 0px;
+        margin-left: auto;
+        margin-right: auto;
     }
+    #manage_employee_view .form_guide{
+        padding: 5px;
+        width: 98%;
+        margin-bottom: 5px;
+    }
+
 }

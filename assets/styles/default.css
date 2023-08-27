@@ -1,6 +1,6 @@
 /* default settings for body */
 body {
-    /* min-width: 1000px; */
+    min-width: 500px;
     background-image: linear-gradient(to right, rgb(165, 199, 165), rgb(90, 90, 197));
 }
 
