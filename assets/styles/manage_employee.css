@@ -45,7 +45,7 @@ body {
 ADD NEW EMPLOYEE CSS
 */
 #manage_employee_add {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -111,9 +111,9 @@ UPDATE EMPLOYEE CSS
     display: none;
 }
 
-#update_emp:active + #hide_employee_id_input {
+/* #update_emp:active + #hide_employee_id_input {
     display: block;
-}
+} */
 
 .right {
     display: flex;
@@ -141,7 +141,7 @@ UPDATE EMPLOYEE CSS
 VIEW EMPLOYEE CSS
 */
 #manage_employee_view {
-    display: flex;
+    display: none;
     flex: 3;
     flex-direction: column;
     justify-content: center;
