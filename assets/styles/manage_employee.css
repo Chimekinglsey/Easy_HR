@@ -5,13 +5,16 @@ body {
 }
 /* Default styles for your divs */
 #container {
-    background-color: rgb(231, 212, 211);
+    background-color: #a59d9d;
     padding: 10px;
     /* border-radius: 10px; */
     /* commented out border-radius */
     margin: 20px 0;
     display: flex; /* Use flexbox to arrange the elements */
     width: auto;
+}
+.view_emp_section2 {
+    background-color: white !important;
 }
 
 #welcome {
@@ -22,7 +25,7 @@ body {
     border-radius: 5px;
     margin: 20px 0;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ededed;
 }
 /* 
 ADD NEW EMPLOYEE CSS
@@ -33,9 +36,8 @@ ADD NEW EMPLOYEE CSS
     justify-content: center;
     align-items: center;
     border-radius: 3px;
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
+    margin: 20px 10px;
+    padding: 0px 10px;
 }
 #register{ /*This css is used for both add_new employee and update_employee*/
     display: flex;
@@ -45,10 +47,9 @@ ADD NEW EMPLOYEE CSS
     margin-left: auto;
     padding: 20px;
     font: 16px Helvetica, Impact;
-    border: 2px solid black;
     border-radius: 3px;
     place-items: center;
-    background-color: #c1c1c2;
+    background-color: #ededed;
 }
 
 .below {
@@ -83,8 +84,8 @@ UPDATE EMPLOYEE CSS
     align-items: center;
     border-radius: 3px;
     margin: 20px;
-    padding: 20px 10px;
-    background-color: #fff;
+    padding: 0px 10px;
+    background-color: #a59d9d;
 }
 
 #hide_employee_id_input{
@@ -149,7 +150,7 @@ VIEW EMPLOYEE CSS
     border-radius: 3px;
     margin: 20px;
     padding: 0 20px;
-    background-color: #a09393;
+    background-color: #61676b;
     width: auto;
 }
 #manage_employee_view .form_guide{
@@ -159,8 +160,10 @@ VIEW EMPLOYEE CSS
     padding: 20px;
     padding-left: 0%;
     margin: 0;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
     width: 102.2%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     background-color: #61676b;
     color: white;
 }
@@ -182,11 +185,10 @@ VIEW EMPLOYEE CSS
     width: auto;
     padding: 20px;
     font: 16px Helvetica, Impact;
-    border: 2px solid black;
     border-radius: 3px;
     place-items: center;
     margin:auto;
-    background-color: #c1c1c2; /* Added a background color */
+    background-color: #ededed; /* Added a background color */
 }
 #form_table{
     width: 700px;

@@ -38,4 +38,18 @@ $(document).ready(function(){
             });
         });
     });
+    // function to change container background of view to white on click
+     $('#view_emp').click(function(){
+        $('#container').addClass('view_emp_section')
+    })
+    // to compare, go to line 16 of the css, remove the 2 in .vew_emp_section2 and comment the background color in line 165
+    // Which of the view is more appealing to you?
+    const all_buttons = ['#add_new_emp', '#update_emp', '#archive_emp']
+    for (const button of all_buttons){
+        $(button).click( () => {
+            if ($('#container').hasClass('view_emp_section'))
+              $('#container').removeClass('view_emp_section')
+        })
+    }
+   
 });

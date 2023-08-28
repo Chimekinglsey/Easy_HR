@@ -1,7 +1,8 @@
 /* default settings for body */
 body {
-    min-width: 500px;
-    background-image: linear-gradient(to right, rgb(165, 199, 165), rgb(90, 90, 197));
+    margin: 0;
+    min-width: none;
+    background-image: linear-gradient(to right, rgb(165, 199, 165), rgb(102, 102, 104));
 }
 
 
@@ -12,7 +13,7 @@ body {
     width: auto;
     text-align: center;
     background-color: #35424a;
-    margin: 5px 0;
+    margin: 0;
     font-family: 'Times New Roman', Times, serif;
 }
 #header img{
@@ -35,6 +36,12 @@ body {
     text-decoration: none;
     color: white;
     padding-right: 50px;
+    font-size: 16px;
+
+}
+header a:hover{
+    color: rgb(224, 216, 216);
+    font-weight: bold;
 }
 @media (max-width: 700px) {
     #header, #footer {
@@ -67,7 +74,7 @@ body {
     padding: 10px 20px;
     margin:auto;
     margin-top: 15px;
-    width: 200px;
+    width: 70%;
     background-color: rgb(1, 65, 1);
     color: #fff;
     border: none;
