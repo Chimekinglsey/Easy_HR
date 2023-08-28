@@ -24,23 +24,6 @@ body {
     padding: 20px;
     background-color: #fff;
 }
-
-#welcome #logo {
-    background-image: url("../images/user.png");
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
-    background-position: center top;
-    text-align: center;
-    border-radius: 50%;
-    border: 2px solid black;
-}
-
-.welcome_body {
-    margin-top: 20px;
-    padding: 10px;
-    text-align: center;
-}
 /* 
 ADD NEW EMPLOYEE CSS
 */
@@ -72,12 +55,6 @@ ADD NEW EMPLOYEE CSS
     flex: 3;
 }
 
-.row input[type='tel']{
-    display: table-cell;
-    width: 82%;
-    /* margin-left: 10px; */
-}
-
 .dashboard_btns {
     display: flex;
     flex-direction: column;
@@ -88,7 +65,14 @@ ADD NEW EMPLOYEE CSS
     height: 70px;
     width: 100%;
 }
-
+/* updated the phone field for add_emp*/
+.row .phone_style{
+    margin:0;
+    margin-left:10px;
+}
+.row .phone_style input{
+   width: 98%;
+}
 /* 
 UPDATE EMPLOYEE CSS
 */
@@ -102,23 +86,33 @@ UPDATE EMPLOYEE CSS
     padding: 20px 10px;
     background-color: #fff;
 }
-#reduce_btn {
-    height: 50px;
-    width: 150px;
-}
 
 #hide_employee_id_input{
     display: none;
 }
+#hide_employee_id_input input {
+    display: inline-block;
+    max-width: 50%;
+}
+/* Added search button inside the hide_emp button */
+.search_btn {
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: #dfdfd4;
+    color: black !important;
+    border-radius: 4px;
+    margin-left: 10;
+}
+.search_btn:hover{
+    background-color: #adada2 !important;
+    color: black !important;
+}
 
-/* #update_emp:active + #hide_employee_id_input {
-    display: block;
-} */
 
 .right {
     display: flex;
 }
-
+/* Adjusted buttons for add and update employee */
 #update_btn, #cancel_btn, #reset, #view{
     display: block;
     margin: 20px 20px 20px 120px;
@@ -136,7 +130,13 @@ UPDATE EMPLOYEE CSS
     background-color: rgb(212, 127, 127);
 }
 
-
+/* updated the phone field for update_emp*/
+.row .phone_style2{
+    margin:0;
+}
+.row .phone_style input{
+   width: 98%;
+}
 /* 
 VIEW EMPLOYEE CSS
 */

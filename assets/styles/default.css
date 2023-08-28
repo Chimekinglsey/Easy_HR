@@ -109,11 +109,12 @@ button:hover, .btn a:hover {
      margin: 10px;
      font-size: 16px;
      height: 28px;
-     width: 80%;
+     width: 90%;
      border-radius: 3px;
+     text-align: center;
  }
  .row select {
-     width: 82%;
+     width: 95%;
  }
 
 
