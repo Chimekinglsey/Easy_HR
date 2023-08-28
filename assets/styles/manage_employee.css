@@ -176,6 +176,11 @@ VIEW EMPLOYEE CSS
     margin: 2px 5px;
     padding: 5px;
     height: fit-content;
+    background-color: rgb(175, 16, 16);
+}
+.form_guide button:hover {
+    background-color: rgb(97, 8, 8);
+    color: white;
 }
 #select_view{ 
     display: flex;
