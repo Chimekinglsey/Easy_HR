@@ -21,6 +21,13 @@ body {
     min-width: 150px;
     margin: 5px auto 15px auto;
 }
+.cancel_btn{
+    background-color: rgb(175, 16, 16);
+}
+
+.cancel_btn:hover {
+    background-color: rgb(212, 127, 127);
+}
 
 /* Custom form */
 .row input, .row select{
@@ -39,7 +46,12 @@ body {
 
 }
 .center {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+    display: table-row;
+}
+.center div {
+    display: table-cell;
+    padding-top: 30px;
+}
+.center .right {
+    margin-right: 20px;
 }
