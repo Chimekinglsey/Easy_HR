@@ -1,0 +1,318 @@
+body {
+    margin: 0px;
+    width: 100%;
+    min-width: 700px;
+}
+/* Default styles for your divs */
+#container {
+    background-color: #a59d9d;
+    padding: 10px;
+    /* border-radius: 10px; */
+    /* commented out border-radius */
+    margin: 20px 0;
+    display: flex; /* Use flexbox to arrange the elements */
+    width: auto;
+}
+.view_emp_section2 {
+    background-color: white !important;
+}
+
+#welcome {
+    display: flex;
+    flex: 1; 
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ededed;
+}
+/* 
+ADD NEW EMPLOYEE CSS
+*/
+#manage_employee_add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px 10px;
+    padding: 0px 10px;
+}
+#register{ /*This css is used for both add_new employee and update_employee*/
+    display: flex;
+    flex: 3;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
+    font: 16px Helvetica, Impact;
+    border-radius: 3px;
+    place-items: center;
+    background-color: #ededed;
+}
+
+.below {
+    flex: 3;
+}
+
+.dashboard_btns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn {
+    height: 70px;
+    width: 100%;
+}
+/* updated the phone field for add_emp*/
+.row .phone_style{
+    margin:0;
+    margin-left:10px;
+}
+.row .phone_style input{
+   width: 98%;
+}
+/* 
+UPDATE EMPLOYEE CSS
+*/
+#manage_employee_update{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 0px 10px;
+    background-color: #a59d9d;
+}
+
+#hide_employee_id_input{
+    display: none;
+}
+#hide_employee_id_input input {
+    display: inline-block;
+    max-width: 50%;
+}
+/* Added search button inside the hide_emp button */
+.search_btn {
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: #dfdfd4;
+    color: black !important;
+    border-radius: 4px;
+    margin-left: 10;
+}
+.search_btn:hover{
+    background-color: #adada2 !important;
+    color: black !important;
+}
+
+
+.right {
+    display: flex;
+}
+/* Adjusted buttons for add and update employee */
+#update_btn, #cancel_btn, #reset, #view{
+    display: block;
+    margin: 20px 20px 20px 120px;
+    padding: 0px 50px;
+    width: 50%;
+    height: 3em;
+}
+
+#cancel_btn, #reset {
+    margin: 20px 120px 20px 20px;
+    background-color: rgb(175, 16, 16);
+}
+
+#cancel_btn:hover, #reset:hover {
+    background-color: rgb(212, 127, 127);
+}
+
+/* updated the phone field for update_emp*/
+.row .phone_style2{
+    margin:0;
+}
+.row .phone_style input{
+   width: 98%;
+}
+/* 
+VIEW EMPLOYEE CSS
+*/
+#manage_employee_view {
+    display: none;
+    flex: 3;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 0 20px;
+    background-color: #61676b;
+    width: auto;
+}
+#manage_employee_view .form_guide{
+    flex: 1;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    padding: 20px;
+    padding-left: 0%;
+    margin: 0;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    width: 102.2%;
+    margin-bottom: 5px;
+    background-color: #61676b;
+    color: white;
+}
+.form_guide div {
+    text-align: center;
+}
+.form_guide button {
+    display: inline-block;
+    width: fit-content;
+    margin: 2px 5px;
+    padding: 5px;
+    height: fit-content;
+    background-color: rgb(175, 16, 16);
+}
+.form_guide button:hover {
+    background-color: rgb(97, 8, 8);
+    color: white;
+}
+#select_view{ 
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    font: 16px Helvetica, Impact;
+    border-radius: 3px;
+    place-items: center;
+    margin:auto;
+    background-color: #ededed; /* Added a background color */
+}
+#form_table{
+    width: 700px;
+}
+#form_table p {
+    text-align: center;
+}
+.row label {
+    padding: 10px;
+    padding-left: 50px;
+}
+#reset{ /*Some reset rule are in the cancel rule of the update emp section*/
+    margin-right: 50px;
+}
+#view{
+    margin-left: 50px;
+}
+
+/* ARCHIVE CSS PLACEHOLDER */
+#manage_employee_archive {
+    flex: 3;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+/* less than 1000px Media query for container responsiveness */
+@media (max-width: 1000px) {
+    #container {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #form_table {
+        width: auto;
+        margin: 0px;
+        padding: 10px;
+    }
+
+    .row label {
+        padding-left: 30px;
+        font-size: 15.5px;
+
+    }
+
+    #manage_employee_view {
+        margin: 10px;
+        padding: 0px 10px;
+    }
+    #manage_employee_add, #manage_employee_update {
+        padding: 5px;
+    }
+
+    #select_view, #register {
+        /* padding: 0px; */
+        width: auto;
+        margin-left: 0px;
+    }
+
+    #manage_employee_view .form_guide{
+        margin-bottom: 5px;
+        width: 100%;
+    }
+}
+/* less than 870px (formally 768px) responsiveness  */
+@media (max-width: 870px) { /*Changed this to 870 after measuring the width where imbalance is offensive*/
+    #container {
+        flex-direction: column;
+    }
+    #welcome {
+        width: auto;
+    }
+
+    #dashboard_items {
+        width: 100%;
+    }
+    #manage_employee_add, #manage_employee_update{
+        margin: 0px;
+        padding: 5px;
+        margin-top: 20px;
+    }
+    #register{
+        padding: 10px 0;
+        margin: 0px;
+    }
+
+    #form_table {
+        width: auto;
+        padding: 0px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+
+    .row label {
+        padding-left: 20px;
+        font-size: 16px;
+    }
+
+    #manage_employee_view {
+        margin: 20px 0px 0px 0px;
+        padding: 0px;
+    }
+
+    #select_view, #register {
+        /* padding: 0px; */
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #manage_employee_view .form_guide{
+        margin-bottom: 10px;
+        width: 97%;
+    }
+
+}
