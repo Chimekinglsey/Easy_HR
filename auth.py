@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for
-from flask import request
+from flask import request, flash
+from flask_login import login_user, login_required, logout_user
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from .model_user import User
@@ -7,9 +8,39 @@ from . import db
 
 auth = Blueprint('auth', __name__)
 
+
 @auth.route('/login')
 def login():
     return render_template('landing_page.html')
+
+@auth.route('/login', methods=['POST'])
+def login_post():
+    # login code goes here
+    
+    official_email = request.form.get('official_email')
+    password = request.form.get('password')
+    remember = True if request.form.get('remember') else False
+
+    user = User.query.filter_by(official_email=official_email).first()
+
+    # check if the user actually exists
+    # take the user-supplied password, hash it, and compare it to the hashed password in the database
+    if not user:
+        # if user doesn't exist, reload the page
+        flash('User not found. Check your details and try again.')
+        return redirect(url_for('auth.login'))
+    
+    if not check_password_hash(user.password, password):
+        # if user doesn't exist or password is wrong, reload the page
+        flash('Incorrect password. Please check your login details and try again.')
+        return redirect(url_for('auth.login')) 
+    
+    # if the user doesn't exist or password is wrong, reload the page
+
+    # if the above check passes, then we know the user has the right credentials
+    login_user(user, remember=remember)
+
+    return redirect(url_for('main.dashboard'))
 
 @auth.route('/signup')
 def signup():
@@ -31,6 +62,7 @@ def signup_post():
     user = User.query.filter_by(official_email=official_email).first() # if this returns a user, then the email already exists in database
     
     if user: # if a user is found, we want to redirect back to signup page so user can try again
+        flash('Email address already exists')
         return redirect(url_for('auth.signup'))
         # return 'Email address already exists'
     
@@ -46,5 +78,7 @@ def signup_post():
     return redirect(url_for('auth.login'))
 
 @auth.route('/logout')
+@login_required
 def logout():
-    return 'Logout'
+    logout_user()
+    return redirect(url_for('main.landing_page'))

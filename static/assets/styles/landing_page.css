@@ -2,10 +2,19 @@
 body {
     /* min-height: 90vh; */
     margin: 0;
-
-
 }
 
+.remember_checkbox {
+    display: inline;
+    margin: 0;
+    padding-left: 0;
+}
+#checkbox1 {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    width: 20px !important;
+}
 /* Main Container Styles */
 #container {
     background-color: #c1c1c2;

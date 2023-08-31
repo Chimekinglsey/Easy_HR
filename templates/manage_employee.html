@@ -18,8 +18,8 @@
         <div class="image"><img src="../static/assets/images/icon.png" alt="EasyHR"></div>
        <div class="ul">
         <ul>
-            <a href="../html/dashboard.html">Home</a>
-            <a href="../html/landing_page.html">Sign out</a>
+            <a href="{{ url_for('auth.dashboard') }}">Home</a>
+            <a href="{{ url_for('auth.logout') }}">Sign out</a>
             <!-- <a href="#">Partnerships</a>
             <a href="#">Contact</a> -->
         </ul>

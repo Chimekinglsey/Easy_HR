@@ -5,6 +5,19 @@ body {
     background-image: linear-gradient(to right, rgb(165, 199, 165), rgb(102, 102, 104));
 }
 
+/* Default styling for flasks-flash messages */
+.red_background {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.red_background a {
+    color: white;
+    font-weight: bold;
+}
 
 /* Default setting for header */
 #header {

@@ -13,8 +13,8 @@
         <div class="image"><img src="../static/assets/images/icon.png" alt="EasyHR"></div>
        <div class="ul">
         <ul>
-            <a href="#">Home</a>
-            <a href="../html/landing_page.html">Sign out</a>
+            <a href="{{ url_for('main.dashboard') }}">Home</a>
+            <a href="{{ url_for('auth.logout') }}">Sign out</a>
             <!-- <a href="#">Partnerships</a>
             <a href="#">Contact</a> -->
         </ul>
@@ -32,7 +32,7 @@
             <div id="dashboard_items">
                 <div class="dashboard_btns">
                     <button class="btn">
-                       <a href="../html/manage_employee.html">Manage Employee</a> 
+                       <a href="{{ url_for('main.manage_emp') }}">Manage Employee</a> 
                     </button>
                     <button class="btn">
                         Manage Department
