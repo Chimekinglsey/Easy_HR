@@ -15,10 +15,10 @@
     </header>
      <div id="container">
         <div id="register">
-            <form id="form_table" action="" method="POST">
+            <form id="form_table" action="/signup" method="POST">
                 <div class="row">
                     <label for="FirstName"> First Name:</label>
-                    <input type="text" id="FirstName" name="first_name" required><br>
+                    <input type="text" id="FirstName" name="first_name" required autofocus><br>
                 </div>
 
                 <div class="row">
@@ -44,7 +44,7 @@
                 <div class="row">
                         <label for="CompanySize"> Company Size:</label>
                     <select name="company_size">
-                    <option value="">--select one--</option>
+                    <option value="" disabled selected>--select one--</option>
                     <option value="1 - 50">1 - 50</option>
                     <option value="51 - 100">51 - 100</option>
                     <option value="101 - 200">101 - 200</option>
@@ -55,7 +55,7 @@
                 
                 <div class="row">
                     <label for="Password"> Password:</label>
-                    <input type="password" name="password"  required>
+                    <input type="password" name="password" maxlength="20" size="8" required>
                 </div>
                 
                  <div class="center"> 
