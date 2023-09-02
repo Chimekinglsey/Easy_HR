@@ -1,5 +1,6 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required, current_user
+from datetime import datetime
 from .model_user import User, Employee
 from . import db
 
@@ -16,17 +17,33 @@ def dashboard():
     count = 0
     for user in users:
         count += 1
-    return render_template('dashboard.html', user=current_user.first_name, emp_count=count)
 
-@main.route('/dashboard/manage_emp')
+    count1 = 0
+    numEmp = current_user.employees
+    for employee in numEmp:
+        count1 += 1
+
+    employee = ""
+    if count1 < 2:
+        employee = 'employee'
+    else:
+        employee = 'employees'
+
+    emps = current_user.employees
+    return render_template('dashboard.html', user=current_user.first_name,
+                           employee=employee, emp_count=emps)
+
+@main.route('/manage_emp')
 @login_required
 def manage_emp():
     return render_template('manage_employee.html')
 
-@main.route('user/add_employee', methods=['GET', 'POST'])
+@main.route('/add_employee', methods=['GET', 'POST'])
 @login_required
 def add_emp():
-    if request.method is 'POST':
+    if request.method == 'POST':
+        user_id = current_user.id
+
         firstName = request.form.get("firstName") 
         middleName = request.form.get("middleName") 
         lastName = request.form.get("lastName")
@@ -40,11 +57,21 @@ def add_emp():
         salary = request.form.get("salary") 
         branch = request.form.get("branch") 
         department = request.form.get("department") 
-        DateOfEmployment = request.form.get("DateOfEmployment") 
-        dateOfBirth = request.form.get("dateOfBirth") 
+        DateOfEmployment = datetime.strptime(request.form.get("DateOfEmployment"), '%Y-%m-%d').date()
+        dateOfBirth = datetime.strptime(request.form.get("dateOfBirth"), '%Y-%m-%d').date() 
         gender = request.form.get("gender")
 
-        new_employee = Employee(firstName=firstName, middleName=middleName,
+        #to ensure emails are unqiue per employee
+        emps = current_user.employees
+        for emp in emps:
+            if emp.email == email:
+        # [employee_emails for employees.email in  current_user.employees]
+        # [exists for email in employee_emails]
+        # if exists:
+                flash('Employee with this email already exists')
+                return redirect(url_for('main.manage_emp'))
+
+        new_employee = Employee(user_id=user_id, firstName=firstName, middleName=middleName,
                                 lastName=lastName, email=email, phoneNumber=phoneNumber,
                                 address=address, nationality=nationality, stateOfOrigin=stateOfOrigin,
                                 employeeID=employeeID, level=level, salary=salary,

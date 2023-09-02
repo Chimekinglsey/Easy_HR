@@ -18,7 +18,7 @@
         <div class="image"><img src="../static/assets/images/icon.png" alt="EasyHR"></div>
        <div class="ul">
         <ul>
-            <a href="{{ url_for('auth.dashboard') }}">Home</a>
+            <a href="{{ url_for('main.dashboard') }}">Home</a>
             <a href="{{ url_for('auth.logout') }}">Sign out</a>
             <!-- <a href="#">Partnerships</a>
             <a href="#">Contact</a> -->
@@ -48,9 +48,27 @@
         </div>
 
         </div>
+        <!-- <div>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="red_background">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+            {% endwith %}
+        </div> -->
         <div id="manage_employee_add" class="manage_add">
                 <div id="register">
-                    <form id="form_table"action="" method="post" enctype="multipart/form-data">
+                    <div>
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="red_background">
+                                {{ messages[0] }}
+                            </div>
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                    <form id="form_table" action="/add_employee" method="post" enctype="multipart/form-data">
                         <div class="row">
                         <label for="firstName" autofocus="autofocus">First Name:</label>
                         <input type="text" id="firstName" name="firstName" required>
@@ -313,7 +331,7 @@
                             <option value="">Finance</option>
                         </select>
                         <label for="dateEmp">Date of Employement:</label>
-                        <input type="date" id="dateEmp" name="DateOfEmployement" required>
+                        <input type="date" id="dateEmp" name="DateOfEmployment" required>
                     </div>
 
                     <div class="row">
