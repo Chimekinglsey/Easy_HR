@@ -29,7 +29,7 @@ def dashboard():
     else:
         employee = 'employees'
 
-    emps = current_user.employees.employeeID
+    emps = current_user.employees
     return render_template('dashboard.html', user=current_user.first_name,
                            employee=employee, emp_count=emps)
 
@@ -91,8 +91,13 @@ def get_employee_details():
         employeeID = request.form.get("employeeID")
 
         # Query the database for the employee with the employeeID for the current user
-        # employee = current_user.employees.query.filter_by(employeeID=employeeID).first()
-        employee = current_user.employees
+        # employee_list = current_user.employees
+        # for employee in employee_list:
+        #     if employee.employeeID == employeeID:
+        #         return render_template('manage_employee.html', employee=employee)
+
+
+        employee = Employee.query.filter_by(employeeID=employeeID, user_id=current_user.id).first()
 
         # Check if the employee exists and belongs to the currently logged-in user
         if not employee:
@@ -100,4 +105,5 @@ def get_employee_details():
             return redirect(url_for('main.manage_emp'))
         
         # Return the employee details to the page
-        return render_template('manage_employee.html', employee=employee)
+    
+    return render_template('manage_employee.html', employee=employee)
