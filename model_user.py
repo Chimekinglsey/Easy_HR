@@ -26,7 +26,7 @@ class Employee(db.Model):
     address = db.Column(db.String(100), nullable=False)
     nationality = db.Column(db.String(30), nullable=False)
     stateOfOrigin = db.Column(db.String(30), nullable=False)
-    employeeID = db.Column(db.String(30), nullable=False, unique=True)
+    employeeID = db.Column(db.String(30), nullable=False)
     level = db.Column(db.Enum('Entry', 'Junior', 'Mid', 'Senior', 'Executive'), nullable=False)
     salary = db.Column(db.Integer, nullable=False)
     branch = db.Column(db.String(30), nullable=False)

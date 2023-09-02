@@ -34,11 +34,13 @@
                 <button class="btn" id="update_emp">
                     Update Employee Record
                 </button>
-                <button class="btn" id="hide_employee_id_input">
+                <div class="btn" id="hide_employee_id_input" style="width: 220px; height: 50px; text-align: center;">
                     Enter employee ID: 
-                    <input type="text" placeholder="0889" required>
-                    <a class="search_btn">Search</a>
-                </button>
+                    <form action="/get_employee_details" method="POST" >
+                        <input type="text" name="employeeID" placeholder="Employee ID" style="text-align: center;" required>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
                 <button class="btn" id="view_emp">
                     View Employees
                 </button>
@@ -360,7 +362,7 @@
                         <form id="form_table"action="" method="put" enctype="multipart/form-data">
                             <div class="row">
                             <label for="firstName" autofocus="autofocus">First Name:</label>
-                            <input type="text" id="firstName" name="firstName" required>
+                            <input type="text" id="firstName" name="firstName" value = "" required>
                             <label for="middleName">Middle Name:</label>
                             <input type="text" id="middleName" name="middleName" required>
                         </div>

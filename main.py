@@ -29,7 +29,7 @@ def dashboard():
     else:
         employee = 'employees'
 
-    emps = current_user.employees
+    emps = current_user.employees.employeeID
     return render_template('dashboard.html', user=current_user.first_name,
                            employee=employee, emp_count=emps)
 
@@ -81,3 +81,23 @@ def add_emp():
         db.session.commit()
         return redirect(url_for('main.manage_emp'))
     return url_for('main.manage_emp')
+
+
+@main.route('/get_employee_details', methods=['GET', 'POST'])
+@login_required
+def get_employee_details():
+    if request.method == 'POST':
+        # Retrieve the employee ID from the form
+        employeeID = request.form.get("employeeID")
+
+        # Query the database for the employee with the employeeID for the current user
+        # employee = current_user.employees.query.filter_by(employeeID=employeeID).first()
+        employee = current_user.employees
+
+        # Check if the employee exists and belongs to the currently logged-in user
+        if not employee:
+            flash('Employee does not exist')
+            return redirect(url_for('main.manage_emp'))
+        
+        # Return the employee details to the page
+        return render_template('manage_employee.html', employee=employee)

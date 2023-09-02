@@ -20,7 +20,7 @@ def create_app():
         return User.query.get(int(user_id))
 
     app.config['SECRET_KEY'] = 'Big_Team_Easy_HR'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:root@localhost/easyhr'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:0793@localhost/easyhrv3'
 
     db.init_app(app)
 
