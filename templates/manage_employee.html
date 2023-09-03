@@ -12,6 +12,23 @@
     <script src="../static/assets/scripts/phone_country_code.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="../static/assets/scripts/manage_employee.js"></script>
+    <script>
+        $('.update_emp').submit(function(event) {
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: 'html/manage_employee.html',
+                date: $(this).serialize(),
+                dataType: 'json'
+            }).done(function (){
+                reload_update_emp();
+            })
+        });
+        function reload_update_emp(){
+            $('.update_emp').load('manage_employee.html')
+        }
+    </script>
+ 
 </head>
 <body>
     <header id="header">
@@ -361,7 +378,7 @@
         <div id="manage_employee_update">
 
                     <div id="register">
-                        <form id="form_table"action="" method="put" enctype="multipart/form-data">
+                        <form id="form_table" class="update_emp" action="" method="put" enctype="multipart/form-data">
                             <div class="row">
                             <label for="firstName" autofocus="autofocus">First Name:</label>
                             <input type="text" id="firstName" name="firstName" value = "{{ employee.firstName }}" required>
@@ -736,6 +753,10 @@
             <h2>No Archived Data Yet</h2>
         </div>
     </div>
+    <script>
+        document.getElementById("employeeName").value = employeeData.employeeName;
+        document.getElementById("department").value = employeeData.department;
+    </script>
 </body>
 <footer>
     <ul>

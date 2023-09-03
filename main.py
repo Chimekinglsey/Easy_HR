@@ -13,30 +13,30 @@ def landing_page():
 @main.route('/dashboard')
 @login_required
 def dashboard():
-    users=User.query.all()
-    count = 0
-    for user in users:
-        count += 1
-
-    count1 = 0
+    # users=User.query.all()
+    # count = 0
+    # for user in users:
+    #     count += 1
+    count1 = 0 
+    emps = count1
     numEmp = current_user.employees
-    for employee in numEmp:
-        count1 += 1
-
-    employee = ""
-    if count1 < 2:
-        employee = 'employee'
+    if numEmp:
+        for employee in numEmp:
+            count1 += 1
+        if count1 < 2:
+            employee = 'employee'
+        else:
+            employee = 'employees'
+        emps = count1
     else:
-        employee = 'employees'
-
-    emps = current_user.employees
+        employee = "employees"
     return render_template('dashboard.html', user=current_user.first_name,
                            employee=employee, emp_count=emps)
 
 @main.route('/manage_emp')
 @login_required
 def manage_emp():
-    return render_template('manage_employee.html')
+    return render_template('manage_employee.html', employee=current_user.employees)
 
 @main.route('/add_employee', methods=['GET', 'POST'])
 @login_required
