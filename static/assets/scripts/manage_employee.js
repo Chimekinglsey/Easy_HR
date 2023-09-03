@@ -52,4 +52,85 @@ $(document).ready(function(){
         })
     }
    
+
+});
+// $(document).ready(function(){
+//     //
+//     $('#retrieve_emp_data').click(function() {
+//         alert('clicked2');
+//         setTimeout(function () {
+//             // Trigger the click event on #update_emp after the new content has loaded.
+//             $('#update_emp').trigger('click');
+//         }, 5000);
+//         });
+//     });
+$(document).ready(function() {
+    $("#retrieve_emp_data").click(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        // Get the employeeID from the input field
+        let employeeID = $("input[name='employeeID']").val();
+
+        // Make an AJAX request to get the employee details
+        $.ajax({
+            type: "POST",
+            url: "/get_employee_details",  // Update the URL as needed
+            contentType: "application/json",
+            data: JSON.stringify({ "employeeID": employeeID }),
+            success: function(response) {
+                if (response.success) {
+                    // Populate the form fields with the received data
+                    $(".retrieve_update_data #firstName").val(response.employee.firstName);
+                    $(".retrieve_update_data #middleName").val(response.employee.middleName);
+                    $(".retrieve_update_data #lastName").val(response.employee.lastName);
+                    $(".retrieve_update_data #email").val(response.employee.email);
+                    $(".retrieve_update_data #phone").val(response.employee.phoneNumber);
+                    $(".retrieve_update_data #address").val(response.employee.address);
+                    $(".retrieve_update_data #nationality").val(response.employee.nationality);
+                    $(".retrieve_update_data #state").val(response.employee.stateOfOrigin);
+                    $(".retrieve_update_data #emp_id").val(response.employee.employeeID);
+                    $(".retrieve_update_data #level").val(response.employee.level);
+                    $(".retrieve_update_data #salary").val(response.employee.salary);
+                    $(".retrieve_update_data #branch").val(response.employee.branch);
+                    $(".retrieve_update_data #dept").val(response.employee.department);
+                    $(".retrieve_update_data #dob").val(response.employee.dateOfBirth);
+                    $(".retrieve_update_data #dateEmp").val(response.employee.DateOfEmployment);
+                    $(".retrieve_update_data #gender").val(response.employee.gender);
+                    // Update other form fields as needed
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    });
+});
+
+
+$(document).ready(function() {
+    $(".retrieve_update_data").submit(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Serialize the form data into a format that can be sent via AJAX
+        let formData = $(this).serialize();
+
+        // Make an AJAX request to update the employee
+        $.ajax({
+            type: "POST",
+            url: "/update_employee", // Update the URL as needed
+            data: formData,
+            success: function(response) {
+                if (response.success) {
+                    alert(response.message); // Show a success message
+                    // You can update other elements or perform additional actions here
+                } else {
+                    alert(response.message); // Show an error message
+                }
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    });
 });

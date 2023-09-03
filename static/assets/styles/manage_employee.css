@@ -32,7 +32,6 @@ ADD NEW EMPLOYEE CSS
 */
 #manage_employee_add {
     display: flex;
-    flex:3;
     flex-direction: column;
     justify-content: center;
     align-items: center;
