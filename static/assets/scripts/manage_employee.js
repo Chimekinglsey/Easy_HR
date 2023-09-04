@@ -133,4 +133,37 @@ $(document).ready(function() {
             }
         });
     });
+   
+
+        const employeeSearchForm = $('#employeeSearchForm');
+        const searchInput = $('#search_id');
+    
+        employeeSearchForm.onclick('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+        let searchValue = searchInput.val();
+        //    const searchValue = searchInput.value; // Trim to remove leading/trailing spaces
+        // let employeeID = $("input[name='employeeID']").val()
+        if (searchValue) {
+                const searchURL = `/view_employee/${searchValue}`;
+                // window.location.href = searchURL;
+        }
+        else {
+            alert('Please enter an employee ID');
+        }
+        $.ajax({
+            url: searchURL,
+            method: 'GET',
+            dataType: 'html',
+            success: function (data) {
+                // Update the view_employees div with the response
+                viewEmployeesDiv.html(data);
+            },
+            error: function (error) {
+                console.error('Error:', error);
+            }
+        });
+        
+        });
+
+    
 });

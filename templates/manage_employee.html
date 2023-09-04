@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../static/assets/styles/default.css">
     <link rel="stylesheet" href="../static/assets/styles/manage_employee.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput.min.js"></script>
-    <script src="../static/assets/scripts/phone_country_code.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../static/assets/scripts/view_search_btn.js"></script>
     <script src="../static/assets/scripts/manage_employee.js"></script>
 </head>
 <body>
@@ -366,12 +366,12 @@
                             <label for="firstName" autofocus="autofocus">First Name:</label>
                             <input type="text" id="firstName" name="firstName">
                             <label for="middleName">Middle Name:</label>
-                            <input type="text" id="middleName" name="middleName" value = "{{ employee.middleName }}">
+                            <input type="text" id="middleName" name="middleName">
                         </div>
     
                         <div class="row">
                             <label for="lastname">Last Name:</label>
-                            <input type="text" id="lastName" name="lastName" value = "{{ employee.lastName }}">
+                            <input type="text" id="lastName" name="lastName">
                             <label for="email">Email Address:</label>
                             <input type="email" id="email" name="email" value = "">
                         </div>
@@ -380,7 +380,7 @@
                             <label for="phone">Phone Number:</label>
                             <div class="phone_style2"><input type="tel" id="phone" name="phoneNumber" value = "" class="form-control" placeholder="ex. +234xxxxxxxx"></div>
                             <label for="address">Address:</label>
-                            <input type="text" id="address" name="address" value = "{{ employee.address }}">
+                            <input type="text" id="address" name="address">
                         </div>
     
                         <div class="row">
@@ -582,7 +582,7 @@
                               </select>
                             </select><br>
                             <label for="state">State of Origin:</label>
-                            <select id="state" name="stateOfOrigin" value = "{{ employee.stateOfOrigin }}">
+                            <select id="state" name="stateOfOrigin">
                                 <option value="">-- select one --</option>
                                 <option value="Imo">Imo</option>
                                 <option value="Enugu">Enugu</option>
@@ -593,9 +593,9 @@
     
                             <div class="row">  
                             <label for="emp_id">Employee ID:</label>
-                            <input type="text" id="emp_id" name="employeeID" value = "{{ employee.employeeID }}">
+                            <input type="text" id="emp_id" name="employeeID">
                             <label for="level">Level:</label>
-                            <select type="text" id="level" name="level" value = "{{ employee.level }}">
+                            <select type="text" id="level" name="level">
                                 <option value="">-- select one --</option>
                                 <option value="Entry">Entry</option>
                                 <option value="Junior">Junior</option>
@@ -607,9 +607,9 @@
     
                         <div class="row">
                             <label for="salary">Salary:</label>
-                            <input type="number" id="salary" name="salary" value = "{{ employee.salary }}">
+                            <input type="number" id="salary" name="salary">
                             <label for="branch">Branch:</label>
-                            <select type="text" id="branch" name="branch" value = "{{ employee.branch }}">
+                            <select type="text" id="branch" name="branch">
                                 <option value="">-- select one --</option>
                                 <option value="Lagos II">Lagos II</option>
                             </select>
@@ -617,7 +617,7 @@
     
                         <div class="row">
                             <label for="dept">Department:</label>
-                            <select type="text" id="dept" name="department" value = "{{ employee.department }}">
+                            <select type="text" id="dept" name="department">
                                 <option value="">-- select one --</option>
                                 <option value="Human Resource">Human Resource</option>
                                 <option value="Marketing">Marketing</option>
@@ -629,9 +629,9 @@
     
                         <div class="row">
                             <label for="dob">Date of Birth:</label>
-                            <input type="date" id="dob" name="dateOfBirth" value = "{{ employee.dateOfBirth }}">
+                            <input type="date" id="dob" name="dateOfBirth">
                             <label for="gender">Gender:</label>
-                            <select id="gender" name="gender" value = "{{ employee.gender }}">
+                            <select id="gender" name="gender">
                                 <option value="">-- select one --</option>
                                 <option value="Female">Female</option>
                                 <option value="Male">Male</option>
@@ -651,83 +651,48 @@
         <div id="manage_employee_view">
                         <div class="form_guide">
                             <div>Do you want to view  employee by name or id?</div>
-                            <div class="viewById"><b>Enter ID or Name: </b><input type="text"><button class="btn">Search</button></div required>
+                            <form id="employeeSearchForm" action="/view_employee"><div class="viewById">
+                                <b>Enter ID or Name: </b><input id="search_id" type="text" placeholder="Enter ID or Name">
+                                <button class="btn" type="submit">Search</button></div>
+                            </form>
                         </div>
                         <div id="select_view" class="below">
-                            <form id="form_table"action="" method="get" enctype="multipart/form-data">
-                                <p>Select the Employee information you wish to view.</p>
-                                <p><b> Select the View all below to view all employee information</b></p>
-
-                                <div class="row">
-                                    <label for="select_all">Select All:</label>
-                                    <input type="radio" id="select_all" name="quick_option" value = "{{ employee.quick_option }}">
-                                    <label for="deselect_all">Deselect All:</label>
-                                    <input type="radio" id="deselect_all" name="quick_option">      
-                                    <label for="select_basic">Select Basic:</label>
-                                    <input type="radio" id="select_basic" name="quick_option">
+                                <p>Enter the Employee information you wish to view above.</p>
+                                <p style="color: red;"><b> Select the View all below to view all employee information</b></p>
+                                <div id="view_employees">
+                                    {% if not view_employees %}
+                                        <h2>No Data Found</h2>
+                                    {% else %}
+                                            {% for item in view_employees %}
+                                            <div id="title" class="tr">
+                                                <h4><b>Name</b>: {{ item.firstName }} {{ item.middleName }} {{ item.lastName }}  - <b>ID:</b> {{ item.employeeId }}</h4>
+                                                    </div>
+                                                    <form action="/view_employees" id="employee_data">
+                                                    <div class="tr">
+                                                        <span class="td"><b>Date Employeed</b>: {{ item.dateEmployed }}</span>
+                                                        <span class="td"><b>Department</b>: {{ item.department }}</span>
+                                                        <span class="td"><b>Email</b>: {{ item.email }}</span>
+                                                        <span class="td"><b>Level</b>: {{ item.level }}</span>
+                                                </div> 
+                                                <div class="tr">  <span class="td"><b>Salary</b>: {{ item.salary }}</span>
+                                                        <span class="td"><b>Phone</b>: {{ item.phoneNumber }}</span>
+                                                        <span class="td"><b>Address</b>: {{ item.address }}</span>
+                                                        <span class="td"><b>Nationality</b>: {{ item.nationality }}     </span>
+                                                    </div>
+                                                    <div class="tr"><span class="td"><b>State Of Origin</b>: {{ item.stateOfOrigin }}</span>
+                                                        <span class="td"><b>Branch</b>: {{ item.branch }}</span>
+                                                        <span class="td"><b>Date Of Birth</b>: {{ item.dateOfBirth }}</span>
+                                                        <span class="td"><b>Gender: </b>{{ item.gender }}</span>
+                                                    </div>
+                                                </tr>
+                                            </form>
+                                            {% endfor %}
+                                    {% endif %}
                                 </div>
-            
-                                <div class="row">
-                                <label for="firstName">First Name:</label>
-                                <input type="checkbox" id="firstName" name="firstName">
-                                <label for="middleName">Middle Name:</label>
-                                <input type="checkbox" id="middleName" name="middleName">
-                                <label for="lastname">Last Name:</label>
-                                <input type="checkbox" id="lastname" name="lastName">
-                            </div>
-        
-                            <div class="row">
-                                <label for="email">Email Address:</label>
-                                <input type="checkbox" id="email" name="email">
-                            
-                                <label for="Phone_no">Phone Number:</label>
-                                <input type="checkbox" id="Phone_no" name="Phone_no.">
-                                <label for="address">Address:</label>
-                                <input type="checkbox" id="address" name="address">
-                            </div>
-        
-                            <div class="row">
-                                <label for="nationality">Nationality:</label>
-                                <input type="checkbox" id="nationality" name="Nationality">
-                                <label for="state">State of Origin:</label>
-                                <input type="checkbox" id="state" name="StateOfOrigin">
-                               
-                                <label for="emp_id">Employee ID:</label>
-                                <input type="checkbox" id="emp_id" name="employeeID">
-                            </div>
-        
-                            <div class="row">  
-                                <label for="level">Level:</label>
-                                <input type="checkbox" id="level" name="level">
-                            
-                                <label for="salary">Salary:</label>
-                                <input type="checkbox" id="salary" name="salary">
-                                <label for="branch">Branch:</label>
-                               <input type="checkbox" id="branch" name="branch">
-                            </div>
-        
-                            <div class="row">
-                                <label for="dept">Department:</label>
-                                <input type="checkbox" id="dept" name="department">
-
-                                <label for="dateEmp">Date Of Emp:</label>
-                                <input type="checkbox" id="dateEmp" name="DateOfEmployement">
-                           
-                                <label for="dob">Date of Birth:</label>
-                                <input type="checkbox" id="dob" name="dateOfBirth">
-                            </div>
-        
-                            <div class="row">
-                                <p></p>
-                                <p></p>
-                                <label for="sex">Gender:</label>
-                                <input type="checkbox" id="sex" name="gender">
-                             </div>
-        
                             </div>
                             <div class="right">
                                 <input type="reset" class="btn" id="cancel_btn"    value="Reset">
-                                <input type="submit" class="btn" id="update_btn" value="View">
+                                <a href="{{url_for('main.view_employees')}}"><input type="submit" class="btn" id="update_btn" value="View All"></a>
                             </div>
                                         
                             </form>

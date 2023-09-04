@@ -316,3 +316,25 @@ VIEW EMPLOYEE CSS
     }
 
 }
+/* 
+    style for view function
+*/
+#employee_data{
+    display: table;
+    text-align: center
+}
+#employee_data .tr{
+display: table-row !important;
+}
+#employee_data #title, #title h4{
+    text-align: center !important;
+    border-bottom: 2px solid red;
+    display: block; 
+    text-align: center;
+    }
+#employee_data .tr .td{
+    display: table-cell !important;
+    text-align: left !important;
+    padding-right: 30px !important;
+    padding-left: 10px !important;
+    }

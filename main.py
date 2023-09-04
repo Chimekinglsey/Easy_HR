@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
 from flask_login import login_required, current_user
+from sqlalchemy import or_
 from datetime import datetime
 from .model_user import User, Employee
 from . import db
@@ -39,7 +40,7 @@ def manage_emp():
     employee = None
     return render_template('manage_employee.html', employee=employee)
 
-@main.route('/add_employee', methods=['GET', 'POST'])
+@main.route('/add_employee', strict_slashes=False, methods=['GET', 'POST'])
 @login_required
 def add_emp():
     if request.method == 'POST':
@@ -84,7 +85,7 @@ def add_emp():
     return url_for('main.manage_emp')
 
 
-# @main.route('/get_employee_details', methods=['GET', 'POST'])
+# @main.route('/get_employee_details', strict_slashes=False, methods=['GET', 'POST'])
 # @login_required
 # def get_employee_details():
 #     if request.method == 'POST':
@@ -113,7 +114,7 @@ def add_emp():
 #         return render_template('manage_employee.html', employee=employee)
 #     return render_template('manage_employee.html')
 
-@main.route('/get_employee_details', methods=['POST'])
+@main.route('/get_employee_details', strict_slashes=False, methods=['POST'])
 @login_required
 def get_employee_details():
     if request.is_json and request.method == 'POST': 
@@ -156,7 +157,7 @@ def get_employee_details():
     # Handle GET requests if needed
     return jsonify({"success": False, "message": "GET request not allowed"})
 
-@main.route('/update_employee', methods=['POST'])
+@main.route('/update_employee', strict_slashes=False, methods=['POST'])
 @login_required
 def update_employee():
     if request.method == 'POST':
@@ -205,3 +206,28 @@ def update_employee():
             return jsonify({"success": False, "message": "Failed to update employee: " + str(e)})
 
     return jsonify({"success": False, "message": "GET request not allowed"})
+
+
+@main.route('/view_employees', strict_slashes=False, methods=['GET'])
+@login_required
+def view_employees():
+    """View all employees for the current user."""
+
+    employee_data = Employee.query.filter_by(user_id=current_user.id).all()
+
+    return render_template('manage_employee.html', view_employees=employee_data)
+
+
+@main.route('/view_employee/<id_or_name>', strict_slashes=False, methods=['GET'])
+@login_required
+def view_employee(id_or_name):
+    """view all employees or specific employees(using name or id)"""
+    employee_data = Employee.query.filter(
+        (Employee.employeeID==id_or_name) |
+        (Employee.firstName==id_or_name)|
+        (Employee.middleName == id_or_name)|
+        (Employee.lastName == id_or_name), Employee.user_id == current_user.id).all()
+    if employee_data is not None:
+            return render_template('manage_employee.html', view_employees=employee_data)
+    else:
+        return render_template('manage_employee.html', view_employees="None")
