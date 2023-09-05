@@ -70,7 +70,12 @@ def add_emp():
         # [employee_emails for employees.email in  current_user.employees]
         # [exists for email in employee_emails]
         # if exists:
+                return jsonify({"success": False, "message": "Employee with this email already exists"})
                 flash('Employee with this email already exists')
+                return redirect(url_for('main.manage_emp'))
+            if emp.employeeID == employeeID:
+                return jsonify({"success": False, "message": "Employee with this email already exists"})
+                flash('Employee with this ID already exists')
                 return redirect(url_for('main.manage_emp'))
 
         new_employee = Employee(user_id=user_id, firstName=firstName, middleName=middleName,
@@ -214,20 +219,23 @@ def view_employees():
     """View all employees for the current user."""
 
     employee_data = Employee.query.filter_by(user_id=current_user.id).all()
+    write_up = f"Employee List"
 
-    return render_template('manage_employee.html', view_employees=employee_data)
+    return render_template('view_Semployee.html', view_employees=employee_data, write_up=write_up)
 
 
 @main.route('/view_employee/<id_or_name>', strict_slashes=False, methods=['GET'])
 @login_required
 def view_employee(id_or_name):
     """view all employees or specific employees(using name or id)"""
+    write_up = f"Click the View all button below to view all employee information"
+
     employee_data = Employee.query.filter(
         (Employee.employeeID==id_or_name) |
         (Employee.firstName==id_or_name)|
         (Employee.middleName == id_or_name)|
         (Employee.lastName == id_or_name), Employee.user_id == current_user.id).all()
     if employee_data is not None:
-            return render_template('manage_employee.html', view_employees=employee_data)
+            return render_template('view_employee.html', view_employees=employee_data, write_up=write_up)
     else:
-        return render_template('manage_employee.html', view_employees="None")
+        return render_template('view_employee.html', view_employees="None")

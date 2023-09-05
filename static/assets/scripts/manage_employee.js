@@ -1,16 +1,3 @@
-// $(document).ready(function(){
-//     $('#add_new_emp').click(function(){
-//         display()
-//     });
-//     function display (){
-//         $('#manage_employee_update, #manage_employee_view, #manage_employee_archive').css('display, none');
-//         $("#manage_employee_add").css({
-//             'flex': 3,
-//             'display': 'flex'
-//         })
-
-//     }
-// });
 $(document).ready(function(){
     const buttons = [
         {id: '#add_new_emp', contentId: '#manage_employee_add'},
@@ -54,16 +41,7 @@ $(document).ready(function(){
    
 
 });
-// $(document).ready(function(){
-//     //
-//     $('#retrieve_emp_data').click(function() {
-//         alert('clicked2');
-//         setTimeout(function () {
-//             // Trigger the click event on #update_emp after the new content has loaded.
-//             $('#update_emp').trigger('click');
-//         }, 5000);
-//         });
-//     });
+
 $(document).ready(function() {
     $("#retrieve_emp_data").click(function(event) {
         event.preventDefault(); // Prevent the default form submission
@@ -132,38 +110,75 @@ $(document).ready(function() {
                 console.error(error);
             }
         });
+    });    
+});
+
+addEventListener('DOMContentLoaded', function(){
+    const employeeSearchForm = document.getElementById('employeeSearchForm');
+    const searchInput = document.getElementById('search_id');
+
+    employeeSearchForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+    let searchValue = searchInput.value;
+    
+    if (searchValue) {
+            // alert(searchValue);
+            const searchURL = `/view_employee/${searchValue}`;
+            // // display in same window but reloads page
+            // window.location.href = searchURL;
+
+            // // Open searchURL in a new window
+            // window.open(searchURL, '_blank');
+
+            const popupWidth = 900;
+            const popupHeight = 600;
+
+            const screenWidth = window.screen.availWidth;
+            const screenHeight = window.screen.availHeight;
+
+            // Calculate adjusted dimensions to fit within the screen
+            const adjustedWidth = Math.min(popupWidth, screenWidth);
+            const adjustedHeight = Math.min(popupHeight, screenHeight);
+
+            // Calculate the left and top positions to center the popup
+            const leftPosition = (screenWidth - adjustedWidth) / 2;
+            const topPosition = (screenHeight - adjustedHeight) / 2;
+
+            // Define the final popup features
+            const popupFeatures = `width=${adjustedWidth}, height=${adjustedHeight}, left=${leftPosition}, top=${topPosition}, resizable=yes, scrollbars=yes`;
+            // Open searchURL in a pop-up window
+            window.open(searchURL, 'popupWindow', popupFeatures);
+    }
+    else {
+        alert('Please enter an employee ID');
+    }
     });
-   
+})
 
-        const employeeSearchForm = $('#employeeSearchForm');
-        const searchInput = $('#search_id');
+// works as the code below but must be place directly on the html file
+// function closeOrRedirect() {
+//     if (window.opener) {
+//         // This is a popup window
+//         window.close();
+//     } else {
+//         // This is not a popup window, redirect to another page
+//         window.location.href = "{{ url_for('main.manage_emp') }}";
+//     }
+// }
+document.addEventListener('DOMContentLoaded', function() {
+    const closeOrRedirectLink = document.getElementById('closeOrRedirectLink');
     
-        employeeSearchForm.onclick('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
-        let searchValue = searchInput.val();
-        //    const searchValue = searchInput.value; // Trim to remove leading/trailing spaces
-        // let employeeID = $("input[name='employeeID']").val()
-        if (searchValue) {
-                const searchURL = `/view_employee/${searchValue}`;
-                // window.location.href = searchURL;
-        }
-        else {
-            alert('Please enter an employee ID');
-        }
-        $.ajax({
-            url: searchURL,
-            method: 'GET',
-            dataType: 'html',
-            success: function (data) {
-                // Update the view_employees div with the response
-                viewEmployeesDiv.html(data);
-            },
-            error: function (error) {
-                console.error('Error:', error);
-            }
-        });
-        
-        });
+    closeOrRedirectLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link click behavior
+        // Get the data-url attribute value
+        const urlToRedirect = closeOrRedirectLink.getAttribute('data-url');
 
-    
+        if (window.opener) {
+            // This is a popup window
+            window.close();
+        } else {
+            // This is not a popup window, redirect to another page (data-url)
+            window.location.href = urlToRedirect
+        }
+    });
 });

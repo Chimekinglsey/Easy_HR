@@ -138,6 +138,20 @@ UPDATE EMPLOYEE CSS
 .row .phone_style input{
    width: 98%;
 }
+
+/* pop up css styling */
+#manage_employee_view_v2 {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 0 20px;
+    background-color: #61676b;
+    width: auto;
+}
 /* 
 VIEW EMPLOYEE CSS
 */
