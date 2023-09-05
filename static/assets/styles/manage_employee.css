@@ -123,9 +123,7 @@ UPDATE EMPLOYEE CSS
     width: 50%;
     height: 3em;
 }
-.shift-in {
-    margin-left: 20px;
-}
+
 
 #cancel_btn, #reset {
     margin: 20px 120px 20px 20px;
@@ -135,7 +133,9 @@ UPDATE EMPLOYEE CSS
 #cancel_btn:hover, #reset:hover {
     background-color: rgb(212, 127, 127);
 }
-
+.shift-in {
+    margin: 0 !important;
+}
 /* updated the phone field for update_emp*/
 .row .phone_style2{
     margin:0;
