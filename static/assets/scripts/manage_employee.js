@@ -183,6 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.querySelector('.flash_messages').classList.add('hidden'); // To hide the element
+    // document.querySelector('.flash_messages').classList.add('hidden'); // To hide the element
     // document.querySelector('.flash_messages').classList.remove('hidden'); // To show the element
 });

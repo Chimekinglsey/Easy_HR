@@ -160,3 +160,21 @@ footer ul a{
     padding-right: 30px;
     color: white;
 }
+
+.flash_messages {
+    opacity: 1;
+    transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
+    background-color: red;
+    color: rgb(239, 231, 231);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+}
+.flash_messages a {
+    color: white;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
