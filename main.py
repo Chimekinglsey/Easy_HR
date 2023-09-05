@@ -221,7 +221,7 @@ def view_employees():
     employee_data = Employee.query.filter_by(user_id=current_user.id).all()
     write_up = f"Employee List"
 
-    return render_template('view_Semployee.html', view_employees=employee_data, write_up=write_up)
+    return render_template('view_employee.html', view_employees=employee_data, write_up=write_up)
 
 
 @main.route('/view_employee/<id_or_name>', strict_slashes=False, methods=['GET'])
