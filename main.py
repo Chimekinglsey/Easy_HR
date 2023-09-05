@@ -14,10 +14,10 @@ def landing_page():
 @main.route('/dashboard')
 @login_required
 def dashboard():
-    users=User.query.all()
-    count = 0
-    for user in users:
-        count += 1
+    # users=User.query.all()
+    # count = 0
+    # for user in users:
+    #     count += 1
 
     count1 = 0
     numEmp = current_user.employees
@@ -30,9 +30,8 @@ def dashboard():
     else:
         employee = 'employees'
 
-    emps = current_user.employees
     return render_template('dashboard.html', user=current_user.first_name,
-                           employee=employee, emp_count=emps)
+                           employee=employee, emp_count=count1)
 
 @main.route('/manage_emp')
 @login_required

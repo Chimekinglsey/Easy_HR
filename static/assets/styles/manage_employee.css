@@ -26,7 +26,7 @@ body {
     margin: 20px 0;
     padding: 20px;
     /* width: 200px; */
-    background-color: #96c06e;
+    background-color: #e0fbc7;
 }
 /* 
 ADD NEW EMPLOYEE CSS
@@ -69,13 +69,13 @@ ADD NEW EMPLOYEE CSS
     width: 100%;
 }
 /* updated the phone field for add_emp*/
-.row .phone_style{
+/* .row .phone_style{
     margin:0;
     margin-left:10px;
 }
 .row .phone_style input{
    width: 98%;
-}
+} */
 /* 
 UPDATE EMPLOYEE CSS
 */
@@ -122,6 +122,9 @@ UPDATE EMPLOYEE CSS
     padding: 0px 50px;
     width: 50%;
     height: 3em;
+}
+.shift-in {
+    margin-left: 20px;
 }
 
 #cancel_btn, #reset {
@@ -170,7 +173,7 @@ VIEW EMPLOYEE CSS for manage_employee.html
     background-color: #61676b;
     width: auto;
 }
-#manage_employee_view .form_guide{
+.form_guide{
     flex: 1;
     text-align: center;
     border-radius: 5px 5px 0 0;
@@ -204,12 +207,12 @@ VIEW EMPLOYEE CSS for manage_employee.html
     flex: 3;
     flex-direction: column;
     height: auto;
-    width: auto;
     padding: 20px;
     font: 16px Helvetica, Impact;
     border-radius: 3px;
     place-items: center;
     margin:auto;
+    width: 80%;
     background-color: #ededed; /* Added a background color */
 }
 #form_table{
@@ -270,7 +273,7 @@ VIEW EMPLOYEE CSS for manage_employee.html
         padding: 5px;
     }
 
-    #select_view, #register {
+     #register {
         /* padding: 0px; */
         width: auto;
         margin-left: 0px;
@@ -321,7 +324,7 @@ VIEW EMPLOYEE CSS for manage_employee.html
         padding: 0px;
     }
 
-    #select_view, #register {
+  #register {
         /* padding: 0px; */
         width: auto;
         margin-left: auto;
@@ -361,6 +364,7 @@ display: table-row !important;
     text-align: center;
     background-color: #61676b;
     padding: 10px;
+    color: white;
 }
 #archive_btn {
     display: inline-block;

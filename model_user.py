@@ -13,7 +13,7 @@ class User(UserMixin, db.Model):
     company_size = db.Column(db.Enum('1 - 50', '51 - 100', '101 - 200', '201 - 500', 'Above 500'), nullable=False)
     password = db.Column(db.String(100))
 
-    employees = db.relationship('Employee', backref='user', lazy=True)
+    employees = db.relationship('Employee', backref='user', lazy=True, cascade="all, delete-orphan")
 
 class Employee(db.Model):
     id = db.Column(db.Integer, primary_key=True) #
