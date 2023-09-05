@@ -80,6 +80,7 @@ $(document).ready(function() {
             },
             error: function(error) {
                 console.error(error);
+                alert("An error occurred while retrieving employee details.");
             }
         });
     });
@@ -181,4 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
             window.location.href = urlToRedirect
         }
     });
+
+    document.querySelector('.flash_messages').classList.add('hidden'); // To hide the element
+    // document.querySelector('.flash_messages').classList.remove('hidden'); // To show the element
 });

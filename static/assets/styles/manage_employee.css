@@ -25,13 +25,15 @@ body {
     border-radius: 5px;
     margin: 20px 0;
     padding: 20px;
-    background-color: #ededed;
+    /* width: 200px; */
+    background-color: #7a0909;
 }
 /* 
 ADD NEW EMPLOYEE CSS
 */
 #manage_employee_add {
     display: flex;
+    flex: 3;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -41,7 +43,7 @@ ADD NEW EMPLOYEE CSS
 }
 #register{ /*This css is used for both add_new employee and update_employee*/
     display: flex;
-    flex: 3;
+    flex: "";
     height: auto;
     margin-right: auto;
     margin-left: auto;
@@ -139,10 +141,10 @@ UPDATE EMPLOYEE CSS
    width: 98%;
 }
 
-/* pop up css styling */
+/* pop up and view_employee.html css styling */
 #manage_employee_view_v2 {
     display: flex;
-    flex: 3;
+    /* flex: 3; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -152,8 +154,9 @@ UPDATE EMPLOYEE CSS
     background-color: #61676b;
     width: auto;
 }
+
 /* 
-VIEW EMPLOYEE CSS
+VIEW EMPLOYEE CSS for manage_employee.html
 */
 #manage_employee_view {
     display: none;
@@ -335,7 +338,8 @@ VIEW EMPLOYEE CSS
 */
 #employee_data{
     display: table;
-    text-align: center
+    text-align: center;
+    margin: auto;
 }
 #employee_data .tr{
 display: table-row !important;
@@ -345,10 +349,42 @@ display: table-row !important;
     border-bottom: 2px solid red;
     display: block; 
     text-align: center;
-    }
+}
 #employee_data .tr .td{
     display: table-cell !important;
     text-align: left !important;
     padding-right: 30px !important;
     padding-left: 10px !important;
-    }
+}
+.view_name_style {
+    display: block;
+    text-align: center;
+    background-color: #61676b;
+    padding: 10px;
+}
+#archive_btn {
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: #dfdfd4;
+    /* box-shadow:  0 0 0 1px #ee3232; */
+    color: black !important;
+    border-radius: 4px;
+    margin-left: 15px;
+}
+#register .flash_messages {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0 0px;
+    background-color: #1a0909;
+    width: auto;
+    color: white;
+    border-radius: 5px;
+}
+#register .flex_row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+}

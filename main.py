@@ -70,11 +70,11 @@ def add_emp():
         # [employee_emails for employees.email in  current_user.employees]
         # [exists for email in employee_emails]
         # if exists:
-                return jsonify({"success": False, "message": "Employee with this email already exists"})
+                # return jsonify({"success": False, "message": "Employee with this email already exists"})
                 flash('Employee with this email already exists')
                 return redirect(url_for('main.manage_emp'))
             if emp.employeeID == employeeID:
-                return jsonify({"success": False, "message": "Employee with this email already exists"})
+                # return jsonify({"success": False, "message": "Employee with this email already exists"})
                 flash('Employee with this ID already exists')
                 return redirect(url_for('main.manage_emp'))
 

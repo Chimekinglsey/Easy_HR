@@ -30,22 +30,22 @@
 
         <div id="manage_employee_view_v2">
                         <div class="form_guide">
-                            <div>Do you want to view  employee by name or id?</div>
+                            <div style="color: white;">Do you want to view  employee by name or id?</div>
                             <form id="employeeSearchForm" action="/view_employee"><div class="viewById">
                                 <b>Enter ID or Name: </b><input id="search_id" type="text" placeholder="Enter ID or Name">
                                 <button class="btn" type="submit">Search</button></div>
                             </form>
                         </div>
-                        <div id="select_view" class="below" style="margin-left: auto; margin-right: auto;">
-                                <p>Enter the Employee information you wish to view above.</p>
-                                <p style="color: red;"><b> {{ write_up }}</b></p>
+                        <div id="select_view" class="below">
+                                
+                                <p style="color: red; margin: 0px; padding: 0px;"><b> {{ write_up }}</b></p>
                                 <div id="view_employees">
                                     {% if not view_employees %}
                                         <h2>No Data Found</h2>
                                     {% else %}
                                             {% for item in view_employees %}
                                             <div id="title" class="tr">
-                                                <h4><b>Name</b>: {{ item.firstName }} {{ item.middleName }} {{ item.lastName }}  - <b>ID:</b> {{ item.employeeID }}</h4>
+                                                <h4 class="view_name_style"><b>Name</b>: {{ item.firstName }} {{ item.middleName }} {{ item.lastName }}  - <b>ID:</b> {{ item.employeeID }} <button id="archive_btn">Archive</button></h4>
                                                     </div>
                                                     <form action="/view_employees" id="employee_data">
                                                     <div class="tr">
