@@ -112,7 +112,7 @@ UPDATE EMPLOYEE CSS
 }
 
 
-.right {
+.right, .right2{
     display: flex;
 }
 /* Adjusted buttons for add and update employee */
@@ -133,8 +133,14 @@ UPDATE EMPLOYEE CSS
 #cancel_btn:hover, #reset:hover {
     background-color: rgb(212, 127, 127);
 }
-.shift-in {
-    margin: 0 !important;
+.right2 #cancel_btn, .right2 #update_btn{
+        display: inline-block;
+        padding: auto;
+        margin-top: 5%;
+}
+.right2 #cancel_btn{
+    margin-left: 25%;
+    margin-right: 13%;
 }
 /* updated the phone field for update_emp*/
 .row .phone_style2{
