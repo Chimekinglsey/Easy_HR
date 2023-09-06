@@ -68,14 +68,7 @@ ADD NEW EMPLOYEE CSS
     height: 70px;
     width: 100%;
 }
-/* updated the phone field for add_emp*/
-/* .row .phone_style{
-    margin:0;
-    margin-left:10px;
-}
-.row .phone_style input{
-   width: 98%;
-} */
+
 /* 
 UPDATE EMPLOYEE CSS
 */
@@ -142,14 +135,6 @@ UPDATE EMPLOYEE CSS
     margin-left: 25%;
     margin-right: 13%;
 }
-/* updated the phone field for update_emp*/
-.row .phone_style2{
-    margin:0;
-}
-.row .phone_style input{
-   width: 98%;
-}
-
 /* pop up and view_employee.html css styling */
 #manage_employee_view_v2 {
     display: flex;
@@ -188,7 +173,7 @@ VIEW EMPLOYEE CSS for manage_employee.html
     margin: 0;
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
-    width: 102.2%;
+    width: 100%;
     margin-bottom: 5px;
     background-color: #61676b;
     color: white;

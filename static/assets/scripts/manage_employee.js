@@ -185,4 +185,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // document.querySelector('.flash_messages').classList.add('hidden'); // To hide the element
     // document.querySelector('.flash_messages').classList.remove('hidden'); // To show the element
+
+      
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+const inputFields = document.querySelectorAll(".row input");
+
+    inputFields.forEach((inputField) => {
+        inputField.addEventListener("focus", () => {
+            inputField.classList.add("active");
+        });
+    
+        inputField.addEventListener("blur", () => {
+            inputField.classList.remove("active");
+        });
+    })
+}); 

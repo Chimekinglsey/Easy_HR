@@ -38,7 +38,7 @@
                 <div class="btn" id="hide_employee_id_input" style="width: 220px; height: 50px; text-align: center;">
                     Enter employee ID: 
                     <form action="/get_employee_details" method="POST" >
-                        <input type="text" name="employeeID" placeholder="Employee ID" style="text-align: center;" required>
+                        <input type="text" name="employeeID" placeholder="Employee ID" style="text-align: center;" autofocus required>
                         <button type="submit" id="retrieve_emp_data">Search</button>
                     </form>
                 </div>
@@ -76,8 +76,8 @@
                         <form id="form_table" action="/add_employee" method="post" enctype="multipart/form-data">
                         <div>
                             <div class="row">
-                            <label for="firstName" autofocus="autofocus">First Name:</label>
-                            <input type="text" id="firstName" name="firstName" required>
+                            <label for="firstName" >First Name:</label>
+                            <input type="text" id="firstName" name="firstName" autofocus="autofocus" required>
                             <label for="middleName">Middle Name:</label>
                             <input type="text" id="middleName" name="middleName" required>
                             </div>
@@ -91,7 +91,7 @@
 
                             <div class="row">
                                 <label for="phone">Phone Number:</label>
-                                <div class="phone_style"><input type="tel" id="phone" name="phoneNumber" class="form-control" placeholder="Enter Tel..." required>
+                                <div><input type="tel" id="phone" name="phoneNumber" class="form-control" placeholder="e.g. 07030000000" required>
                                 </div>
                                 <label for="address">Address:</label>
                                 <input type="text" id="address" name="address" required>
@@ -99,7 +99,7 @@
 
                             <div class="row">
                                 <label for="nationality">Nationality:</label>
-                                <select id="nationality" name="nationality" required>
+                                <select id="nationality" name="nationality" value = "">
                                     <option value="">-- select one --</option>
                                     <option value="afghan">Afghan</option>
                                     <option value="albanian">Albanian</option>
@@ -230,7 +230,8 @@
                                     <option value="new zealander">New Zealander</option>
                                     <option value="ni-vanuatu">Ni-Vanuatu</option>
                                     <option value="nicaraguan">Nicaraguan</option>
-                                    <option value="nigerian">Nigerian</option>                                    <option value="nigerian">Nigerian</option>
+                                    <option value="nigerian">Nigerian</option>
+                                    <option value="nigerien">Nigerien</option>
                                     <option value="north korean">North Korean</option>
                                     <option value="northern irish">Northern Irish</option>
                                     <option value="norwegian">Norwegian</option>
@@ -293,17 +294,18 @@
                                     <option value="yemenite">Yemenite</option>
                                     <option value="zambian">Zambian</option>
                                     <option value="zimbabwean">Zimbabwean</option>
-                                </select>
+                                  </select>
                                 </select><br>
                                 <label for="state">State of Origin:</label>
-                                <select id="state" name="stateOfOrigin" required>
+                                <select id="state" name="stateOfOrigin">
                                     <option value="">-- select one --</option>
                                     <option value="Imo">Imo</option>
                                     <option value="Enugu">Enugu</option>
                                     <option value="Rivers">Rivers</option>
                                     <option value="Akwa Ibom">Akwa Ibom</option>
                                 </select>
-                            </div>
+                                </div>
+    
 
                             <div class="row">  
                                 <label for="emp_id">Employee ID:</label>
@@ -321,7 +323,7 @@
 
                             <div class="row">
                                 <label for="salary">Salary:</label>
-                                <input type="number" id="salary" name="salary" required>
+                                <input type="number" min="0" max="9000000000" id="salary" name="salary"  required>
                                 <label for="branch">Branch:</label>
                                 <select type="text" id="branch" name="branch">
                                     <option value="">-- select one --</option>
@@ -338,18 +340,17 @@
                                     <option value="Finance">Finance</option>
                                 </select>
                                 <label for="dateEmp">Date of Employement:</label>
-                                <input type="date" id="dateEmp" name="DateOfEmployment" required>
+                                <input type="date" class="date" id="dateEmp" name="DateOfEmployment" required>
                             </div>
 
                             <div class="row">
                                 <label for="dob">Date of Birth:</label>
-                                <input type="date" id="dob" name="dateOfBirth" required>
+                                <input type="date" class="date" id="dob" name="dateOfBirth" required>
                                 <label for="sex">Gender:</label>
                                 <select id="sex" name="gender" required>
                                     <option value="">-- select one --</option>
                                     <option value="Female">Female</option>
                                     <option value="Male">Male</option>
-                                    <option value="Other">Other</option>
                                 </select>
                             </div>
 
@@ -367,7 +368,7 @@
                     <div id="register">
                         <form id="form_table" class="retrieve_update_data" action="/update_employee" method="POST" enctype="multipart/form-data">
                             <div class="row">
-                            <label for="firstName" autofocus="autofocus">First Name:</label>
+                            <label for="firstName">First Name:</label>
                             <input type="text" id="firstName" name="firstName">
                             <label for="middleName">Middle Name:</label>
                             <input type="text" id="middleName" name="middleName">
@@ -382,7 +383,7 @@
     
                         <div class="row">
                             <label for="phone">Phone Number:</label>
-                            <div class="phone_style2"><input type="tel" id="phone" name="phoneNumber" value = "" class="form-control" placeholder="ex. +234xxxxxxxx"></div>
+                            <div><input type="tel" id="phone" name="phoneNumber" value = "" class="form-control" placeholder="e.g. 07030000000"></div>
                             <label for="address">Address:</label>
                             <input type="text" id="address" name="address">
                         </div>
@@ -612,7 +613,7 @@
     
                         <div class="row">
                             <label for="salary">Salary:</label>
-                            <input type="number" id="salary" name="salary">
+                            <input type="number" min="0" max="9000000000" id="salary" name="salary">
                             <label for="branch">Branch:</label>
                             <select type="text" id="branch" name="branch">
                                 <option value="">-- select one --</option>
@@ -629,12 +630,12 @@
                                 <option value="Finance">Finance</option>
                             </select>
                             <label for="dateEmp">Date of Employement:</label>
-                            <input type="date" id="dateEmp" name="DateOfEmployment" value = "">
+                            <input type="date" class="date" id="dateEmp" name="DateOfEmployment" value = "">
                         </div>
     
                         <div class="row">
                             <label for="dob">Date of Birth:</label>
-                            <input type="date" id="dob" name="dateOfBirth">
+                            <input type="date" class="date" id="dob" name="dateOfBirth">
                             <label for="gender">Gender:</label>
                             <select id="gender" name="gender">
                                 <option value="">-- select one --</option>
