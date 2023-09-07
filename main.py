@@ -2,8 +2,8 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash,
 from flask_login import login_required, current_user
 from sqlalchemy import or_
 from datetime import datetime
-from .model_user import User, Employee
-from . import db
+from model_user import User, Employee
+from create_app import db
 
 main = Blueprint('main', __name__)
 
