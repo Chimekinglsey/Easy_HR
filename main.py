@@ -7,6 +7,7 @@ from create_app import db
 
 main = Blueprint('main', __name__)
 
+
 @main.route('/')
 def landing_page():
     return render_template('landing_page.html')

@@ -36,6 +36,7 @@
                     {% endwith %}
                     <form action="/login" method="POST">
                         <p class="login_text">LOGIN</p>
+                        {{ next }}
                         <p>Email</p>
                         <input type="email" value="" placeholder="Johndoe@example.com" name="official_email">
                         <p>Password</p>

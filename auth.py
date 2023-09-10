@@ -8,45 +8,45 @@ from create_app import db
 
 auth = Blueprint('auth', __name__)
 
-@auth.before_request
-def before_request():
-    """routes user to intended page after login is complete"""
-    if not current_user.is_authenticated and request.endpoint and request.endpoint != 'login':
-        session['next_url'] = request.endpoint
 
 @auth.route('/login')
 def login():
-    """login page"""
+    # Capture the 'next' query parameter from the URL
+    next_url = request.args.get('next')
+    
+    # Store it in the session
+    if next_url:
+        session['next_url'] = next_url
+
     return render_template('landing_page.html')
+
 
 @auth.route('/login', methods=['POST'])
 def login_post():
-    # this validates user credentials and grants or denies access based on authenticity|
-    
     official_email = request.form.get('official_email')
     password = request.form.get('password')
     remember = True if request.form.get('remember') else False
 
     user = User.query.filter_by(official_email=official_email).first()
 
-    # check if the user actually exists
-    # take the user-supplied password, hash it, and compare it to the hashed password in the database
     if not user:
-        # if user doesn't exist, reload the page
         flash('User not found. Check your details and try again.')
         return redirect(url_for('auth.login'))
     
     if not check_password_hash(user.password, password):
-        # if user doesn't exist or password is wrong, reload the page
         flash('Incorrect password. Please check your login details and try again.')
         return redirect(url_for('auth.login')) 
+
+
+    next_url = session.pop('next_url', None)
     
-    login_user(user, remember=remember)
-    next_url = session.get('next_url')
     if next_url:
-        session.pop('next_url')
-        return redirect(next_url)
-    return redirect(url_for('main.dashboard'))
+        next_url = next_url.lstrip('/')
+        login_user(user, remember=remember)
+        return redirect(url_for(f'main.{next_url}'))
+    else:
+        login_user(user, remember=remember)
+        return redirect(url_for('main.dashboard'))
 
 @auth.route('/signup')
 def signup():
