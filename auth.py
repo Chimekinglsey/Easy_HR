@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, session, redirect, url_for
 from flask import request, flash
-from flask_login import login_user, login_required, logout_user
+from flask_login import login_user, login_required, logout_user, current_user
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from model_user import User
@@ -8,14 +8,20 @@ from create_app import db
 
 auth = Blueprint('auth', __name__)
 
+@auth.before_request
+def before_request():
+    """routes user to intended page after login is complete"""
+    if not current_user.is_authenticated and request.endpoint and request.endpoint != 'login':
+        session['next_url'] = request.endpoint
 
 @auth.route('/login')
 def login():
+    """login page"""
     return render_template('landing_page.html')
 
 @auth.route('/login', methods=['POST'])
 def login_post():
-    # login code goes here
+    # this validates user credentials and grants or denies access based on authenticity|
     
     official_email = request.form.get('official_email')
     password = request.form.get('password')
@@ -35,20 +41,21 @@ def login_post():
         flash('Incorrect password. Please check your login details and try again.')
         return redirect(url_for('auth.login')) 
     
-    # if the user doesn't exist or password is wrong, reload the page
-
-    # if the above check passes, then we know the user has the right credentials
     login_user(user, remember=remember)
-
+    next_url = session.get('next_url')
+    if next_url:
+        session.pop('next_url')
+        return redirect(next_url)
     return redirect(url_for('main.dashboard'))
 
 @auth.route('/signup')
 def signup():
+    # renders sign up page to take user information
     return render_template('sign_up_page.html')
 
 @auth.route('/signup', methods=['POST'])
 def signup_post():
-    ###
+    # collects valid user information and stores it in the database
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
     DOB = request.form.get('DOB')

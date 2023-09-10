@@ -177,6 +177,10 @@ footer ul a{
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
+    z-index: 9999;
+}
+.hide {
+    /* display:none; */
 }
 .flash_messages a {
     color: white;

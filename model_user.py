@@ -1,10 +1,12 @@
+# model for user and employee tables
 from flask_login import UserMixin
 from datetime import date, datetime
 from create_app import db
 
 
 class User(UserMixin, db.Model):
-    id = db.Column(db.Integer, primary_key=True) # primary keys are required by SQLAlchemy
+    """Attributes of each User object"""
+    id = db.Column(db.Integer, primary_key=True) # primary key unique for each  user
     first_name = db.Column(db.String(30))
     last_name = db.Column(db.String(30))
     DOB = db.Column(db.Date, default=date.today)
@@ -12,12 +14,13 @@ class User(UserMixin, db.Model):
     official_email = db.Column(db.String(100), unique=True)
     company_size = db.Column(db.Enum('1 - 50', '51 - 100', '101 - 200', '201 - 500', 'Above 500'), nullable=False)
     password = db.Column(db.String(100))
+    employees = db.relationship('Employee', backref='user', lazy=True, cascade="all, delete-orphan") # allows many employees to associate to a user
 
-    employees = db.relationship('Employee', backref='user', lazy=True, cascade="all, delete-orphan")
 
 class Employee(db.Model):
-    id = db.Column(db.Integer, primary_key=True) #
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    """Attributes of each employee managed by a user"""
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) # associates an employee to a particular user
     firstName = db.Column(db.String(30), nullable=False)
     middleName = db.Column(db.String(30), nullable=False)
     lastName = db.Column(db.String(30), nullable=False)
