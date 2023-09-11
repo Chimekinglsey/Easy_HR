@@ -238,3 +238,41 @@ def view_employee(id_or_name):
             return render_template('view_employee.html', view_employees=employee_data, write_up=write_up)
     else:
         return render_template('view_employee.html', view_employees="None")
+
+@main.route('/manage_department', strict_slashes=False, methods=['GET'])
+@login_required
+def manage_department():
+    """View all department for the current user."""
+    render_template('manage_department.html')
+
+# @main.route('/add_department', strict_slashes=False, methods=['POST'])
+# @login_required
+# def add_department():
+
+# @main.route('/view_department', strict_slashes=False, methods=['GET'])
+# @login_required
+# def view_department():
+#     """View all department for the current user."""
+#     render_template('view_department.html')
+
+@main.route('/manage_branch', strict_slashes=False, methods=['GET'])
+@login_required
+def manage_branch():
+    """View all branch for the current user."""
+    render_template('manage_branch.html')
+
+# @main.route('/add_branch', strict_slashes=False, methods=['POST'])
+# @login_required
+# def add_branch():
+
+# @main.route('/view_branch', strict_slashes=False, methods=['GET'])
+# @login_required
+# def view_branch():
+#     """View all branch for the current user."""
+#     render_template('view_branch.html')
+
+@main.route('/manage_payrole', strict_slashes=False, methods=['GET'])
+@login_required
+def manage_payrole():
+    """View all payrole for the current user."""
+    render_template('manage_payrole.html')
