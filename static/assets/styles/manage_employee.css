@@ -25,13 +25,15 @@ body {
     border-radius: 5px;
     margin: 20px 0;
     padding: 20px;
-    background-color: #ededed;
+    /* width: 200px; */
+    background-color: #e0fbc7;
 }
 /* 
 ADD NEW EMPLOYEE CSS
 */
 #manage_employee_add {
     display: flex;
+    flex: 3;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -41,7 +43,7 @@ ADD NEW EMPLOYEE CSS
 }
 #register{ /*This css is used for both add_new employee and update_employee*/
     display: flex;
-    flex: 3;
+    flex: "";
     height: auto;
     margin-right: auto;
     margin-left: auto;
@@ -66,14 +68,7 @@ ADD NEW EMPLOYEE CSS
     height: 70px;
     width: 100%;
 }
-/* updated the phone field for add_emp*/
-.row .phone_style{
-    margin:0;
-    margin-left:10px;
-}
-.row .phone_style input{
-   width: 98%;
-}
+
 /* 
 UPDATE EMPLOYEE CSS
 */
@@ -110,7 +105,7 @@ UPDATE EMPLOYEE CSS
 }
 
 
-.right {
+.right, .right2{
     display: flex;
 }
 /* Adjusted buttons for add and update employee */
@@ -122,6 +117,7 @@ UPDATE EMPLOYEE CSS
     height: 3em;
 }
 
+
 #cancel_btn, #reset {
     margin: 20px 120px 20px 20px;
     background-color: rgb(175, 16, 16);
@@ -130,16 +126,31 @@ UPDATE EMPLOYEE CSS
 #cancel_btn:hover, #reset:hover {
     background-color: rgb(212, 127, 127);
 }
+.right2 #cancel_btn, .right2 #update_btn{
+        display: inline-block;
+        padding: auto;
+        margin-top: 5%;
+}
+.right2 #cancel_btn{
+    margin-left: 25%;
+    margin-right: 13%;
+}
+/* pop up and view_employee.html css styling */
+#manage_employee_view_v2 {
+    display: flex;
+    /* flex: 3; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 0 20px;
+    background-color: #61676b;
+    width: auto;
+}
 
-/* updated the phone field for update_emp*/
-.row .phone_style2{
-    margin:0;
-}
-.row .phone_style input{
-   width: 98%;
-}
 /* 
-VIEW EMPLOYEE CSS
+VIEW EMPLOYEE CSS for manage_employee.html
 */
 #manage_employee_view {
     display: none;
@@ -153,7 +164,7 @@ VIEW EMPLOYEE CSS
     background-color: #61676b;
     width: auto;
 }
-#manage_employee_view .form_guide{
+.form_guide{
     flex: 1;
     text-align: center;
     border-radius: 5px 5px 0 0;
@@ -162,7 +173,7 @@ VIEW EMPLOYEE CSS
     margin: 0;
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
-    width: 102.2%;
+    width: 100%;
     margin-bottom: 5px;
     background-color: #61676b;
     color: white;
@@ -187,12 +198,12 @@ VIEW EMPLOYEE CSS
     flex: 3;
     flex-direction: column;
     height: auto;
-    width: auto;
     padding: 20px;
     font: 16px Helvetica, Impact;
     border-radius: 3px;
     place-items: center;
     margin:auto;
+    width: 80%;
     background-color: #ededed; /* Added a background color */
 }
 #form_table{
@@ -253,7 +264,7 @@ VIEW EMPLOYEE CSS
         padding: 5px;
     }
 
-    #select_view, #register {
+     #register {
         /* padding: 0px; */
         width: auto;
         margin-left: 0px;
@@ -304,7 +315,7 @@ VIEW EMPLOYEE CSS
         padding: 0px;
     }
 
-    #select_view, #register {
+  #register {
         /* padding: 0px; */
         width: auto;
         margin-left: auto;
@@ -315,4 +326,60 @@ VIEW EMPLOYEE CSS
         width: 97%;
     }
 
+}
+/* 
+    style for view function
+*/
+#employee_data{
+    display: table;
+    text-align: center;
+    margin: auto;
+}
+#employee_data .tr{
+display: table-row !important;
+}
+#employee_data #title, #title h4{
+    text-align: center !important;
+    border-bottom: 2px solid red;
+    display: block; 
+    text-align: center;
+}
+#employee_data .tr .td{
+    display: table-cell !important;
+    text-align: left !important;
+    padding-right: 30px !important;
+    padding-left: 10px !important;
+}
+.view_name_style {
+    display: block;
+    text-align: center;
+    background-color: #61676b;
+    padding: 10px;
+    color: white;
+}
+#archive_btn {
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: #dfdfd4;
+    /* box-shadow:  0 0 0 1px #ee3232; */
+    color: black !important;
+    border-radius: 4px;
+    margin-left: 15px;
+}
+#register .flash_messages {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0 0px;
+    background-color: #1a0909;
+    width: auto;
+    color: white;
+    border-radius: 5px;
+}
+#register .flex_row {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
 }

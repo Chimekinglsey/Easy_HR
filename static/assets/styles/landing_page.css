@@ -2,13 +2,22 @@
 body {
     /* min-height: 90vh; */
     margin: 0;
-
-
 }
 
+.remember_checkbox {
+    display: inline;
+    margin: 0;
+    padding-left: 0;
+}
+#checkbox1 {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    width: 20px !important;
+}
 /* Main Container Styles */
 #container {
-    background-color: #c1c1c2;
+    background-color: #e6e6f8;
     padding: 10px;
     margin: 20px 0 10px 0;
     overflow: auto;
@@ -56,7 +65,7 @@ body {
     overflow: auto;
     margin: 50px auto;
     border-radius: 3px;
-    background-color: #c1c1c2;
+    background-color: #e6e6f8;
 }
 @media (max-height: 500px) {
     #login {
@@ -129,7 +138,7 @@ div input {
     width: auto;
     height: fit-content;
     border-radius: 3px;
-    background-color: rgba(210, 227, 238, 0.5); /* Your background color with opacity */  
+    background-color: #dbdbdb;
 }
 #welcome_content .content{
     width: auto;

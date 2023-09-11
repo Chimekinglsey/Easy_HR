@@ -5,6 +5,19 @@ body {
     background-image: linear-gradient(to right, rgb(165, 199, 165), rgb(102, 102, 104));
 }
 
+/* Default styling for flasks-flash messages */
+.red_background {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.red_background a {
+    color: white;
+    font-weight: bold;
+}
 
 /* Default setting for header */
 #header {
@@ -118,7 +131,15 @@ button:hover, .btn a:hover {
      height: 28px;
      width: 90%;
      border-radius: 3px;
-     text-align: center;
+     outline: 0.5px solid black;
+     /* outline: none; */
+     /* text-align: center; */
+ }
+ .active {
+    border: 1px solid transparent; /* Hide the default border */
+    box-shadow: 0 0px 20px rgb(0, 0, 0); /* Blue blurry border */
+
+    transition: box-shadow 0.3s ease-in-out;
  }
  .row select {
      width: 95%;
@@ -146,4 +167,24 @@ footer ul a{
     text-decoration: none;
     padding-right: 30px;
     color: white;
+}
+
+.flash_messages {
+    opacity: 1;
+    transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
+    background-color: red;
+    color: rgb(239, 231, 231);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    z-index: 9999;
+}
+
+.flash_messages a {
+    color: white;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }

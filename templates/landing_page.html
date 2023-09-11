@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-    <script src="https://apis.google.com/js/api:client.js"></script>    <meta charset="UTF-8">
+    <!-- <script src="https://apis.google.com/js/api:client.js"></script>    <meta charset="UTF-8"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyHR</title>
     <link rel="icon" href="../static/assets/images/icon.png" type="image/img">
         <link rel="stylesheet" href="../static/assets/styles/default.css">
         <link rel="stylesheet" href="../static/assets/styles/landing_page.css">
+        <script src="../static/assets/scripts/default.js"></script>
 
 </head>
 <body>
@@ -26,12 +27,28 @@
         <div id="login_container">
             <div id="login">
                 <div>
-                    <p class="login_text">LOGIN</p>
-                    <p>Email</p>
-                    <input type="email" value="" placeholder="Johndoe@example.com">
-                    <p>Password</p>
-                    <input type="password" value="" placeholder="Password123++"><br>
-                    <button class="login_btn btn"><a href="../html/dashboard.html">Login</a></button>
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <div class="red_background">
+                            {{ messages[0] }}
+                        </div>
+                    {% endif %}
+                    {% endwith %}
+                    <form action="/login" method="POST">
+                        <p class="login_text">LOGIN</p>
+                        {{ next }}
+                        <p>Email</p>
+                        <input type="email" value="" placeholder="Johndoe@example.com" name="official_email">
+                        <p>Password</p>
+                        <input type="password" value="" placeholder="Password123++" name="password"><br>
+                        <div class="remember_checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" name="remember" id="checkbox1">
+                                Remember me
+                            </label>
+                        </div>
+                        <button class="login_btn btn" type="submit">Login</button>
+                    </form>
                     <div class="hr">
                         <hr>
                         <h4>OR</h4>
@@ -48,28 +65,28 @@
                     </div>
                       </div>
                     <!-- ends here.  -->
-                    <div id="forgot_passw"><a href="#">Forgot Password?</a></div>
+                    <div id="forgot_passw"><a href="{{ url_for('auth.signup') }}">Forgot Password?</a></div>
                 </div>
                 <div id="register_btn">
                     <p>Don't have an account yet?</p>
-                    <button class="register_btn btn" ><a href="../html/sign_up_page.html">Register</a></button>
+                    <button class="register_btn btn" ><a href="{{ url_for('auth.signup') }}">Register</a></button>
                 </div>
             </div>
             <div id="welcome_img">
-                <img id="side_image" class="side1" src="../images/enjoy_ease.jpg" alt="">
+                <img id="side_image" class="side1" src="../static/assets/images/enjoy_ease.jpg" alt="">
             </div>
             <div id="welcome_img">
-                <img id="side_image" class="side2" src="../images/save_more_time.jpg" alt="">
+                <img id="side_image" class="side2" src="../static/assets/images/save_more_time.jpg" alt="">
             </div>
             <div id="welcome_img">
-                <img id="side_image" class="side3" src="../images/trademark.jpg" alt="">
+                <img id="side_image" class="side3" src="../static/assets/images/trademark.jpg" alt="">
             </div>
         </div>
         <div id="welcome_content">
             <div class="center_header"><h1 class="inline-block">Welcome to E<p class="green">as</p>yH<p class="green">R</p></h1></div>
             <div class="content">
                 <div class="welcome_img">
-                    <img src="../images/partner_with_us.jpeg" alt="">
+                    <img src="../static/assets/images/partner_with_us.jpeg" alt="">
                 </div>
                 <h2 class="center"> Your Ultimate Employee Management Solution</h2>
                 <p class="center">In the fast-paced world of business, managing your workforce efficiently is not just a necessity; it's the key to success. That's where EasyHR steps in a cutting-edge web application meticulously crafted to elevate your employee management to unparalleled heights.</p>
