@@ -2,11 +2,22 @@ body {
     margin: 0px;
     width: 100%;
     min-width: 700px;
+    background-color: blue;
 }
 
-.work_in_progess {
+
+.p_container {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#work_in_progress {
     height: 500px;
     width: 80%;
-    border: 2px solid red;
     background-image: url("../images/wip.webp");
+    background-repeat: no-repeat;
+    background-size: 80% 100%;
+    background-position: center; */
 }
