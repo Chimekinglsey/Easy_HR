@@ -2,7 +2,6 @@ body {
     margin: 0px;
     width: 100%;
     min-width: 700px;
-    background-color: blue;
 }
 
 
@@ -19,5 +18,5 @@ body {
     background-image: url("../images/wip.webp");
     background-repeat: no-repeat;
     background-size: 80% 100%;
-    background-position: center; */
+    background-position: center;
 }

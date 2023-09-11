@@ -11,6 +11,15 @@ main = Blueprint('main', __name__)
 def landing_page():
     return render_template('landing_page.html')
 
+@main.route('/about')
+def about():
+    return render_template('about.html')
+
+@main.route('/privacy')
+def privacy():
+    return render_template('privacy.html')
+
+
 @main.route('/dashboard')
 @login_required
 def dashboard():
@@ -32,6 +41,11 @@ def dashboard():
 
     return render_template('dashboard.html', user=current_user.first_name,
                            employee=employee, emp_count=count1)
+
+@main.route('/work_in_progress')
+@login_required
+def work_in_progress():
+    return render_template('work_in_progress.html')
 
 @main.route('/manage_emp')
 @login_required
