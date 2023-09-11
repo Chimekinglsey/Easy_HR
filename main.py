@@ -19,6 +19,13 @@ def about():
 def privacy():
     return render_template('privacy.html')
 
+@main.route('/terms')
+def terms():
+    return render_template('terms_of_use.html')
+
+@main.route('/contact')
+def contact():
+    return render_template('contact.html')
 
 @main.route('/dashboard')
 @login_required
