@@ -5,6 +5,7 @@ from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from model_user import User
 from create_app import db
+import re
 
 auth = Blueprint('auth', __name__)
 
@@ -53,6 +54,20 @@ def signup():
     # renders sign up page to take user information
     return render_template('sign_up_page.html')
 
+def is_valid_password(password):
+    # Check if the password meets the criteria
+    if (
+        len(password) >= 8 and
+        re.search(r'[a-z]', password) and  # At least one lowercase letter
+        re.search(r'[A-Z]', password) and  # At least one uppercase letter
+        re.search(r'\d', password) and     # At least one digit (number)
+        re.search(r'[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]', password)  # At least one special character
+    ):
+        return True
+    else:
+        return False
+
+
 @auth.route('/signup', methods=['POST'])
 def signup_post():
     # collects valid user information and stores it in the database
@@ -63,6 +78,7 @@ def signup_post():
     official_email = request.form.get('official_email')
     company_size = request.form.get('company_size')
     password = request.form.get('password')
+    passwordII = request.form.get('password2')
 
     # DOB = datetime.strptime(DOB, '%Y-%m-%d').date()
 
@@ -72,6 +88,14 @@ def signup_post():
         flash('Email address already exists')
         return redirect(url_for('auth.signup'))
         # return 'Email address already exists'
+    """check if a password is valid"""
+    if not is_valid_password(password): # if a user is found, we want to redirect back to signup page so user can try again
+        flash('password must be a minimum of 8 character including a lowercase, an upppercase, a number and a special character')
+        return redirect(url_for('auth.signup'))
+    # check password matches
+    # if password != passwordII:
+    #     flash('passwords does not match')
+    #     return redirect(url_for('auth.signup'))
     
     # create a new user with the form data. Hash the password so plaintext version isn't saved.
     new_user = User(first_name=first_name, last_name=last_name, DOB=DOB,

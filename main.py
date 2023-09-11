@@ -87,7 +87,7 @@ def add_emp():
         db.session.add(new_employee)
         db.session.commit()
         return redirect(url_for('main.manage_emp'))
-    return url_for('main.manage_emp')
+    return redirect(url_for('main.manage_emp'))
 
 
 # @main.route('/get_employee_details', strict_slashes=False, methods=['GET', 'POST'])
