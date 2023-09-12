@@ -1,9 +1,9 @@
 body {
     min-width: 500px !important;
 }
-#header {
+/* #header {
     text-align: left !important;
-}   
+}    */
 #container {
     display: grid;
     place-items: center;

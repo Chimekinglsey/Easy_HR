@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyHR</title>
     <link rel="icon" href="../static/assets/images/icon.png" type="image/img">
-    <link rel="stylesheet" href="../static/assets/styles/default.css">
     <link rel="stylesheet" href="../static/assets/styles/sign_up_page.css">
+    <link rel="stylesheet" href="../static/assets/styles/default.css">
+    
 </head>
 <body>
     <header id="header">
-        <img src="../static/assets/images/icon.png" alt="EasyHR">
-
+        <div class="image"><img src="../static/assets/images/icon.png" alt="EasyHR"></div>
+        <div class="ul">
+            <ul>
+                <a href="{{ url_for('main.landing_page') }}" style="margin: auto;">Back Home</a>
+                <!-- <a href="#">Partnerships</a>
+                <a href="#">Contact</a> -->
+            </ul>
+        </div> 
     </header>
      <div id="container">
         <div id="register">
