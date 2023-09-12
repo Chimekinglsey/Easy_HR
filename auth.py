@@ -9,6 +9,7 @@ import re
 
 auth = Blueprint('auth', __name__)
 
+
 @auth.route('/login')
 def login():
     # Capture the 'next' query parameter from the URL
@@ -77,7 +78,7 @@ def signup_post():
     official_email = request.form.get('official_email')
     company_size = request.form.get('company_size')
     password = request.form.get('password')
-    passwordII = request.form.get('password2')
+    # passwordII = request.form.get('password2')
 
     # DOB = datetime.strptime(DOB, '%Y-%m-%d').date()
 

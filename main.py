@@ -27,6 +27,7 @@ def terms():
 def contact():
     return render_template('contact.html')
 
+
 @main.route('/dashboard')
 @login_required
 def dashboard():
@@ -54,6 +55,25 @@ def dashboard():
 def manage_emp():
     employee = None
     return render_template('manage_employee.html', employee=employee)
+
+
+@main.route('/manage_dept')
+@login_required
+def manage_dept():
+    #this route will implement management of employees by department 
+    return render_template('work_in_progress.html')
+
+@main.route('/manage_branch')
+@login_required
+def manage_branch():
+    #this route will implement management of employees for different branches of an organization
+    return render_template('work_in_progress.html')
+
+@main.route('/manage_payroll')
+@login_required
+def manage_payroll():
+    #this route will implement management of employees payroll, promotions and other finance related activities
+    return render_template('work_in_progress.html')
 
 @main.route('/add_employee', strict_slashes=False, methods=['GET', 'POST'])
 @login_required
@@ -104,35 +124,6 @@ def add_emp():
         return redirect(url_for('main.manage_emp'))
     return url_for('main.manage_emp')
 
-
-# @main.route('/get_employee_details', strict_slashes=False, methods=['GET', 'POST'])
-# @login_required
-# def get_employee_details():
-#     if request.method == 'POST':
-#         # Retrieve the employee ID from the form
-#         # employeeID = request.form.get("employeeID")
-#         data = request.get_json()  # Get JSON data from the request
-#         employeeID = data.get("employeeID")
-
-#         # Query the database for the employee with the employeeID for the current user
-#         # employee_list = current_user.employees
-#         # for employee in employee_list:
-#         #     if employee.employeeID == employeeID:
-#         #         return render_template('manage_employee.html', employee=employee)
-
-
-#         employee = Employee.query.filter_by(employeeID=employeeID, user_id=current_user.id).first()
-
-#         # Check if the employee exists and belongs to the currently logged-in user
-#         if not employee:
-#             flash('Employee does not exist')
-#             return redirect(url_for('main.manage_emp'))
-#         print("Employee:", employee)
-        
-#         # Return the employee details to the page
-    
-#         return render_template('manage_employee.html', employee=employee)
-#     return render_template('manage_employee.html')
 
 @main.route('/get_employee_details', strict_slashes=False, methods=['POST'])
 @login_required
