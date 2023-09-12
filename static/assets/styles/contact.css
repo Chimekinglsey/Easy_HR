@@ -2,7 +2,7 @@ body {
     margin: 0px;
     width: 100%;
     min-width: 888px;
-
+    background-image: linear-gradient(to right, rgb(230, 238, 230), rgb(168, 168, 172));
 }
 
 #devs {

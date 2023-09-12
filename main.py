@@ -27,6 +27,21 @@ def terms():
 def contact():
     return render_template('contact.html')
 
+@main.route('/products')
+def products():
+    #this route will describes all products provided by EasyHR
+    return render_template('work_in_progress.html')
+
+@main.route('/resources')
+def resources():
+    #this route will describe open source resources provided by EasyHR
+    return render_template('work_in_progress.html')
+
+@main.route('/partnership')
+def partnership():
+    #this route will describe our business partnerships 
+    return render_template('work_in_progress.html')
+
 
 @main.route('/dashboard')
 @login_required
