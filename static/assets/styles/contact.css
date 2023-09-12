@@ -4,6 +4,9 @@ body {
     min-width: 888px;
     background-image: linear-gradient(to right, rgb(230, 238, 230), rgb(168, 168, 172));
 }
+header{
+    display: none;
+}
 
 #devs {
     margin-top: 0px;
