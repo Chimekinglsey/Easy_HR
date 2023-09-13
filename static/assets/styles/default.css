@@ -187,7 +187,9 @@ footer a:hover{
     border-radius: 5px;
     padding: 10px;
     margin: 5px;
+    z-index: 9999;
 }
+
 .flash_messages a {
     color: white;
 }

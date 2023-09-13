@@ -78,6 +78,7 @@ def signup_post():
     official_email = request.form.get('official_email')
     company_size = request.form.get('company_size')
     password = request.form.get('password')
+
     # passwordII = request.form.get('password2')
 
     # DOB = datetime.strptime(DOB, '%Y-%m-%d').date()
