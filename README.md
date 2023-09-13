@@ -5,13 +5,18 @@ It provides a platform for managing employee data, payroll, leave requests, and 
 EasyHR aims to simplify HR tasks, making it easier for organizations to manage their workforce efficiently.
 
 ### Features
-**Employee Record** Management: EasyHR makes it easy to create, update, and manage employee records. You can quickly add new employees, update their contact information, and track their employment history.
-**Payroll Management**: EasyHR makes it easy to manage payroll. You can easily create and process payroll, and generate reports on payroll expenses.
-**Leave Management**: EasyHR makes it easy to track employee leaves. You can easily create and approve leave requests, and generate reports on leave usage.
-**Employee Directory**: EasyHR provides a central repository for employee contact information. This makes it easy to find the contact information of any employee in your organization.
-**Security:** EasyHR is a secure application that complies with industry standards. Your employee data is safe and secure with EasyHR.
-
-**Performance Evaluation:** Performance Evaluation is a critical feature in EasyHR that allows organizations to assess and track the performance of their employees.
+# Employee Record Management
+EasyHR makes it easy to create, update, and manage employee records. You can quickly add new employees, update their contact information, and track their employment history.
+# Payroll Management
+EasyHR makes it easy to manage payroll. You can easily create and process payroll, and generate reports on payroll expenses.
+# Leave Management
+EasyHR makes it easy to track employee leaves. You can easily create and approve leave requests, and generate reports on leave usage.
+# Employee Directory
+EasyHR provides a central repository for employee contact information. This makes it easy to find the contact information of any employee in your organization.
+# Security
+EasyHR is a secure application that complies with industry standards. Your employee data is safe and secure with EasyHR.
+# Performance Evaluation
+Performance Evaluation is a critical feature in EasyHR that allows organizations to assess and track the performance of their employees.
 It provides a structured framework for setting performance goals, conducting regular reviews, and documenting employee achievements.
 With Performance Evaluation, managers can provide feedback, identify areas for improvement, and recognize outstanding contributions.
 This feature aids in fostering a culture of continuous improvement and helps organizations make data-driven decisions regarding promotions, bonuses, and professional development.
