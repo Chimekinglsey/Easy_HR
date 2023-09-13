@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up -EasyHR</title>
     <link rel="icon" href="../static/assets/images/icon.png" type="image/img">
-    <link rel="stylesheet" href="../static/assets/styles/sign_up_page.css">
     <link rel="stylesheet" href="../static/assets/styles/default.css">
+    <link rel="stylesheet" href="../static/assets/styles/sign_up_page.css">
     
 </head>
 <body>
@@ -18,7 +18,10 @@
                 <!-- <a href="#">Partnerships</a>
                 <a href="#">Contact</a> -->
             </ul>
-        </div> 
+        </div>
+        <div class="placeholder">
+            
+        </div>
     </header>
      <div id="container">
         <div id="register">
@@ -73,8 +76,8 @@
                 </div>
                 
                  <div class="center"> 
-                    <div><input type="reset" class="cancel_btn btn" value="Cancel">
-                   </div>
+                    <div><button class="cancel_btn btn"><a href="{{ url_for('auth.login') }}">Cancel</a></button>
+                </div>
                     <div class="right"><input type="submit" class="signUp_btn btn" value="Sign Up"> 
                     </div>
             </div>
@@ -89,7 +92,7 @@
         <a href="#">Terms of Service</a>
         <a href="#">Privacy Policy</a>
     </ul>
-    <p class="center"><i>Big Team 2023 &copy; <b>All Rights Reserved</b></i></p>
+    <p><i>Big Team 2023 &copy; <b>All Rights Reserved</b></i></p>
 </footer>
 </body>
 

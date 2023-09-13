@@ -3,6 +3,9 @@ body {
     /* min-height: 90vh; */
     margin: 0;
 }
+header .ul{
+    flex: 2;
+}
 
 .remember_checkbox {
     display: inline;

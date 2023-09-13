@@ -17,7 +17,7 @@ body {
 }
 /* Custom button */
 .btn {
-    width: auto;
+    width: 30%;
     min-width: 150px;
     margin: 5px auto 15px auto;
 }
