@@ -19,7 +19,7 @@ h2 {
     background-image: linear-gradient(to right, rgb(2, 2, 2), rgb(151, 182, 122));
 }
 header{
-    display: none;
+    display: none !important;
 }
 h4 {
     font-size: 20px;

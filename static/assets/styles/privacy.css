@@ -6,7 +6,7 @@ body {
 
 }
 header{
-    display: none;
+    display: none !important;
 }
 #privacy {
     height: fit-content;
