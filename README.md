@@ -1,20 +1,21 @@
-**Introduction**
+### Introduction
 
-*EasyHR is a powerful and user-friendly web application designed to streamline human resources management processes.
+EasyHR is a powerful and user-friendly web application designed to streamline human resources management processes.
 It provides a platform for managing employee data, payroll, leave requests, and more. 
 EasyHR aims to simplify HR tasks, making it easier for organizations to manage their workforce efficiently.
 
-**Features**
+### Features
 
-    * Employee Record Management: EasyHR makes it easy to create, update, and manage employee records. 
+    **Employee Record Management** EasyHR makes it easy to create, update, and manage employee records. 
     You can quickly add new employees, update their contact     information, and track their employment history.
-    * Payroll Management: EasyHR makes it easy to manage payroll. 
+    
+    Payroll Management: EasyHR makes it easy to manage payroll. 
     You can easily create and process payroll, and generate reports on payroll expenses.
-    * Leave Management: EasyHR makes it easy to track employee leaves.
+    Leave Management: EasyHR makes it easy to track employee leaves.
     You can easily create and approve leave requests, and generate reports on leave usage.
-    * Employee Directory: EasyHR provides a central repository for employee contact information.
+    Employee Directory: EasyHR provides a central repository for employee contact information.
     This makes it easy to find the contact information of any employee in your organization.
-    * Security: EasyHR is a secure application that complies with industry standards. 
+    Security: EasyHR is a secure application that complies with industry standards. 
     Your employee data is safe and secure with EasyHR.
     Certainly! Here are short descriptions for the two features:
 
