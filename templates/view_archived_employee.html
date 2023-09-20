@@ -43,21 +43,21 @@
                                 
                                 <p style="color: red; margin: 0px; padding: 0px;"><b> {{ write_up }}</b></p>
                                 <div id="view_employees">
-                                    {% if not view_employees %}
+                                    {% if not view_archived_employees %}
                                         <h2>No Data Found</h2>
                                     {% else %}
-                                            {% for item in view_employees %}
+                                            {% for item in view_archived_employees %}
                                             <div id="title" class="tr">
                                                 <h4 class="view_name_style"><b>Name</b>: {{ item.firstName }} {{ item.middleName }} {{ item.lastName }}  - <b>ID:</b> {{ item.employeeID }} 
-                                                    <button class="archive_btn" id="display_archive_form">Archive</button></h4>
+                                                    <button class="archive_btn" id="">Delete</button></h4>
                                             </div>
-                                            <form method="POST" action="/archive_employee/{{ item.employeeID }}" id="archive_form">
+                                            <!-- <form method="POST" action="/archive_employee/{{ item.employeeID }}" id="archive_form">
                                                 <label for="employeeID" >ID: </label>
                                                 <input type="text" id="employeeID" name="employeeID" value="{{ item.employeeID }}" required>
                                                 <label for="reason_for_archive">Reason: </label>
                                                 <input id="reason_for_archive" name="reason_for_archive" autofocus="autofocus" required>
                                                 <button class="archive_btn" id="" type="submit">Archive</button>
-                                            </form>
+                                            </form> -->
                                                     <form action="/view_employees" id="employee_data">
                                                     <div class="tr">
                                                         <span class="td"><b>Date Employed</b>: {{ item.DateOfEmployment }}</span>

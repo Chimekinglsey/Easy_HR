@@ -193,7 +193,7 @@ VIEW EMPLOYEE CSS for manage_employee.html
     background-color: rgb(97, 8, 8);
     color: white;
 }
-#select_view{ 
+#select_view, #archive_view { 
     display: flex;
     flex: 3;
     flex-direction: column;
@@ -205,6 +205,9 @@ VIEW EMPLOYEE CSS for manage_employee.html
     margin:auto;
     width: 80%;
     background-color: #ededed; /* Added a background color */
+}
+#archive_view {
+    margin-top: 15px;
 }
 #form_table{
     width: 700px;
@@ -357,7 +360,7 @@ display: table-row !important;
     padding: 10px;
     color: white;
 }
-#archive_btn {
+.archive_btn {
     display: inline-block;
     padding: 3px 10px;
     background-color: #dfdfd4;
@@ -382,4 +385,19 @@ display: table-row !important;
     justify-content: center;
     align-items: center;
     margin-right: 25px;
+}
+#archive_form {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 0px 10px;
+    background-color: #a59d9d;
+}
+
+/* archive function css */
+#manage_employee_archive{
+    margin-top: 15px;
 }

@@ -684,7 +684,48 @@
             </div>
         </div> 
         <div id="manage_employee_archive">
-            <h2>No Archived Data Yet</h2>
+            <div id="manage_employee_view_v2">
+                        <div id="archive_view" class="below">
+                                <p style="color: red; margin: 0px; padding: 0px;"><b> {{ write_up }}</b></p>
+                                <div id="view_employees">
+                                    {% if not view_archived_employees %}
+                                        <h2>No Data Found again</h2>
+                                    {% else %}
+                                            {% for item in view_archived_employees %}
+                                            <div id="title" class="tr">
+                                                <h4 class="view_name_style"><b>Name</b>: {{ item.firstName }} {{ item.middleName }} {{ item.lastName }}  - <b>ID:</b> {{ item.employeeID }} 
+                                                    <button class="archive_btn" id="">Delete</button></h4>
+                                            </div>
+                                                    <form action="/view_employees" id="employee_data">
+                                                    <div class="tr">
+                                                        <span class="td"><b>Date Employed</b>: {{ item.DateOfEmployment }}</span>
+                                                        <span class="td"><b>Department</b>: {{ item.department }}</span>
+                                                        <span class="td"><b>Email</b>: {{ item.email }}</span>
+                                                        <span class="td"><b>Level</b>: {{ item.level }}</span>
+                                                </div> 
+                                                <div class="tr"><span class="td"><b>Salary</b>: {{ item.salary }}</span>
+                                                        <span class="td"><b>Phone</b>: {{ item.phoneNumber }}</span>
+                                                        <span class="td"><b>Address</b>: {{ item.address }}</span>
+                                                        <span class="td"><b>Nationality</b>: {{ item.nationality }}</span>
+                                                    </div>
+                                                    <div class="tr"><span class="td"><b>State Of Origin</b>: {{ item.stateOfOrigin }}</span>
+                                                        <span class="td"><b>Branch</b>: {{ item.branch }}</span>
+                                                        <span class="td"><b>Date Of Birth</b>: {{ item.dateOfBirth }}</span>
+                                                        <span class="td"><b>Gender: </b>{{ item.gender }}</span>
+                                                    </div>
+                                                </tr>
+                                            </form>
+                                            {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="right">
+                                <input type="reset" class="btn" id="cancel_btn"    value="Archived">
+                                <a href="{{url_for('main.view_employees')}}"><input type="submit" class="btn" id="update_btn" value="View All"></a>
+                            </div>
+                                        
+                            </form>
+        </div> 
         </div>
     </div>
 </div>

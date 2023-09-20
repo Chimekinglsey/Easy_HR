@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash,
 from flask_login import login_required, current_user
 from sqlalchemy import or_
 from datetime import datetime
-from model_user import User, Employee
+from model_user import User, Employee, Employee_archive
 from create_app import db
 
 main = Blueprint('main', __name__)
@@ -261,3 +261,36 @@ def view_employee(id_or_name):
             return render_template('view_employee.html', view_employees=employee_data, write_up=write_up)
     else:
         return render_template('view_employee.html', view_employees="None")
+    
+@main.route('/archive_employee/<employeeID>', strict_slashes=False, methods=['GET', 'POST'])
+@login_required
+def archive_employee(employeeID):
+    """ """
+    # Query the database to find the employee by ID
+    employee_data = Employee.query.filter_by(employeeID=employeeID, user_id=current_user.id).first()
+    if employee_data:
+        reason_for_archive = request.form.get("reason_for_archive")
+        new_employee_archive = Employee_archive(user_id=employee_data.user_id, firstName=employee_data.firstName, middleName=employee_data.middleName,
+                                lastName=employee_data.lastName, email=employee_data.email, phoneNumber=employee_data.phoneNumber,
+                                address=employee_data.address, nationality=employee_data.nationality, stateOfOrigin=employee_data.stateOfOrigin,
+                                employeeID=employee_data.employeeID, level=employee_data.level, salary=employee_data.salary,
+                                branch=employee_data.branch, department=employee_data.department, DateOfEmployment=employee_data.DateOfEmployment,
+                                dateOfBirth=employee_data.dateOfBirth, gender=employee_data.gender, reason_for_archive=reason_for_archive)
+        
+        db.session.add(new_employee_archive)
+        db.session.delete(employee_data)
+        db.session.commit()
+        flash('Employee archived successfully')
+        return redirect(url_for('main.view_employees'))
+    else:
+        flash('An Error Occurred: "Employee data not found"')
+        return redirect(url_for('main.view_employees'))
+    
+@main.route('/view_archived_employees', strict_slashes=False, methods=['GET'])
+@login_required
+def view_archived_employees():
+    """     """
+    archived_employee_data = Employee_archive.query.filter_by(user_id=current_user.id).all()
+    write_up = f"Archived Employee List"
+
+    return render_template('manage_employee.html', view_archived_employees=archived_employee_data, write_up=write_up)

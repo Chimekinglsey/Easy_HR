@@ -201,4 +201,64 @@ const inputFields = document.querySelectorAll(".row input");
             inputField.classList.remove("active");
         });
     })
-}); 
+});
+
+
+// $(document).ready(function(){
+//     $('#display_archive_form').click(function() {
+//         // Check if the element is currently displayed
+//         if ($('#archive_form').css('display') === 'block') {
+//             // If displayed, hide it
+//             $('#archive_form').css('display', 'none');
+//         } else {
+//             // If hidden, display it
+//             $('#archive_form').css('display', 'block');
+//         };
+//     });
+// });
+
+//same as above but shorter
+$(document).ready(function(){
+    $('#display_archive_form').click(function() {
+        $('#archive_form').toggle();
+    });
+});
+
+
+
+// addEventListener('DOMContentLoaded', function(){
+//     const employeeSearchForm = document.getElementById('employeeSearchForm');
+//     const searchInput = document.getElementById('search_id');
+
+//     employeeSearchForm.addEventListener('submit', function (event) {
+//     event.preventDefault(); // Prevent the default form submission
+//     let searchValue = searchInput.value;
+    
+//     if (searchValue) {
+          
+//             const searchURL = `/view_employee/${searchValue}`;
+
+//             const popupWidth = 900;
+//             const popupHeight = 600;
+
+//             const screenWidth = window.screen.availWidth;
+//             const screenHeight = window.screen.availHeight;
+
+//             // Calculate adjusted dimensions to fit within the screen
+//             const adjustedWidth = Math.min(popupWidth, screenWidth);
+//             const adjustedHeight = Math.min(popupHeight, screenHeight);
+
+//             // Calculate the left and top positions to center the popup
+//             const leftPosition = (screenWidth - adjustedWidth) / 2;
+//             const topPosition = (screenHeight - adjustedHeight) / 2;
+
+//             // Define the final popup features
+//             const popupFeatures = `width=${adjustedWidth}, height=${adjustedHeight}, left=${leftPosition}, top=${topPosition}, resizable=yes, scrollbars=yes`;
+//             // Open searchURL in a pop-up window
+//             window.open(searchURL, 'popupWindow', popupFeatures);
+//     }
+//     else {
+//         alert('Please enter an employee ID');
+//     }
+//     });
+// })
