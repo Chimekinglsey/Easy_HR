@@ -49,7 +49,7 @@
                                             {% for item in view_employees %}
                                             <div id="title" class="tr">
                                                 <h4 class="view_name_style"><b>Name</b>: {{ item.firstName }} {{ item.middleName }} {{ item.lastName }}  - <b>ID:</b> {{ item.employeeID }} 
-                                                    <button class="archive_btn" id="display_archive_form">Archive</button></h4>
+                                                    <button class="archive_btn display_archive_form">Archive</button></h4>
                                             </div>
                                             <form method="POST" action="/archive_employee/{{ item.employeeID }}" id="archive_form">
                                                 <label for="employeeID" >ID: </label>

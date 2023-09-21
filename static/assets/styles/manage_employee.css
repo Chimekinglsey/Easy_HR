@@ -386,7 +386,7 @@ display: table-row !important;
     align-items: center;
     margin-right: 25px;
 }
-#archive_form {
+.archive_form {
     display: none;
     flex-direction: column;
     justify-content: center;

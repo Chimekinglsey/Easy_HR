@@ -90,10 +90,10 @@ def signup_post():
         return redirect(url_for('auth.signup'))
         # return 'Email address already exists'
     """check if a password is valid"""
-    if not is_valid_password(password): # if a user is found, we want to redirect back to signup page so user can try again
-        flash('password must be a minimum of 8 character including a lowercase, an upppercase, a number and a special character')
-        return redirect(url_for('auth.signup'))
-    # check password matches
+    # if not is_valid_password(password): # if a user is found, we want to redirect back to signup page so user can try again
+    #     flash('password must be a minimum of 8 character including a lowercase, an upppercase, a number and a special character')
+    #     return redirect(url_for('auth.signup'))
+    #  check password matches
     # if password != passwordII:
     #     flash('passwords does not match')
     #     return redirect(url_for('auth.signup'))

@@ -294,3 +294,17 @@ def view_archived_employees():
     write_up = f"Archived Employee List"
 
     return render_template('manage_employee.html', view_archived_employees=archived_employee_data, write_up=write_up)
+
+@main.route('/delete_employee/<emp_id>', methods=['GET','POST'])
+@login_required
+def delete_employee(emp_id):
+    """deletes an employee permanently"""
+    employee = Employee_archive.query.filter_by(employeeID=emp_id, user_id=current_user).first()
+    if employee:
+        db.session.delete(employee)
+        db.session.commit()
+        success = f'Employee Deleted successfully'
+        return success
+    else:
+        return 'Not a valid Id'
+    

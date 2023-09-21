@@ -49,7 +49,9 @@
                                             {% for item in view_archived_employees %}
                                             <div id="title" class="tr">
                                                 <h4 class="view_name_style"><b>Name</b>: {{ item.firstName }} {{ item.middleName }} {{ item.lastName }}  - <b>ID:</b> {{ item.employeeID }} 
-                                                    <button class="archive_btn" id="">Delete</button></h4>
+                                                    <form action="/delete_employee/{{ item.employeeID }}" method="POST" style="display: inline;">
+                                                            <button type="submit" class="archive_btn" id="">Delete</button>
+                                                    </form></h4>
                                             </div>
                                             <!-- <form method="POST" action="/archive_employee/{{ item.employeeID }}" id="archive_form">
                                                 <label for="employeeID" >ID: </label>

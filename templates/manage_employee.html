@@ -48,7 +48,7 @@
                 <button class="btn" id="view_emp">
                     View Employees
                 </button>
-                <button class="btn" id="archive_emp">
+                <button class="btn" id="archive_emp" href="view_archived_employees">
                     Archive Employee
                 </button>
             </div>
@@ -689,7 +689,7 @@
                                 <p style="color: red; margin: 0px; padding: 0px;"><b> {{ write_up }}</b></p>
                                 <div id="view_employees">
                                     {% if not view_archived_employees %}
-                                        <h2>No Data Found again</h2>
+                                        <h2>No Data Found</h2>
                                     {% else %}
                                             {% for item in view_archived_employees %}
                                             <div id="title" class="tr">
