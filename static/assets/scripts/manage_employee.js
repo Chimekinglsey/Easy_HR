@@ -221,11 +221,11 @@ const inputFields = document.querySelectorAll(".row input");
 $(document).ready(function(){
     // on click of each archive button, toggle to display form to proceed with archiving
     $('.display_archive_form').click(function() {
-        $('#employee_data').toggle()
+        const employeeData = $(this).closest('.tr').next().next().find('#employee_data');
+        employeeData.toggle();
         const archiveForm = $(this).closest('.tr').next().find('.archive_form');
-        archiveForm.toggle(200);
+        archiveForm.toggle(150);
     });
-
 });
 
 

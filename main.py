@@ -122,11 +122,11 @@ def add_emp():
         # [exists for email in employee_emails]
         # if exists:
                 # return jsonify({"success": False, "message": "Employee with this email already exists"})
-                flash('Employee with this email already exists')
+                flash('Employee with this email already exists', 'error')
                 return redirect(url_for('main.manage_emp'))
             if emp.employeeID == employeeID:
                 # return jsonify({"success": False, "message": "Employee with this email already exists"})
-                flash('Employee with this ID already exists')
+                flash('Employee with this ID already exists', 'error')
                 return redirect(url_for('main.manage_emp'))
 
         new_employee = Employee(user_id=user_id, firstName=firstName, middleName=middleName,
@@ -280,10 +280,10 @@ def archive_employee(employeeID):
         db.session.add(new_employee_archive)
         db.session.delete(employee_data)
         db.session.commit()
-        flash('Employee archived successfully')
+        flash('Employee archived successfully', 'success')
         return redirect(url_for('main.view_employees'))
     else:
-        flash('An Error Occurred: "Employee data not found"')
+        flash('An Error Occurred: "Employee data not found"', 'error')
         return redirect(url_for('main.view_employees'))
     
 @main.route('/view_archived_employees', strict_slashes=False, methods=['GET'])

@@ -31,13 +31,14 @@ def login_post():
     user = User.query.filter_by(official_email=official_email).first()
 
     if not user:
-        flash('User not found. Check your details and try again.')
+        flash('User not found. Check your details and try again', 'error')
         return redirect(url_for('auth.login'))
     
     if not check_password_hash(user.password, password):
-        flash('Incorrect password. Please check your login details and try again.')
+        flash('Incorrect password. Please check your login details and try again', 'error')
         return redirect(url_for('auth.login')) 
 
+    flash('Login successful', 'success')
 
     next_url = session.pop('next_url', None)
     
@@ -86,16 +87,16 @@ def signup_post():
     user = User.query.filter_by(official_email=official_email).first() # if this returns a user, then the email already exists in database
     
     if user: # if a user is found, we want to redirect back to signup page so user can try again
-        flash('Email address already exists')
+        flash('Email address already exists', 'error')
         return redirect(url_for('auth.signup'))
         # return 'Email address already exists'
     """check if a password is valid"""
     # if not is_valid_password(password): # if a user is found, we want to redirect back to signup page so user can try again
-    #     flash('password must be a minimum of 8 character including a lowercase, an upppercase, a number and a special character')
+    #     flash('password must be a minimum of 8 character including a lowercase, an upppercase, a number and a special character', 'error')
     #     return redirect(url_for('auth.signup'))
     #  check password matches
-    # if password != passwordII:
-    #     flash('passwords does not match')
+    # if password != password2:
+    #     flash('passwords does not match', 'error')
     #     return redirect(url_for('auth.signup'))
     
     # create a new user with the form data. Hash the password so plaintext version isn't saved.
@@ -106,6 +107,8 @@ def signup_post():
     # add the new user to the database
     db.session.add(new_user)
     db.session.commit()
+    flash('Signup successful', 'success')
+
 
     return redirect(url_for('auth.login'))
 
@@ -113,4 +116,5 @@ def signup_post():
 @login_required
 def logout():
     logout_user()
+    flash('Logout successful', 'success')
     return redirect(url_for('main.landing_page'))

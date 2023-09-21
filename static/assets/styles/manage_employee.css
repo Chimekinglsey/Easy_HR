@@ -365,9 +365,9 @@ display: table-row !important;
     padding: 3px 10px;
     background-color: #dfdfd4;
     /* box-shadow:  0 0 0 1px #ee3232; */
-    color: black !important;
+    color: black;
     border-radius: 4px;
-    margin-left: 15px;
+    margin-left: 1%;
 }
 #register .flash_messages {
     flex-direction: row;
@@ -408,4 +408,12 @@ display: table-row !important;
 /* archive function css */
 #manage_employee_archive{
     margin-top: 15px;
+}
+.archive_form .archive_btn{
+    background-color: red;
+    margin-left: 15px;
+}
+.archive_form .archive_btn:hover{
+    background-color: rgb(231, 37, 37);
+    color: rgb(233, 229, 229);
 }
