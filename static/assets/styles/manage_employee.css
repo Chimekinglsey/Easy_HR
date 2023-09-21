@@ -394,7 +394,15 @@ display: table-row !important;
     border-radius: 3px;
     margin: 20px;
     padding: 0px 10px;
-    background-color: #a59d9d;
+    width: fit-content;
+}    
+.hidden_archive{
+    display: flex;
+    margin:0 auto;
+    padding: 0;
+    width: fit-content;
+    background-color: rgb(136, 230, 156);
+
 }
 
 /* archive function css */

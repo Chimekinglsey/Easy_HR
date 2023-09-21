@@ -219,9 +219,13 @@ const inputFields = document.querySelectorAll(".row input");
 
 //same as above but shorter
 $(document).ready(function(){
+    // on click of each archive button, toggle to display form to proceed with archiving
     $('.display_archive_form').click(function() {
-        $('.archive_form').toggle(function(){
-            $('.archive')
-        });
+        $('#employee_data').toggle()
+        const archiveForm = $(this).closest('.tr').next().find('.archive_form');
+        archiveForm.toggle(200);
     });
+
 });
+
+

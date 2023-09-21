@@ -51,13 +51,14 @@
                                                 <h4 class="view_name_style"><b>Name</b>: {{ item.firstName }} {{ item.middleName }} {{ item.lastName }}  - <b>ID:</b> {{ item.employeeID }} 
                                                     <button class="archive_btn display_archive_form">Archive</button></h4>
                                             </div>
-                                            <form method="POST" action="/archive_employee/{{ item.employeeID }}" id="archive_form">
-                                                <label for="employeeID" >ID: </label>
-                                                <input type="text" id="employeeID" name="employeeID" value="{{ item.employeeID }}" required>
-                                                <label for="reason_for_archive">Reason: </label>
-                                                <input id="reason_for_archive" name="reason_for_archive" autofocus="autofocus" required>
-                                                <button class="archive_btn" id="" type="submit">Archive</button>
-                                            </form>
+                                            <div class="hidden_archive">
+                                                <form method="POST" action="/archive_employee/{{ item.employeeID }}" class="archive_form">
+                                                    <input type="hidden" id="employeeID" name="employeeID" value="{{ item.employeeID }}" required>
+                                                    <label for="reason_for_archive">Reason for archiving: </label>
+                                                    <input id="reason_for_archive" name="reason_for_archive" autofocus="autofocus" required>
+                                                    <button class="archive_btn" id="" type="submit">Proceed</button>
+                                                </form>
+                                            </div>
                                                     <form action="/view_employees" id="employee_data">
                                                     <div class="tr">
                                                         <span class="td"><b>Date Employed</b>: {{ item.DateOfEmployment }}</span>
