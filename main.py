@@ -299,12 +299,75 @@ def view_archived_employees():
 @login_required
 def delete_employee(emp_id):
     """deletes an employee permanently"""
-    employee = Employee_archive.query.filter_by(employeeID=emp_id, user_id=current_user).first()
-    if employee:
-        db.session.delete(employee)
-        db.session.commit()
-        success = f'Employee Deleted successfully'
-        return success
-    else:
-        return 'Not a valid Id'
-    
+    if request.method == 'POST':
+        form_emp_id = request.form.get('delete_employee')
+        if emp_id == form_emp_id:
+            employee = Employee.query.filter_by(employeeID=emp_id, user_id=current_user.id).first()
+            if employee:
+                db.session.delete(employee)
+                db.session.commit()
+                flash('Delete Successful', 'success')
+                success = f'Employee Deleted successfully'
+                return success
+        else:
+            return 'Not a valid Id'
+    return render_template('manage_employee.html')
+
+@main.route('/empty_archive', methods=['GET','POST'])
+@login_required
+def empty_archive():
+    """permanently delete all archived employee"""
+    if request.method == 'POST':
+        delete_phrase = request.form.get('delete_phrase')
+        if delete_phrase == 'permanently delete all':
+            all_archived = Employee_archive.query.filter_by(user_id=current_user.id).all()
+            if all_archived:
+                for employee in all_archived:
+                    db.session.delete(employee)
+                db.session.commit()
+                flash('Archive emptied!', 'success')
+                return redirect(url_for('main.view_archived_employees'))
+    return redirect(url_for('main.view_archived_employees'))
+        
+
+@main.route('/restore_employee/<emp_id>', methods=['GET', 'POST'])
+@login_required
+def restore_employee(emp_id):
+    """restores an employee from archive"""
+    if emp_id and request.method == 'POST':
+        employee = Employee_archive.query.filter_by(employeeID=emp_id, user_id=current_user.id).first()
+        if employee:
+            restored_employee = Employee(user_id=employee.user_id, firstName=employee.firstName, middleName=employee.middleName,
+                                    lastName=employee.lastName, email=employee.email, phoneNumber=employee.phoneNumber,
+                                    address=employee.address, nationality=employee.nationality, stateOfOrigin=employee.stateOfOrigin,
+                                    employeeID=employee.employeeID, level=employee.level, salary=employee.salary,
+                                    branch=employee.branch, department=employee.department, DateOfEmployment=employee.DateOfEmployment,
+                                    dateOfBirth=employee.dateOfBirth, gender=employee.gender, created_at=employee.created_at)
+            db.session.add(restored_employee)
+            db.session.delete(employee)
+            db.session.commit()
+            flash('Employee restored successfully', 'success')
+            return redirect(url_for('main.view_employees'))
+    return redirect(url_for('main.view_archived_employees'))
+
+
+@main.route('/restore_all', methods=['GET', 'POST'])
+@login_required
+def restore_all():
+    """restores all employee from archive"""
+    if request.method == 'POST':
+        employees = Employee_archive.query.filter_by(user_id=current_user.id).all()
+        if employees:
+            for employee in employees:
+                restored_employee = Employee(user_id=employee.user_id, firstName=employee.firstName, middleName=employee.middleName,
+                                        lastName=employee.lastName, email=employee.email, phoneNumber=employee.phoneNumber,
+                                        address=employee.address, nationality=employee.nationality, stateOfOrigin=employee.stateOfOrigin,
+                                        employeeID=employee.employeeID, level=employee.level, salary=employee.salary,
+                                        branch=employee.branch, department=employee.department, DateOfEmployment=employee.DateOfEmployment,
+                                        dateOfBirth=employee.dateOfBirth, gender=employee.gender, created_at=employee.created_at)
+                db.session.add(restored_employee)
+                db.session.delete(employee)
+            db.session.commit()
+            flash('Employee restored successfully', 'success')
+            return redirect(url_for('main.view_employees'))
+    return redirect(url_for('main.view_archived_employees'))

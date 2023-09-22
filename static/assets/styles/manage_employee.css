@@ -135,23 +135,6 @@ UPDATE EMPLOYEE CSS
     margin-left: 25%;
     margin-right: 13%;
 }
-/* pop up and view_employee.html css styling */
-#manage_employee_view_v2 {
-    display: flex;
-    /* flex: 3; */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    margin: 20px;
-    padding: 0 20px;
-    background-color: #61676b;
-    width: auto;
-}
-
-/* 
-VIEW EMPLOYEE CSS for manage_employee.html
-*/
 #manage_employee_view {
     display: none;
     flex: 3;
@@ -164,6 +147,25 @@ VIEW EMPLOYEE CSS for manage_employee.html
     background-color: #61676b;
     width: auto;
 }
+/* pop up and view_employee.html css styling */
+#manage_employee_view_v2 {
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 20px;
+    padding: 0 10px 10px 10px;
+    background-color: #61676b;
+    min-width: 70%;
+    width: auto;
+}
+
+
+/* 
+VIEW EMPLOYEE CSS for manage_employee.html
+*/
 .form_guide{
     flex: 1;
     text-align: center;
@@ -193,7 +195,7 @@ VIEW EMPLOYEE CSS for manage_employee.html
     background-color: rgb(97, 8, 8);
     color: white;
 }
-#select_view, #archive_view { 
+#select_view, #archive_view, #archive_view2 { 
     display: flex;
     flex: 3;
     flex-direction: column;
@@ -206,8 +208,11 @@ VIEW EMPLOYEE CSS for manage_employee.html
     width: 80%;
     background-color: #ededed; /* Added a background color */
 }
-#archive_view {
+#archive_view, #archive_view2 {
     margin-top: 15px;
+}
+#archive_view2{
+    padding: 0;
 }
 #form_table{
     width: 700px;
@@ -360,7 +365,7 @@ display: table-row !important;
     padding: 10px;
     color: white;
 }
-.archive_btn {
+.archive_btn, .delete_btn {
     display: inline-block;
     padding: 3px 10px;
     background-color: #dfdfd4;
@@ -368,6 +373,10 @@ display: table-row !important;
     color: black;
     border-radius: 4px;
     margin-left: 1%;
+}
+.delete_btn{
+    background-color: red;
+    color: wheat;
 }
 #register .flash_messages {
     flex-direction: row;
@@ -395,25 +404,118 @@ display: table-row !important;
     margin: 20px;
     padding: 0px 10px;
     width: fit-content;
-}    
-.hidden_archive{
+}
+.delete_form, .restore_form {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin: 0 20px;
+    padding: 0px 10px;
+    width: fit-content;
+}
+.delete_form{
+    margin: 20px;
+}
+.delete_emp .d_form{
+    margin: 0 20px;
+}
+   
+.hidden_archive, .delete_emp, .restore_all {
     display: flex;
+    height: min-content;
+    justify-content: center;
+    align-items: center;
     margin:0 auto;
     padding: 0;
+    min-width: 60%;
     width: fit-content;
     background-color: rgb(136, 230, 156);
 
 }
+.delete_emp, .empty_archive{
+    background-color: rgb(238, 150, 135);
+}
 
+.toggle_empty_archive {
+    background-color: rgb(175, 16, 16);
+    height: 50px;
+}
+.toggle_restore_all{
+    height: 50px;
+}
+
+
+.toggle_empty_archive:hover{
+    background-color: rgb(212, 127, 127);
+}
 /* archive function css */
 #manage_employee_archive{
     margin-top: 15px;
 }
-.archive_form .archive_btn{
-    background-color: red;
+.archive_form .archive_btn, .delete_btn{
+    background-color: rgb(231, 37, 37);
     margin-left: 15px;
 }
-.archive_form .archive_btn:hover{
+
+.archive_form .archive_btn:hover, .delete_btn{
     background-color: rgb(231, 37, 37);
     color: rgb(233, 229, 229);
+}
+.archive_view2 {
+    width: auto !important;
+    font-size: 14px;
+}
+.archive_view2 .tr .td {
+    margin: 0 5px;
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+}
+#view_employees h2{
+    display: block;
+    width: 100%;
+}
+#select_view h2{
+    color: black;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 5px solid red;
+}
+.button_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.button_div div{
+    flex: 1;
+}
+.button_div .empty_archive, .button_div .restore_all {
+    display: none;
+}
+.button_div .restore_all, .button_div .empty_archive{
+    padding: 0 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+.button_div .empty_archive{
+    padding: 20px;
+}
+
+.block {
+    display:  flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.block button{
+    margin: auto;
+    margin-left: 10%;
+    margin-right: 10%;
 }

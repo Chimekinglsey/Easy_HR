@@ -205,7 +205,7 @@ const inputFields = document.querySelectorAll(".row input");
 
 
 // $(document).ready(function(){
-//     $('#display_archive_form').click(function() {
+//     $('#archive_btn').click(function() {
 //         // Check if the element is currently displayed
 //         if ($('#archive_form').css('display') === 'block') {
 //             // If displayed, hide it
@@ -218,14 +218,124 @@ const inputFields = document.querySelectorAll(".row input");
 // });
 
 //same as above but shorter
+
+// ============================================================================
+// this worked but faulty when both archive and delete are clicked same time
+// ============================================================================
+// $(document).ready(function(){
+//     // on click of each archive button, toggle to display form to proceed with archiving
+//     $('.archive_btn').click(function() {
+//         const employeeData = $(this).closest('.tr').next().next().next().find('#employee_data');
+//         if (employeeData.css('display') === 'none')
+//             employeeData.toggle();
+//         const archiveForm = $(this).closest('.tr').next().find('.archive_form');
+//         archiveForm.toggle(150);
+//     });
+//     $('.delete_btn').click(function() {
+//         // alert("button clicked")
+//         const employeeData = $(this).closest('.tr').next().next().next().find('#employee_data');
+//         employeeData.toggle();
+//         const archiveForm = $(this).closest('.tr').next().next().find('.delete_form');
+//         archiveForm.toggle(150);
+//     });
+// });
+
+
 $(document).ready(function(){
+    let form1Active = false;
+    let form2Active = false;
+
+    // Function to deactivate form 1
+    function deactivateForm1() {
+        // const employeeData = $('.archive_btn').closest('.tr').next().next().next().find('#employee_data');
+        // employeeData.hide();
+        const archiveForm = $('.archive_btn').closest('.tr').next().find('.archive_form');
+        archiveForm.hide();
+        form1Active = false;
+    }
+
+    // Function to deactivate form 2
+    function deactivateForm2() {
+        // const employeeData = $('.delete_btn').closest('.tr').next().next().next().find('#employee_data');
+        // employeeData.hide();
+        const archiveForm = $('.delete_btn').closest('.tr').next().next().find('.delete_form');
+        archiveForm.hide();
+        form2Active = false;
+    }
+
     // on click of each archive button, toggle to display form to proceed with archiving
-    $('.display_archive_form').click(function() {
-        const employeeData = $(this).closest('.tr').next().next().find('#employee_data');
-        employeeData.toggle();
+    $('.archive_btn').click(function() {
+        if (form2Active) {
+            deactivateForm2();
+        }
+        const employeeData = $(this).closest('.tr').next().next().next().find('#employee_data');
+        if (employeeData.is(':visible')) {
+            employeeData.hide();
+        }
+        else {
+            employeeData.show()
+        }
         const archiveForm = $(this).closest('.tr').next().find('.archive_form');
         archiveForm.toggle(150);
+        form1Active = !form1Active;
     });
+    
+    $('.delete_btn').click(function() {
+        if (form1Active) {
+            deactivateForm1();
+        }
+        const employeeData = $(this).closest('.tr').next().next().next().find('#employee_data');
+        if (employeeData.is(':visible')) {
+            employeeData.hide();
+        }
+        else {
+            employeeData.show()
+        }
+        const archiveForm = $(this).closest('.tr').next().next().find('.delete_form');
+        archiveForm.toggle(150);
+        form2Active = !form2Active;
+    });
+
+    $('.no_btn').click(function(){
+        $('.restore_form').hide(150)
+        $('.delete_form').hide(150)
+        $('.restore_all').hide(150)
+})
+let emptyArchiveActive = false;
+let restoreAllActive = false;
+
+$('.toggle_empty_archive').click(function () {
+    if (restoreAllActive) {
+        $('.toggle_restore_all').removeClass('active'); // Deactivate Restore All
+        $('.restore_all').hide();
+        restoreAllActive = false;
+    }
+
+    if (emptyArchiveActive) {
+        $('.empty_archive').hide(); // Deactivate Empty Archive
+        emptyArchiveActive = false;
+    } else {
+        $(this).addClass('active'); // Activate Empty Archive
+        $('.empty_archive').show();
+        emptyArchiveActive = true;
+    }
 });
 
+$('.toggle_restore_all').click(function () {
+    if (emptyArchiveActive) {
+        $('.toggle_empty_archive').removeClass('active'); // Deactivate Empty Archive
+        $('.empty_archive').hide();
+        emptyArchiveActive = false;
+    }
 
+    if (restoreAllActive) {
+        $('.restore_all').hide(); // Deactivate Restore All
+        restoreAllActive = false;
+    } else {
+        $(this).addClass('active'); // Activate Restore All
+        $('.restore_all').show();
+        restoreAllActive = true;
+    }
+});
+
+});

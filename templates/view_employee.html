@@ -41,7 +41,7 @@
                         </div>
                         <div id="select_view" class="below">
                                 
-                                <p style="color: red; margin: 0px; padding: 0px;"><b> {{ write_up }}</b></p>
+                                <h2>{{ write_up }}</h2>
                                 <div id="view_employees">
                                     {% if not view_employees %}
                                         <h2>No Data Found</h2>
@@ -49,7 +49,8 @@
                                             {% for item in view_employees %}
                                             <div id="title" class="tr">
                                                 <h4 class="view_name_style"><b>Name</b>: {{ item.firstName }} {{ item.middleName }} {{ item.lastName }}  - <b>ID:</b> {{ item.employeeID }} 
-                                                    <button class="archive_btn display_archive_form ">Archive</button></h4>
+                                                    <button class="archive_btn display_archive_form ">Archive</button>
+                                                    <button class="delete_btn display_archive_form2 ">Delete</button></h4>
                                             </div>
                                             <div class="hidden_archive">
                                                 <form method="POST" action="/archive_employee/{{ item.employeeID }}" class="archive_form">
@@ -57,6 +58,13 @@
                                                     <label for="reason_for_archive">Reason for archiving: </label>
                                                     <input id="reason_for_archive" name="reason_for_archive" autofocus="autofocus" required>
                                                     <button class="archive_btn" id="" type="submit">Proceed</button>
+                                                </form>
+                                            </div>
+                                            <div class="delete_emp">
+                                                <form method="POST" action="/delete_employee/{{ item.employeeID }}" class="delete_form">
+                                                    <label for="delete_employee">Permanently Delete "{{ item.firstName}} {{ item.lastName}}"? This is irreversible: </label>
+                                                    <input id="delete_employee" name="delete_employee" autofocus="autofocus" placeholder="Enter '{{ item.employeeID }}' to proceed" required>
+                                                    <button class="delete_btn" id="" type="submit">Proceed</button>
                                                 </form>
                                             </div>
                                             <div>

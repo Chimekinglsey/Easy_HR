@@ -66,4 +66,5 @@ class Employee_archive(db.Model):
     gender = db.Column(db.String(30), nullable=False)
     pension_status = db.Column(db.String(30), nullable=True)
     reason_for_archive = db.Column(db.String(100), nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
     archived_at = db.Column(db.DateTime, nullable=False, default=datetime.now)
