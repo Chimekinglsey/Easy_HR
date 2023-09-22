@@ -66,11 +66,18 @@ def dashboard():
     return render_template('dashboard.html', user=current_user.first_name,
                            employee=employee, emp_count=count1)
 
-@main.route('/manage_emp')
+@main.route('/manage_emp', strict_slashes=False)
 @login_required
 def manage_emp():
+    """     """
     employee = None
-    return render_template('manage_employee.html', employee=employee)
+    archived_employee_data = Employee_archive.query.filter_by(user_id=current_user.id).all()
+    employee_data = Employee.query.filter_by(user_id=current_user.id).all()
+
+    write_up_1 = f"Employee List"
+    write_up_2 = f"Archived Employee List"
+    return render_template('manage_employee.html', view_archived_employees=archived_employee_data, view_employees=employee_data, employee=employee, Employee_List=write_up_1, Archived_Employee_List=write_up_2)
+    # return render_template('manage_employee.html', employee=employee)
 
 
 @main.route('/manage_dept')
@@ -306,12 +313,11 @@ def delete_employee(emp_id):
             if employee:
                 db.session.delete(employee)
                 db.session.commit()
-                flash('Delete Successful', 'success')
-                success = f'Employee Deleted successfully'
-                return success
-        else:
-            return 'Not a valid Id'
-    return render_template('manage_employee.html')
+                # flash('Delete Successful', 'success')
+                success = f'Employee Deleted successfully, please refresh this page to view changes'
+                return jsonify({"success": True, "message": success})
+            else:
+                return jsonify({"success": False, "message": f"Wrong ID inputed"})
 
 @main.route('/empty_archive', methods=['GET','POST'])
 @login_required

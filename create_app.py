@@ -4,8 +4,8 @@ from flask_login import LoginManager
 
 # init SQLAlchemy so we can use it later in our models
 db = SQLAlchemy()
-username = 'kings'
-password = 'root'
+username = 'root'
+password = '0793'
 def create_app():
     app = Flask(__name__)
 
@@ -21,7 +21,7 @@ def create_app():
         return User.query.get(int(user_id))
 
     app.config['SECRET_KEY'] = 'Big_Team_Easy_HR'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+mysqlconnector://{username}:{password}@localhost/easyhrv4'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{username}:{password}@localhost/easyhrv4'
 
     db.init_app(app)
 

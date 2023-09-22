@@ -13,6 +13,7 @@
     <script src="../static/assets/scripts/view_search_btn.js"></script>
     <script src="../static/assets/scripts/phone_country_code.js"></script>
     <script src="../static/assets/scripts/manage_employee.js"></script>
+    <script src="../static/assets/scripts/default.js"></script>
 </head>
 <body>
     <header id="header">
@@ -29,16 +30,23 @@
             
     </div>
     </header>
-     
-
+    <div id="flash_container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash_messages red_background">
+                {{ messages[0] }}
+            </div>
+        {% endif %}
+        {% endwith %}
+    </div>
         <div id="manage_employee_view_v2">
-                        <div class="form_guide">
+                        <!-- <div class="form_guide">
                             <div>Do you want to view  employee by name or id?</div>
                             <form id="employeeSearchForm" action="/view_employee"><div class="viewById">
                                 <b>Enter ID or Name: </b><input id="search_id" type="text" placeholder="Enter ID or Name">
                                 <button class="btn" type="submit">Search</button></div>
                             </form>
-                        </div>
+                        </div> -->
                         <div id="select_view" class="below">
                                 
                                 <h2>{{ write_up }}</h2>

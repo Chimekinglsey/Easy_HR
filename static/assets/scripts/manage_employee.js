@@ -111,7 +111,7 @@ $(document).ready(function() {
                 console.error(error);
             }
         });
-    });    
+    });   
 });
 
 addEventListener('DOMContentLoaded', function(){
@@ -338,4 +338,30 @@ $('.toggle_restore_all').click(function () {
     }
 });
 
+});
+$(document).ready(function() {
+    $(".delete_form").submit(function(event) { // Bind to the form, not the button
+        event.preventDefault(); // Prevent the default form submission
+
+        let employeeID = $("input[name='delete_employee']").val();
+        // Serialize the form data into a format that can be sent via AJAX
+        let formData = $(this).serialize();
+        // Make an AJAX request to update the employee
+        $.ajax({
+            type: "POST",
+            url: `/delete_employee/${employeeID}`,
+            data: formData, // Pass the serialized form data here
+            success: function(response) {
+                if (response.success) {
+                    alert(response.message); // Show a success message
+                    // You can update other elements or perform additional actions here
+                } else {
+                    alert(response.message); // Show an error message
+                }
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    });   
 });
