@@ -7,6 +7,7 @@
     <link rel="icon" href="../static/assets/images/icon.png" type="image/img">
     <link rel="stylesheet" href="../static/assets/styles/default.css">
     <link rel="stylesheet" href="../static/assets/styles/dashboard.css">
+    <script src="../static/assets/scripts/default.js"></script>
 </head>
 <body>
     <header id="header">
@@ -23,6 +24,15 @@
             
     </div>
     </header>
+    <div id="flash_container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+            <div class="flash-messages {% if category == 'error' %}error-message{% elif category == 'success' %}success-message{% endif %}">
+            {{ message }}
+            </div>
+        {% endfor %}
+        {% endwith %}
+    </div>
      <div id="container">
         <div id="welcome">
             <div id="logo">

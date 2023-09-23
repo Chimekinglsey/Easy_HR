@@ -101,6 +101,8 @@ def manage_payroll():
 @main.route('/add_employee', strict_slashes=False, methods=['GET', 'POST'])
 @login_required
 def add_emp():
+    write_up_1 = f"New employee details successfully added"
+    write_up_2 = f"Failed to add new employee details"
     if request.method == 'POST':
         user_id = current_user.id
 
@@ -144,7 +146,9 @@ def add_emp():
                                 dateOfBirth=dateOfBirth, gender=gender)
         db.session.add(new_employee)
         db.session.commit()
+        flash(write_up_1, 'success')
         return redirect(url_for('main.manage_emp'))
+    flash(write_up_2, 'success')
     return redirect(url_for('main.manage_emp'))
 
 

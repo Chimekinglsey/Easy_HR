@@ -156,7 +156,7 @@ UPDATE EMPLOYEE CSS
     align-items: center;
     border-radius: 3px;
     margin: 20px;
-    padding: 0 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
     background-color: #61676b;
     min-width: 70%;
     width: auto;
@@ -478,7 +478,8 @@ display: table-row !important;
 }
 #select_view h2{
     color: black;
-    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     padding: 0px;
     border-bottom: 5px solid red;
 }

@@ -6,7 +6,7 @@ body {
 }
 
 /* Default styling for flasks-flash messages */
-.red_background {
+.error-message {
     background-color: red;
     color: white;
     padding: 10px;
@@ -14,7 +14,20 @@ body {
     margin: 5px;
 }
 
-.red_background a {
+.success-message {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.error-message a {
+    color: white;
+    font-weight: bold;
+}
+
+.green_background a {
     color: white;
     font-weight: bold;
 }
@@ -182,7 +195,6 @@ footer a:hover{
 .flash_messages {
     opacity: 1;
     transition: opacity 1s ease-in-out, background-color 1s ease-in-out;
-    background-color: red;
     color: rgb(239, 231, 231);
     border-radius: 5px;
     padding: 10px 20px;

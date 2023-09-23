@@ -31,12 +31,12 @@
     </div>
     </header>
     <div id="flash_container">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <div class="flash_messages red_background">
-                {{ messages[0] }}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+            <div class="flash-messages {% if category == 'error' %}error-message{% elif category == 'success' %}success-message{% endif %}">
+            {{ message }}
             </div>
-        {% endif %}
+        {% endfor %}
         {% endwith %}
     </div>
         <div id="manage_employee_view_v2">

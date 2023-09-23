@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    const notification = document.querySelector('.red_background');
+    const notification = document.querySelector('.error-message, .success-message');
 
     if (notification) {
         setTimeout(function() {

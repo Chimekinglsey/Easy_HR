@@ -57,12 +57,20 @@
 
         <div id="manage_employee_add" class="manage_add">
             <div>
-                {% with messages = get_flashed_messages() %}
+                <!-- {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     <div class="flash_messages red_background">
                         {{ messages[0] }}
                     </div>
                 {% endif %}
+                {% endwith %} -->
+
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                    <div class="flash-messages {% if category == 'error' %}error-message{% elif category == 'success' %}success-message{% endif %}">
+                    {{ message }}
+                    </div>
+                {% endfor %}
                 {% endwith %}
             </div>
                 <div id="register">
@@ -359,7 +367,7 @@
         </div>
         
         <div id="manage_employee_update">
-            <div>
+            <!-- <div>
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     <div class="flash_messages red_background">
@@ -367,7 +375,8 @@
                     </div>
                 {% endif %}
                 {% endwith %}
-            </div>                    <div id="register">
+            </div> -->
+            <div id="register">
                         <form id="form_table" class="retrieve_update_data" action="/update_employee" method="POST" enctype="multipart/form-data">
                             <div class="row">
                             <label for="firstName">First Name:</label>
@@ -686,9 +695,9 @@
                             </div>
                             <div class="delete_emp">
                                 <form method="POST" action="/delete_employee/{{ item.employeeID }}" class="delete_form">
-                                    <label for="delete_employee">Permanently Delete "{{ item.firstName}} {{ item.lastName}}"? This is irreversible: </label>
+                                    <p><label for="delete_employee">Permanently Delete "{{ item.firstName}} {{ item.lastName}}"? This is irreversible: </label>
                                     <input id="delete_employee" name="delete_employee" autofocus="autofocus" placeholder="Enter '{{ item.employeeID }}' to proceed" required>
-                                    <button class="delete_btn" id="proceed_delete" type="submit">Proceed</button>
+                                    <button class="delete_btn" id="proceed_delete" type="submit">Proceed</button></p>
                                 </form>
                             </div>
                             <div>
